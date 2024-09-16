@@ -1,0 +1,482 @@
+*{
+    color: rgb(0, 0, 0);
+    font-family: 'Calibri';
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'delius_swash_capsregular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fuentes/deliusswashcaps-regular-webfont.woff2') format('woff2'),
+         url('../fuentes/deliusswashcaps-regular-webfont.woff') format('woff');
+}
+ 
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fuentes/kaushanscript-regular-webfont.woff2') format('woff2'),
+         url('../fuentes/kaushanscript-regular-webfont.woff') format('woff');
+}
+ 
+@font-face {
+    font-family: 'gloria_hallelujahregular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fuentes/gloriahallelujah-webfont.woff2') format('woff2'),
+         url('../fuentes/gloriahallelujah-webfont.woff') format('woff');
+}
+ 
+/* Parte del logo de la marca */
+body{
+    background-color: rgb(184, 184, 184);
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+ 
+a{
+    color: black;
+    text-decoration: none;
+}
+ 
+header{
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+ 
+/* Para el primer HTML */
+.logo{
+    align-items: center;
+    display: flex;
+}
+ 
+.logo img{
+    background-color: white;
+    height:50px;
+    margin-right: 10px;
+}
+ 
+.texto-superpuesto {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    left: 50%;
+    padding-right: 20em;
+    position: absolute;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(255, 0, 0, 0.5);
+    top: 65%;
+    transform: translate(-50%, -50%);
+}
+ 
+.linea1{
+    margin-top: auto;
+    padding-left: 25em;
+}
+ 
+.linea2{
+    margin-top: auto;
+    padding-left: 45em;
+}
+ 
+ 
+.texto-superpuesto p{
+    color: rgb(255, 255, 255);
+    font-family: 'kaushan_scriptregular';
+    font-size: 80px;
+    margin-left: auto;
+}
+
+/* BARRA DE MENU HORIZONTAL */
+nav{
+    font-size: 20px;
+    max-width: 900px;
+}
+ 
+.menu-horizontal{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+ 
+.menu-horizontal > li > a{
+    color: black;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+ 
+.menu-vertical{
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    list-style: none; /*Para quitar los puntos que aparecen cuando creas una lista desordenada*/
+    position: absolute;
+    width: 200px;
+}
+ 
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+ 
+.menu-vertical li:hover{
+    background-color: black;
+}
+ 
+.menu-vertical li a{
+    color: white;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+ /***************************************************/
+ 
+nav a{
+    font-weight: 600;
+    margin-left: 1em;
+    padding-right: 30px;
+    text-align: center;
+}
+ 
+/* Responsive para el header */
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}
+/* ------------------------------------ */
+ 
+/* Media query para dispositivos con un ancho de pantalla menor o igual a 600px */
+@media screen and (max-width: 600px) {
+    .menu-horizontal {
+        align-items: center; /* Centra los elementos en la columna */
+        flex-direction: column; /* Cambia la dirección a vertical */
+    }
+    .menu-horizontal > li {
+        margin-bottom: 10px; /* Espacio entre los elementos en la columna */
+    }
+    .menu-horizontal li:hover .menu-vertical {
+        display: block; /* Muestra el menú vertical al hacer clic o pasar el mouse */
+        margin-top: 10px; /* Añade espacio entre el elemento padre y el menú vertical */
+        position: absolute; /* Cambia la posición a estática para que aparezca debajo del elemento padre */
+    }
+}
+ 
+/* IMAGENES DE PORTADA */
+.imagen-encabezado{
+    height: auto;
+    margin-top: 80px;
+    max-width: 100%;
+}
+ 
+.imagen-encabezado img{
+    height: auto;
+    width: 100%;
+}
+ 
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    .imagen-encabezado {
+        margin-top: 0; /* Elimina el margen superior en dispositivos móviles para que la imagen se vea completa */
+    }
+    header{
+        position: relative;
+    }
+}
+ 
+iframe{
+    border-radius: .4em;
+    height: 250px;
+    width: 350px;
+}
+/* PARA SEPARAR LOS TIPOS DE MOTOS */
+ 
+.contenedor-principal{
+    margin-top: 100px;
+}
+ 
+.tipos-de-motos h2{
+    text-align: center;
+}
+ 
+.tipos-de-motos h3{
+    border: 2px solid #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    font-family: 'kaushan_scriptregular';
+    height: 25px;
+    margin-bottom: 20px;
+    margin-top: 4em;
+    text-align: center;
+}
+ 
+.tipos-de-motos a{
+    margin-top: none;
+}
+ 
+.content {
+    border: 2px solid #000000;
+    box-shadow: 0 0 10px rgba(3, 3, 3, 0.7);
+    display:flex;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+ 
+.content img {
+    border: 2px solid #000000; /* Borde azul en la parte inferior de la imagen */
+    height: auto;
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+ 
+.content p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+.moto {
+    border: 2px solid #262525; /* Borde azul */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra azul */
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 400px;
+    position: relative;
+}
+
+.moto img{
+    border-bottom: 2px solid #3498db; /* Borde azul en la parte inferior de la imagen */
+    height: 180px;
+    margin-bottom: 10px;
+    width: 310px;
+}
+ 
+.moto p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.moto iframe{
+    bottom: 0;
+    height: auto;
+    position: relative;
+    width:auto;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        font-size: 1px;
+        top: 10%;
+    }
+    .linea1,
+    .linea2 {
+        padding-left: auto;
+    }
+}
+ 
+label{
+    display: block;
+    margin-bottom: 5px;
+    margin-top: none;
+}
+ 
+textarea{
+    height: 90px;
+    resize: none;
+}
+ 
+input:focus,textarea:focus,select:focus{
+    background: #e1e2e1;
+}
+ 
+input[type=text],input[type=email],textarea{
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+}
+ 
+input[type=radio],input[type=checkbox]{
+    margin-right: .4em;
+}
+ 
+.contact{
+    margin-top: 7em;
+    text-align: center;
+}
+ 
+#formulario {
+    background-color: #3979fa;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    height: fit-content;
+    margin: 20px auto 50px auto;
+    padding: 1.3em 2em 1.7em 2em;
+    width: fit-content;
+}
+ 
+#formulario label{
+    background-color: #c8ccd1;
+    border-radius: 5px;
+    cursor:text;
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 2px 0;
+    padding-left: 4px;
+    width: 100%;
+}
+#formulario textarea{
+    border-radius: 5px;
+    height: 170px;
+    overflow: hidden;
+    padding: 5px;
+    resize: none;
+    width: 350px;
+ 
+}
+#formulario input{
+    border: 0;
+    border-radius: 5px;
+    margin: 4px 0 0 0;
+    padding: 5px;
+}
+
+.mapa-container{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.mapa-container p{
+    padding: .5em;
+}
+
+#formulario p{
+    margin-top: 1em;
+    text-align: center;
+}
+
+#botones{
+    margin-top: 10px;
+    text-align: center;
+}
+#botones input{
+    border-radius: 5px;
+    margin-right: 4px;
+    padding: 4px;
+}
+#botones input:hover{
+    cursor: pointer;
+}
+ 
+/* Iconos y texto de redes sociales */
+.redes-sociales{
+    align-items: center;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    text-align: center;
+}
+ 
+.red-social{
+    align-items: center;
+    display: flex;
+    margin-bottom: 15px;
+    margin-right: 20px; /*Para separar cada red social en forma horizontal */
+    margin-top: 10px;
+}
+
+.red-social img{
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 20px;
+}
+.red-social a{
+    align-items: center;
+    color: black; /* Cambiar color del texto del enlace */
+    display: flex;
+    text-decoration: none; /* Quitar subrayado del enlace */
+}
+ 
+footer{
+    background-color: white;
+    text-align: center;
+}
+ 
+@media only screen and (max-width: 600px) {
+    .redes-sociales {
+        flex-direction: column; /* Cambia la dirección a vertical para dispositivos móviles */
+    }
+    .red-social {
+        margin: 10px 0; /* Añade espacio entre las redes sociales en dispositivos móviles */
+    }
+    .red-social img {
+        width: 30px; /* Ajusta el tamaño de los iconos para dispositivos móviles */
+    }
+}
+ 
+@media screen and (max-width: 600px) {
+    .texto-superpuesto {
+        font-size: 1px;
+        top: 10%;
+    }
+    .linea1,
+    .linea2 {
+        padding-left: auto;
+    }
+ 
+    .content{   
+        display: block;
+    }
+}
+ 
+@media screen and (max-width: 768px) {
+    .texto-superpuesto {
+        font-size: 1px; /* Ajusta el tamaño del texto para tabletas */
+        top: 45%; /* Ajusta la posición vertical para centrar */
+    }
+    .linea1,
+    .linea2 {
+        padding-left: auto; /* Elimina el padding lateral en tabletas */
+        text-align: center;
+    }
+}
+ 
+@media screen and (max-width: 500px) {
+    .texto-superpuesto {
+        font-size: .1em; /* Ajusta el tamaño del texto para dispositivos móviles */
+        top: 65%; /* Ajusta la posición vertical para centrar */
+    }
+    .linea1,
+    .linea2 {
+        font-size: none;
+        margin-top: .1em;
+        padding-left: auto; /* Elimina el padding lateral en dispositivos móviles */
+    }
+}
+ 
+/* PARA LOS VIDEOS XD */
+.contenedor-videos {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 20px;
+}
+ 
+.video {
+    width: 45%; /* Ajusta según tu diseño */
+}

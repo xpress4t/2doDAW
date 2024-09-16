@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Esto es un comentario
+
+        // var texto = "1"; //--> tanto char , como string se pueden poner de esta forma
+        // var entero = 1 //--> se puede poner enteros
+        // var decimal = 5.5 //--> se puede poner decimal
+        // var bool1= true //-->valores booleanos
+        // var bool2 = false
+        // typeof(bol1) //--> para verificar el tipo de dato
+        // console.log("Texto normal:"+num1) //-->para imprimir por pantalla
+        // console.error("Texto en rojo al ser error")
+        // parseInt() //--> para cambiar de un tipo de dato a numero entero
+        // parseFloat() //--> para cambiar un tipo de dato a un numero decimal
+        // console.log("7 como texto->"+parseInt("7"))
+        // console.log("7.96 como texto-->"+parseFloat("7.96"))
+
+        //Conversion para los bool
+        /*
+        0--> False
+        1--> True
+        "" --> False
+        "hola" --> True
+        Boolean() --> para hacer la conversion
+        */
+        /*
+        OPERADORES LOGICOS
+        == --> compara dos valores; sin tener en cuenta el tipo de dato
+        != --> compara si son distintos
+        === --> compara dos valores, teniendo en cuenta el tipo de dato
+        !== --> compara si son distintos, tomando en cuenta el tipo de dato
+        >= --> compara si el valor es mayor o igual
+        <== --> compara si el valor es menor o igual
+        < --> compara si es menor
+        > --> compara si es mayor
+        */
+        /*
+        OPERADORES ARITMETICOS
+        +
+        -
+        *
+        /
+        %
+        ++
+        --
+        COMPARADORES DE ASIGNACION
+        =
+        +=
+        -=
+        *=
+        /=
+        %=
+        OPERADORES BOOLEANOS
+        && --> y logico
+        || --> or logico
+        ! --> not logico
+ 
+        ESTRUCTURAS DE CONTROL
+        IF --
+            if(condicion){
+                si se cumple la condicion
+            }else{
+                si no se cumple la condicion del if
+            }
+ 
+        IF DE LINEA --
+            if(condicion)parte de verdad; else parte falsa
+ 
+        IF --
+            condicion ? parte de verdad : parte falsa
+ 
+ 
+        FOR --
+        --RECORRER POR INDICE--
+        for(expresion inicial,condicion,incremento){
+       
+       }
+   
+       //en JS
+        for(var i=0;listaElementos.length;i++){
+            console.log(listaElementos[i])
+        }
+ 
+        FOR-EACH --
+        -- recorrer por elemento
+        listaElementos = [1,2,3,4,5]
+        listaElementos.forEach(function(item)){
+            console.log(item)    
+        }
+ 
+            
+ 
+        WHILE --
+        while(condicion){
+            si se cumple
+        }
+ 
+        DO-WHILE
+        do{
+            se ejecuta al menos una vez antes de comprobar la condicion
+        }while(condicion)
+
+        Diccionarios --
+        var obj = {
+            "clave1": valor1,
+            "clave2": valor2,
+            "clave3": [1,2,3,4]
+            ....
+        }
+
+        Para acceder a las claves/valores
+            obj.clave1
+            obj["clave1"]
+
+            for(var clave in obj){
+                console.log("Clave"+clave+"valor"+obj[clave])
+            }
+
+            Object.keys(obj).forEach(clave => console.log(obj[clave]))
+        */
+
+        /*
+            Arrays
+            [1,2,3,45,"asd",8,true]
+            .lenght -> para saber el núm de elementos del array
+            .push(item) -> para agregar al principio del array un elemento
+            .pop() -> para eliminar el último elemento de un array
+            .indexOf(item) -> para saber el 1º índice del elemento buscado
+            .includes(item) -> para saber si un elemento está dentro de un array
+            .toString() -> para separar los elementos de un array por comas
+            .join(separador) -> para separar los elementos de array. Nos da un string
+            .every() -> comprobación para cada uno de los elementos
+            var num = [2,4,6,8,10]
+            var sonPares = num.every(item => item % 2 == 0)
+
+            .some() -> comprueba si alguno de los elementos cumple la condición
+            var num = [2,4,6,8,10,11]
+            var hayAlgunImpar = num.every(item => item % 2 != 0)
+
+
+            .find()
+            var personas = [
+                {nombre: "Ana", edad: 25},
+                {nombre: "Carlos", edad: 30},
+                {nombre: "Sofía", edad: 18}
+            ];
+
+            personas.find(persona => persona.edad > 36)
+
+            Null -> variable definida pero son valor null
+            Undefined -> variable definida a la cual no se le ha dado valor
+
+            try{
+                codigo que puede dar error
+            }catch(Excepcion){
+                si falla, el programa no se detiene
+            }finally{
+                si o si se ejecuta este bloque
+            }
+
+            *CALLBACK*
+            function elevarAlCuadrado(item){
+                return item**2
+            }
+
+            (function X(){
+                console.log("esta función se ejecuta de forma inmediata")
+            })
+
+
+            Ejecuto 1 sola vez la función después de X ms
+            var idTimeOut = setTimeOut(elevarAlCuadrado(3),3000)
+
+            Ejecuto la función después de cada X ms
+            var idInterval = setInterval(elevarAlCuadrado(3),3000)
+
+            clearTimeOut(idTimeOut) -> rpevengo la ejecución del timeOut
+            clearInterval(idInterval) -> paro la ejecución del interval
+            
+            alert("Mensaje") interrumpo la ejecución del programa mostrando
+            un mensaje por pantalla hasta que de al botón de aceptar
+
+            confirm("mensaje") interrumpo la ejecución del programa mostrando
+            un mensaje por pantalla hasta que de al botón de aceptar o al de no aceptar
+
+            interrumpo la ejecución de un programa 
+            mostrando un mensaje por pantalla y pidiendo que el usuario introduzca un 
+            valor -> siempre en formato texto
+            prompt("Mensaje")
+        */
+    </script>
+</body>
+</html>

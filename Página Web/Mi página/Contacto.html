@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/archivo.css">
+    <title>Motos BMW</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <a href="Contacto.html"><img src="media/imagen/logo_bmw_head.png" alt="logo_de_la_compañia"></a>
+        </div>
+        <nav>
+            <ul class="menu-horizontal">
+              <li><a href="index.html">Inicio</a></li>
+              <li>
+                <a href="Motos.html">Motos</a>
+                <ul class="menu-vertical">
+                  <li><a href="#">Sport</a></li>
+                  <li><a href="#">M</a></li>
+                  <li><a href="#">Tour</a></li>
+                  <li><a href="#">Roadster</a></li>
+                  <li><a href="#">Heritage</a></li>
+                  <li><a href="#">Adventure</a></li>
+                </ul>
+              </li>
+              <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+          </nav>
+    </header>
+ 
+ 
+    <!-- FORMULARIO -->
+    <div class="contact">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta? Contáctanos a través del siguiente formulario:</p>
+    </div>
+   
+    <section id="formulario">
+        <form name="formulario" action="archivo.php" method="get" enctype="application/x-www-form-urlencoded">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" placeholder="Nombre*" required>
+        <label>E-mail:</label>
+        <input type="email" name="mail" placeholder="Correo electrónico*" required>
+        <label>Asunto:</label>
+        <select name="ciclo" required>
+            <option value="" hidden>Seleccione uno</option> <!-- hidden sirve para ocultar esta opción cuando quiera escoger alguna de las otras-->
+            <option value="1">Consulta sobre modelos disponibles</option>
+            <option value="2">Solicitud de cotización</option>
+            <option value="3">Programar una prueba de manejo</option>
+            <option value="4">Información sobre financiamiento</option>
+            <option value="5">Estado de una orden o entrega</option>
+            <option value="6">Problema técnico o servicio postventa</option>
+            <option value="7">Información sobre accesorios y repuestos</option>
+            <option value="8">Colaboración o asociación comercial</option>
+        </select>
+        <label>Mensaje:</label>
+        <textarea name="mensaje" placeholder="Mensaje*"></textarea>  
+        <section id="botones">
+            <input type="submit" name="enviar" value="Enviar">
+        </section>
+        </form>
+    </section>
+       
+        <div class="mapa-container">
+          <!-- UBICACION -->
+          <h1>Ubicación</h1>
+          <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3033.9332092050054!2d-3.666814923984919!3d40.49885997142658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDI5JzU1LjkiTiAzwrAzOSc1MS4zIlc!5e0!3m2!1ses-419!2ses!4v1707574434866!5m2!1ses-419!2ses"></iframe>
+          <p>BymyCar Madrid Motorrad - Las Tablas</p>
+          <p>AVDA. DE BURGOS 133</p>
+          <p>Madrid - 28050</p>
+        </div>
+ 
+ 
+    <footer>
+        <!-- Redes sociales -->  
+        <div class="redes-sociales">
+            <!-- Facebook -->
+            <div class="red-social">
+            <a href="https://www.facebook.com/bmwmotorradESP?fref=ts" target="_blank"><img src="media/iconos/icono-facebook.png" alt="Facebook">Facebook</a>
+            </div>
+            <!-- Instagram -->
+            <div class="red-social">
+            <a href="https://www.instagram.com/bmwmotorradesp/" target="_blank"><img src="media/iconos/icono-instagram.png" alt="Instagram">Instagram</a>
+            </div>
+            <!-- Twitter -->
+            <div class="red-social">
+            <a href="https://twitter.com/bmwmotorradesp" target="_blank"><img src="media/iconos/icono-twitter.png" alt="Twitter">Twitter</a>
+            </div>
+            <!-- Youtube -->
+            <div class="red-social">
+            <a href="https://www.youtube.com/user/bmwmotorradesp" target="_blank"><img src="media/iconos/icono-youtube.png" alt="YouTube">YouTube</a>
+            </div>
+        </div>
+        <br>
+        <p>&copy; 2024 BMW Motorrad.</p>
+    </footer>
+</body>
+</html>
