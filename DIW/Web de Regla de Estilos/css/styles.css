@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(220, 208, 191);
+}
+
+.remove-bw {
+    width: 350px;
+    height: 250px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    Enunciado: Calculadora Avanzada de Índice de Masa Corporal (IMC)
+ 
+    Objetivo: El objetivo de esta práctica es crear una calculadora avanzada de índice de masa corporal (IMC) que permita
+    a los usuarios calcular su IMC y obtener una clasificación de su estado de peso, incluyendo requisitos adicionales.
+    
+    Descripción: El IMC es una medida utilizada para evaluar si una persona tiene un peso saludable en relación con su altura.
+    En esta práctica, se te pide crear una calculadora de IMC que solicite al usuario su peso y altura, realice el cálculo del IMC
+    y proporcione una clasificación basada en los valores obtenidos. Además, se agregarán requisitos adicionales para mejorar la funcionalidad de la calculadora.
+    
+    Requisitos:
+    
+        -El programa no debe lanzar ninguna excepción. Haz las comprobaciones necesarias de todos los datos.
+        
+        -El programa debe solicitar al usuario que ingrese su peso en kilogramos y su altura en metros.
+        
+        -El programa debe realizar el cálculo del IMC utilizando la fórmula: IMC = peso / (altura * altura).
+        
+        -El programa debe mostrar el valor del IMC calculado con dos decimales.
+        
+        -El programa debe proporcionar una clasificación basada en el valor del IMC, de acuerdo con las siguientes categorías:
+            -Menor a 18.5: Bajo peso.
+            -18.5 a 24.9: Peso normal.
+            -25.0 a 29.9: Sobrepeso.
+            -30.0 a 34.9: Obesidad grado I.
+            -35.0 a 39.9: Obesidad grado II.
+            -Mayor o igual a 40.0: Obesidad grado III.
+        -El programa debe mostrar la clasificación correspondiente al IMC calculado.
+        
+        -El programa debe permitir al usuario calcular el rango de peso saludable en base a la altura ingresada.
+            El rango de peso saludable se calcula multiplicando la altura al cuadrado y luego multiplicando el resultado por los valores 18.5 y 24.9.
+            El programa debe mostrar el rango de peso saludable resultante.
+        
+        -El programa debe proporcionar una opción para permitir al usuario realizar cálculos para varias personas,
+            repitiendo el proceso según lo desee el usuario. En caso de no querer calcular más IMC se deberá cerrar la ventana
+        
+        -El programa debe validar la entrada del usuario para asegurarse de que se ingresen números válidos para peso y altura.
+        
+        
+        
+        - Se debe impedir cualquier error que se pueda producir por parte del usuario. Para conseguir esto se puede emplear:
+            - Adaptación de los datos proporcionados por el usuario para, sin modificar su valor, adaptarlos a JS
+            - Uso de control de excepciones.
+        - No hace falta controlar los datos sin sentido (pesar toneladas o medir kilómetros), pero si aquellos datos que producen errores.
+    -->
+  <script>
+    /* Variables */
+    var peso = prompt("Ingrese su peso en kg: ").replace(",","."); /* Devuelve un string */
+    var altura = prompt("Ingrese su altura en metros: ").replace(",","."); /* Devuelve un string */
+    var imc = peso/(altura*altura);
+    /* convertir a entero */
+
+
+    /* Calculadora */
+    function calcularIMC(imc){
+        return imc;
+    };
+
+    while(isNaN()){
+        
+    }
+
+    function verificacion(imc){
+        if(imc<18.5){
+            return "Bajo peso";
+        }else if(18.5<=imc<=24.9 ){
+            return "Peso normal";
+        }else if(25.0<=imc<=29.9){
+            return "Sobrepeso";
+        }else if(30.0<=imc<=34.9){
+            return "Obesidad grado I";
+        }else if(35.0<=imc<=39.9){
+            return "Obesidad grado II";
+        }else if(imc>=40.0){
+            return "Obesidad grado III";
+        }
+    };
+
+    console.log(calcularIMC(imc).toFixed(1)+" ---> "+verificacion(imc));
+
+    /* Comprobaciones para cuando ingrese otro tipo de dato que no sean números */
+
+    /*
+    while 
+    (isNaN(aux))
+    return parseFloat(aux)
+    */
+
+    
+  </script>
+</body>
+</html>

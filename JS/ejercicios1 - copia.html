@@ -47,9 +47,10 @@ var coche = {
 };
 /* 9-Escribe una función llamada describeCoche que acepte un objeto coche y devuelva una cadena que describa el coche en función de sus propiedades 
     (p.ej., "Un coche rojo de la marca Toyota, modelo Corolla, del año 2010").*/
-function describeCoche(){
-    
-}
+function describeCoche(coche){
+    return `Un coche ${color} de la marca ${marca}, modelo ${modelo}, del año ${año}.`;
+};
+describeCoche(coche);
 /* 10-Utiliza la función describeCoche con tu objeto coche, e imprimelo por consola.*/
 
 /* 11-Crea una función constructora llamada Persona que acepte parámetros para nombre y edad, y asigna estos valores a las propiedades del objeto.*/
