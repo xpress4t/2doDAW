@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Accesible</title>
+    <link rel="stylesheet" href="styles_bueno.css">
+</head>
+<body>
+    <header>
+        <h1>Centro de Recursos para Todos</h1>
+        <p>Proporcionamos información accesible y útil para todos los usuarios</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#news">Noticias</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" aria-labelledby="home-heading">
+            <h2 id="home-heading">Inicio</h2>
+            <p>Bienvenido a nuestro sitio web. Aquí encontrarás recursos y servicios diseñados para ser accesibles para todos.</p>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">Sobre Nosotros</h2>
+            <p>Somos una organización comprometida con la accesibilidad y la inclusión. Trabajamos para mejorar la experiencia de usuario para todas las personas, independientemente de sus capacidades.</p>
+        </section>
+
+        <section id="services" aria-labelledby="services-heading">
+            <h2 id="services-heading">Servicios</h2>
+            <p>Ofrecemos una variedad de servicios que incluyen:</p>
+            <ul>
+                <li>Consultoría en accesibilidad web</li>
+                <li>Entrenamiento en diseño accesible</li>
+                <li>Auditorías de accesibilidad</li>
+            </ul>
+        </section>
+
+        <section id="news" aria-labelledby="news-heading">
+            <h2 id="news-heading">Noticias</h2>
+            <article aria-labelledby="news-article1">
+                <h3 id="news-article1">Actualización de Normas de Accesibilidad</h3>
+                <p>Las nuevas normativas de accesibilidad web han sido publicadas. Asegúrate de revisar las actualizaciones para cumplir con las mejores prácticas.</p>
+            </article>
+            <article aria-labelledby="news-article2">
+                <h3 id="news-article2">Nuevo Curso de Diseño Inclusivo</h3>
+                <p>Estamos lanzando un nuevo curso en diseño inclusivo. Inscríbete para aprender sobre las últimas técnicas y estándares en accesibilidad.</p>
+            </article>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contacto</h2>
+            <form action="#">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" aria-required="true" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" aria-required="true" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" aria-required="true" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Centro de Recursos para Todos - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

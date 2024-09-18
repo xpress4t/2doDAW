@@ -1,0 +1,109 @@
+/* styles.css */
+
+/* Reseteo básico */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    color: #333333; /* Texto en gris oscuro */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff; /* Azul brillante para el encabezado */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.banner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.2em;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #ffffff; /* Blanco para el menú */
+    padding: 20px;
+    border-right: 1px solid #dddddd;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #007bff; /* Azul brillante para los enlaces del menú */
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 75%;
+    padding: 20px;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+main h2 {
+    color: #007bff; /* Azul brillante para los encabezados de sección */
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #007bff; /* Azul brillante para el pie de página */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

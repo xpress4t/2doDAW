@@ -1,0 +1,219 @@
+/* styles.css */
+
+/* Reseteo básico */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fuente básica, pero con efectos molestos */
+    background-color: #fff; /* Fondo blanco, pero el contenido será difícil de leer */
+    color: #000; /* Texto negro, con efectos para hacerlo molesto */
+    line-height: 1.2; /* Espaciado de líneas reducido */
+}
+
+header {
+    background-color: #ff0; /* Fondo amarillo brillante */
+    color: #f00; /* Texto rojo brillante */
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header h1 {
+    font-size: 3em; /* Tamaño de fuente grande */
+    margin-bottom: 0;
+    animation: vibrate 0.1s infinite; /* Texto que vibra */
+}
+
+.header p {
+    font-size: 0.8em;
+    animation: flicker 1s infinite; /* Texto que parpadea */
+}
+
+/* Efecto de vibración */
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-2px); }
+    100% { transform: translateX(2px); }
+}
+
+/* Efecto de parpadeo */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+nav {
+    background-color: #0f0; /* Fondo verde brillante */
+    color: #00f; /* Texto azul brillante */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f; /* Fondo magenta brillante */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #f00; /* Enlaces en rojo brillante */
+    text-decoration: none;
+    font-size: 2em; /* Tamaño de fuente grande */
+    background-color: #00f; /* Fondo azul brillante en enlaces */
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #00f; /* Borde azul brillante */
+}
+
+nav ul li a:hover {
+    background-color: #f00; /* Fondo rojo brillante al pasar el ratón */
+    color: #ff0; /* Texto amarillo brillante en hover */
+    text-decoration: underline;
+}
+
+/* Contenido principal */
+.container {
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #f0f; /* Fondo magenta brillante */
+    padding: 15px;
+    border-right: 2px solid #0f0; /* Borde verde brillante */
+}
+
+.sidebar h2 {
+    color: #00f; /* Encabezados en azul brillante */
+    animation: vibrate 0.1s infinite; /* Encabezados que vibran */
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #f0f; /* Enlaces en magenta brillante */
+    text-decoration: none;
+    background-color: #0f0; /* Fondo verde brillante */
+    padding: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #f0f; /* Fondo magenta brillante en hover */
+    color: #0f0; /* Texto verde brillante en hover */
+    text-decoration: underline;
+}
+
+main {
+    width: 70%;
+    padding: 15px;
+    background-color: #ff0; /* Fondo amarillo brillante */
+    color: #f00; /* Texto rojo brillante */
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+main h2 {
+    color: #0ff; /* Encabezados en cian brillante */
+    animation: flicker 1s infinite; /* Encabezados que parpadean */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 5px solid #0f0; /* Bordes verdes brillantes */
+    filter: brightness(0.8); /* Imagen oscura y difícil de ver */
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.team-member {
+    width: calc(33.333% - 20px);
+    background-color: #0ff; /* Fondo cian brillante */
+    padding: 15px;
+    border: 3px solid #f00; /* Borde rojo brillante */
+    text-align: center;
+}
+
+.team-member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: #0f0; /* Fondo verde brillante */
+    padding: 15px;
+    border: 2px solid #00f; /* Borde azul brillante */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f00; /* Etiquetas en rojo brillante */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #0ff; /* Borde cian brillante */
+    background-color: #ff0; /* Fondo amarillo brillante */
+    color: #f00; /* Texto rojo brillante */
+    animation: flicker 1s infinite; /* Campos de formulario que parpadean */
+}
+
+form button {
+    background-color: #00f; /* Botón azul brillante */
+    color: #ff0; /* Texto amarillo brillante */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    animation: vibrate 0.1s infinite; /* Botón que vibra */
+}
+
+form button:hover {
+    background-color: #f00; /* Fondo rojo brillante en hover */
+    color: #ff0; /* Texto amarillo brillante en hover */
+}
+
+footer {
+    background-color: #ff0; /* Fondo amarillo brillante */
+    color: #f00; /* Texto rojo brillante */
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #00f; /* Borde azul brillante en la parte superior */
+}

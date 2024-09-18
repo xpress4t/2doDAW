@@ -1,0 +1,183 @@
+/* styles.css */
+
+/* Reseteo básico */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Comic Sans MS, cursive, sans-serif; /* Fuente poco profesional y difícil de leer */
+    background-color: #ff00ff; /* Fondo fucsia, muy llamativo y poco agradable */
+    color: #00ff00; /* Texto verde fluorescente, difícil de leer sobre el fondo fucsia */
+    line-height: 1.4;
+}
+
+header {
+    background-color: #ffff00; /* Fondo amarillo brillante */
+    color: #ff00ff; /* Texto fucsia, mal contraste con el fondo amarillo */
+    padding: 30px;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.banner p {
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: #00ffff; /* Fondo cian, muy estridente */
+}
+
+nav ul {
+    list-style-type: square; /* Puntos cuadrados en lugar de círculos */
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ff0000; /* Enlaces rojos, poco legibles sobre el fondo cian */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #00ff00; /* Enlaces verdes al pasar el ratón, mal contraste */
+}
+
+.container {
+    display: flex;
+    max-width: 100%; /* Sin límite de ancho, diseño desordenado */
+    margin: 10px auto;
+    padding: 0;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #ff0000; /* Fondo rojo brillante */
+    padding: 15px;
+    border-right: 5px solid #0000ff; /* Borde azul intenso, poco atractivo */
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    color: #ffff00; /* Texto amarillo, mal contraste con el fondo rojo */
+}
+
+.sidebar ul {
+    list-style-type: circle; /* Círculos en lugar de puntos */
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #00ff00; /* Enlaces verdes, difícil de leer sobre fondo rojo */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #ff0000; /* Enlaces rojos al pasar el ratón, mal contraste */
+}
+
+main {
+    width: 70%;
+    padding: 10px;
+    background-color: #00ff00; /* Fondo verde brillante, desagradable */
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+main h2 {
+    color: #ff0000; /* Encabezados rojos, difícil de leer sobre fondo verde */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas fijas, puede ser caótico */
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 5px dashed #ff00ff; /* Bordes morados y punteados, poco estético */
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.team-member {
+    width: calc(33.333% - 20px);
+    background-color: #ffff00; /* Fondo amarillo, mal contraste con el texto */
+    padding: 15px;
+    border: 2px solid #00ffff; /* Borde cian, poco atractivo */
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 0; /* Sin bordes redondeados */
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: #ff00ff; /* Fondo fucsia, desagradable para el formulario */
+    padding: 15px;
+    border: 3px solid #ff0000; /* Borde rojo, poco estético */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #00ffff; /* Borde cian, poco agradable */
+    border-radius: 0; /* Sin bordes redondeados */
+}
+
+form button {
+    background-color: #ff0000; /* Botón rojo brillante */
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 0; /* Sin bordes redondeados */
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #00ff00; /* Botón verde al pasar el ratón, difícil de ver */
+}
+
+footer {
+    background-color: #00ff00; /* Fondo verde brillante */
+    color: #ff0000; /* Texto rojo, mal contraste con el fondo verde */
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid #ffff00; /* Línea amarilla intensa, desagradable */
+}

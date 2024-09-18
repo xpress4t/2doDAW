@@ -1,0 +1,78 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Blanco para un fondo limpio y neutral */
+    color: #333333; /* Texto en un gris oscuro para buen contraste */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0044cc; /* Azul oscuro, más agradable a la vista */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #f2f2f2; /* Gris claro para una navegación discreta */
+    padding: 10px 0;
+    border-bottom: 2px solid #cccccc; /* Línea sutil para separar la navegación del contenido */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px; /* Espaciado adecuado entre enlaces */
+}
+
+nav ul li a {
+    color: #0044cc; /* Azul oscuro para los enlaces, buen contraste */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Subrayado en el hover para indicar interactividad */
+}
+
+main {
+    max-width: 800px; /* Ancho máximo para un contenido más centrado y fácil de leer */
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px; /* Espaciado generoso entre secciones */
+}
+
+section h2 {
+    color: #0044cc; /* Azul oscuro para los encabezados */
+    margin-top: 0;
+}
+
+img {
+    width: 100%; /* Imagen adaptada al tamaño del contenedor */
+    max-width: 400px; /* Ancho máximo para mantener un buen diseño */
+    height: auto;
+    border: 1px solid #dddddd; /* Borde sutil alrededor de la imagen */
+    border-radius: 8px; /* Bordes redondeados para un diseño más moderno */
+    display: block;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #f2f2f2; /* Gris claro para el pie de página, igual que la navegación */
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #cccccc; /* Línea sutil para separar el footer del contenido */
+    position: relative;
+    width: 100%;
+}

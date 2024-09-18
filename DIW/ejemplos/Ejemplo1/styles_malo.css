@@ -1,0 +1,58 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #ff0000; /* Rojo brillante, molesta a la vista */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #00ff00; /* Verde brillante, molesta a la vista */
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #0000ff; /* Azul brillante, con bajo contraste */
+    text-decoration: none;
+    padding: 5px;
+}
+
+main {
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+img {
+    width: 150px;
+    height: auto;
+    border: 5px solid #000000; /* Borde negro grueso, no estético */
+}
+
+footer {
+    background-color: #cccccc; /* Gris claro, poco atractivo */
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

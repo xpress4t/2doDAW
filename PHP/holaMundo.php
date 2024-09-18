@@ -16,5 +16,4 @@ echo "<p>La suma de 2 + 2 es igual a 7</p>"
 // Se utiliza comillas simples cuando es un enlace
 
 // Pasar los elementos en bloque a través de css
-
 ?>

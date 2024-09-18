@@ -1,0 +1,109 @@
+/* styles.css */
+
+/* Reseteo básico */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif; /* Fuente menos legible */
+    background-color: #e0e0e0; /* Gris claro, poco atractivo */
+    color: #333333; /* Texto gris oscuro, pero difícil de leer en fondo gris claro */
+}
+
+header {
+    background-color: #ff0000; /* Rojo brillante, muy agresivo */
+    color: #ffff00; /* Texto amarillo sobre rojo, mal contraste */
+    padding: 20px;
+    text-align: center;
+}
+
+.banner {
+    max-width: 100%; /* Ancho completo, puede causar problemas en pantallas grandes */
+    margin: 0;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 100%; /* Sin ancho máximo, se extiende demasiado en pantallas grandes */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sidebar {
+    width: 20%; /* Ancho fijo, puede ser demasiado pequeño en pantallas grandes */
+    background-color: #00ff00; /* Verde brillante, molesta a la vista */
+    padding: 10px;
+    border-right: 3px dashed #000000; /* Borde negro y punteado, muy llamativo */
+}
+
+.sidebar h2 {
+    margin-bottom: 5px;
+    color: #0000ff; /* Azul brillante, no se coordina con el fondo verde */
+}
+
+.sidebar ul {
+    list-style-type: square; /* Cuadrados en lugar de puntos para las listas */
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ff0000; /* Rojo brillante para los enlaces, difícil de leer sobre verde */
+    font-weight: normal;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #00ff00; /* Cambio de color molesto al pasar el ratón */
+}
+
+main {
+    width: 80%; /* Ancho fijo, puede ser demasiado ancho en pantallas pequeñas */
+    padding: 10px;
+    background-color: #ffffff; /* Fondo blanco, poco atractivo contra el gris del cuerpo */
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main h2 {
+    color: #ff0000; /* Rojo brillante, muy intenso para los encabezados */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas fijas, problemas en pantallas más pequeñas */
+    gap: 5px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 10px solid #ff00ff; /* Borde morado grueso alrededor de las imágenes, poco estético */
+}
+
+footer {
+    background-color: #0000ff; /* Azul brillante, molesta a la vista */
+    color: #ffff00; /* Texto amarillo, bajo contraste con el fondo azul */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}

@@ -1,0 +1,936 @@
+/* -----------------------------------
+   Estilos Generales
+----------------------------------- */
+
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Títulos de secciones */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Enlaces sin subrayado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Botones */
+button, .form-button, .blog-readmore {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* -----------------------------------
+   Estilos de Componentes
+----------------------------------- */
+
+/* Menú de navegación */
+.menu {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu-item {
+    color: white;
+    margin: 0 15px;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.menu-item:hover {
+    color: #ddd;
+}
+
+/* Encabezado */
+.header {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Sección de tarjetas */
+.card-section {
+    padding: 40px 20px;
+    background-color: #fafafa;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Sección principal con tabla */
+.main-content {
+    padding: 40px 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+.table-cell {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Galería de imágenes */
+.gallery {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    border-color: #999;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    padding: 40px 20px;
+}
+
+.form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-input, .form-textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-button {
+    background-color: #333;
+    color: white;
+    align-self: flex-start;
+}
+
+.form-button:hover {
+    background-color: #555;
+}
+
+/* Sección de testimonios */
+.testimonials {
+    padding: 40px 20px;
+    background-color: #fafafa;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Sección de preguntas frecuentes (FAQ) */
+.faq {
+    padding: 40px 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.faq-answer {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Sección de artículos de blog */
+.blog {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.blog-post {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.blog-post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-excerpt {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.blog-readmore {
+    background-color: #333;
+    color: white;
+}
+
+.blog-readmore:hover {
+    background-color: #555;
+}
+
+/* Desplegable para cambiar tema */
+.theme-selector {
+    padding: 40px 20px;
+}
+
+.dropdown {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+
+
+
+/* Tema 1: Colores análogos (verde, lima, amarillo) */
+.theme-analog-green {
+    background-color: #d4edda; /* Fondo verde claro */
+    color: #155724; /* Texto verde oscuro */
+}
+
+.theme-analog-green .menu {
+    background-color: #6ab04c; /* Verde lima */
+}
+
+.theme-analog-green .menu-item {
+    color: #f9f871; /* Amarillo */
+}
+
+.theme-analog-green .menu-item:hover {
+    color: #155724; /* Verde oscuro */
+}
+
+.theme-analog-green .header {
+    background-color: #6ab04c; /* Verde lima */
+    color: #ffffff;
+}
+
+.theme-analog-green .footer {
+    background-color: #f9f871; /* Amarillo */
+    color: #155724;
+}
+
+.theme-analog-green .card, .theme-analog-green .testimonial-card {
+    background-color: #f9f871; /* Amarillo */
+    border-color: #155724; /* Borde verde oscuro */
+}
+
+.theme-analog-green .form-button {
+    background-color: #155724;
+    color: #ffffff;
+}
+
+/* Tema 2: Colores complementarios (azul, naranja) */
+.theme-complement-blue-orange {
+    background-color: #007bff; /* Fondo azul */
+    color: #ffffff;
+}
+
+.theme-complement-blue-orange .menu {
+    background-color: #ff9f1c; /* Naranja */
+}
+
+.theme-complement-blue-orange .menu-item {
+    color: #ffffff;
+}
+
+.theme-complement-blue-orange .menu-item:hover {
+    color: #ffd700; /* Amarillo dorado */
+}
+
+.theme-complement-blue-orange .header {
+    background-color: #ff9f1c; /* Naranja */
+    color: #ffffff;
+}
+
+.theme-complement-blue-orange .footer {
+    background-color: #ffd700; /* Amarillo dorado */
+    color: #007bff;
+}
+
+.theme-complement-blue-orange .card, .theme-complement-blue-orange .testimonial-card {
+    background-color: #ffd700; /* Amarillo dorado */
+    border-color: #007bff; /* Azul */
+}
+
+.theme-complement-blue-orange .form-button {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Tema 3: Colores monocromáticos (gris) */
+.theme-mono-gray {
+    background-color: #f0f0f0; /* Gris claro */
+    color: #333333; /* Texto gris oscuro */
+}
+
+.theme-mono-gray .menu {
+    background-color: #555555; /* Gris oscuro */
+}
+
+.theme-mono-gray .menu-item {
+    color: #ffffff;
+}
+
+.theme-mono-gray .menu-item:hover {
+    color: #cccccc; /* Gris claro */
+}
+
+.theme-mono-gray .header {
+    background-color: #555555; /* Gris oscuro */
+    color: #ffffff;
+}
+
+.theme-mono-gray .footer {
+    background-color: #333333; /* Gris más oscuro */
+    color: #cccccc;
+}
+
+.theme-mono-gray .card, .theme-mono-gray .testimonial-card {
+    background-color: #ffffff; /* Blanco */
+    border-color: #333333; /* Gris oscuro */
+}
+
+.theme-mono-gray .form-button {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+/* Tema 4: Colores triádicos (rojo, azul, amarillo) */
+.theme-triadic-red-blue-yellow {
+    background-color: #ff6347; /* Rojo tomate */
+    color: #ffffff;
+}
+
+.theme-triadic-red-blue-yellow .menu {
+    background-color: #4682b4; /* Azul acero */
+}
+
+.theme-triadic-red-blue-yellow .menu-item {
+    color: #ffd700; /* Amarillo dorado */
+}
+
+.theme-triadic-red-blue-yellow .menu-item:hover {
+    color: #ffffff;
+}
+
+.theme-triadic-red-blue-yellow .header {
+    background-color: #ff6347; /* Rojo tomate */
+    color: #ffffff;
+}
+
+.theme-triadic-red-blue-yellow .footer {
+    background-color: #4682b4; /* Azul acero */
+    color: #ffd700;
+}
+
+.theme-triadic-red-blue-yellow .card, .theme-triadic-red-blue-yellow .testimonial-card {
+    background-color: #ffd700; /* Amarillo dorado */
+    border-color: #ff6347; /* Rojo tomate */
+}
+
+.theme-triadic-red-blue-yellow .form-button {
+    background-color: #4682b4;
+    color: #ffffff;
+}
+
+/* Tema 5: Colores complementarios (púrpura, amarillo) */
+.theme-complement-purple-yellow {
+    background-color: #6a1b9a; /* Púrpura */
+    color: #ffffff;
+}
+
+.theme-complement-purple-yellow .menu {
+    background-color: #fdd835; /* Amarillo */
+}
+
+.theme-complement-purple-yellow .menu-item {
+    color: #6a1b9a; /* Púrpura */
+}
+
+.theme-complement-purple-yellow .menu-item:hover {
+    color: #000000; /* Negro */
+}
+
+.theme-complement-purple-yellow .header {
+    background-color: #6a1b9a; /* Púrpura */
+    color: #ffffff;
+}
+
+.theme-complement-purple-yellow .footer {
+    background-color: #fdd835; /* Amarillo */
+    color: #6a1b9a;
+}
+
+.theme-complement-purple-yellow .card, .theme-complement-purple-yellow .testimonial-card {
+    background-color: #fdd835; /* Amarillo */
+    border-color: #6a1b9a; /* Púrpura */
+}
+
+.theme-complement-purple-yellow .form-button {
+    background-color: #6a1b9a;
+    color: #ffffff;
+}
+
+/* Tema 6: Colores análogos (rojo, rosa, naranja) */
+.theme-analog-red-pink {
+    background-color: #ff6f61; /* Rojo coral */
+    color: #ffffff;
+}
+
+.theme-analog-red-pink .menu {
+    background-color: #ffcccb; /* Rosa claro */
+}
+
+.theme-analog-red-pink .menu-item {
+    color: #ff4500; /* Naranja oscuro */
+}
+
+.theme-analog-red-pink .menu-item:hover {
+    color: #ffffff;
+}
+
+.theme-analog-red-pink .header {
+    background-color: #ff6f61; /* Rojo coral */
+    color: #ffffff;
+}
+
+.theme-analog-red-pink .footer {
+    background-color: #ff4500; /* Naranja oscuro */
+    color: #ffffff;
+}
+
+.theme-analog-red-pink .card, .theme-analog-red-pink .testimonial-card {
+    background-color: #ffcccb; /* Rosa claro */
+    border-color: #ff6f61; /* Rojo coral */
+}
+
+.theme-analog-red-pink .form-button {
+    background-color: #ff4500;
+    color: #ffffff;
+}
+
+/* Tema 7: Colores complementarios (verde, rosa) */
+.theme-complement-green-pink {
+    background-color: #28a745; /* Verde medio */
+    color: #ffffff;
+}
+
+.theme-complement-green-pink .menu {
+    background-color: #ff69b4; /* Rosa fuerte */
+}
+
+.theme-complement-green-pink .menu-item {
+    color: #ffffff;
+}
+
+.theme-complement-green-pink .menu-item:hover {
+    color: #28a745; /* Verde medio */
+}
+
+.theme-complement-green-pink .header {
+    background-color: #28a745; /* Verde medio */
+    color: #ffffff;
+}
+
+.theme-complement-green-pink .footer {
+    background-color: #ff69b4; /* Rosa fuerte */
+    color: #ffffff;
+}
+
+.theme-complement-green-pink .card, .theme-complement-green-pink .testimonial-card {
+    background-color: #f5deb3; /* Beige */
+    border-color: #28a745; /* Verde medio */
+}
+
+.theme-complement-green-pink .form-button {
+    background-color: #ff69b4;
+    color: #ffffff;
+}
+
+/* Tema 8: Colores análogos (azul, verde, turquesa) */
+.theme-analog-blue-turquoise {
+    background-color: #00ced1; /* Turquesa */
+    color: #ffffff;
+}
+
+.theme-analog-blue-turquoise .menu {
+    background-color: #4682b4; /* Azul acero */
+}
+
+.theme-analog-blue-turquoise .menu-item {
+    color: #20b2aa; /* Verde aguamarina */
+}
+
+.theme-analog-blue-turquoise .menu-item:hover {
+    color: #ffffff;
+}
+
+.theme-analog-blue-turquoise .header {
+    background-color: #00ced1; /* Turquesa */
+    color: #ffffff;
+}
+
+.theme-analog-blue-turquoise .footer {
+    background-color: #4682b4; /* Azul acero */
+    color: #ffffff;
+}
+
+.theme-analog-blue-turquoise .card, .theme-analog-blue-turquoise .testimonial-card {
+    background-color: #5f9ea0; /* Verde cadmio */
+    border-color: #00ced1; /* Turquesa */
+}
+
+.theme-analog-blue-turquoise .form-button {
+    background-color: #4682b4;
+    color: #ffffff;
+}
+
+/* Tema 9: Colores triádicos (verde, morado, naranja) */
+.theme-triadic-green-purple-orange {
+    background-color: #32cd32; /* Verde lima */
+    color: #ffffff;
+}
+
+.theme-triadic-green-purple-orange .menu {
+    background-color: #800080; /* Púrpura */
+}
+
+.theme-triadic-green-purple-orange .menu-item {
+    color: #ff8c00; /* Naranja oscuro */
+}
+
+.theme-triadic-green-purple-orange .menu-item:hover {
+    color: #ffffff;
+}
+
+.theme-triadic-green-purple-orange .header {
+    background-color: #32cd32; /* Verde lima */
+    color: #ffffff;
+}
+
+.theme-triadic-green-purple-orange .footer {
+    background-color: #800080; /* Púrpura */
+    color: #ff8c00;
+}
+
+.theme-triadic-green-purple-orange .card, .theme-triadic-green-purple-orange .testimonial-card {
+    background-color: #ff8c00; /* Naranja oscuro */
+    border-color: #800080; /* Púrpura */
+}
+
+.theme-triadic-green-purple-orange .form-button {
+    background-color: #32cd32;
+    color: #ffffff;
+}
+
+/* Tema 10: Colores complementarios (azul oscuro, dorado) */
+.theme-complement-blue-gold {
+    background-color: #002366; /* Azul oscuro */
+    color: #ffffff;
+}
+
+.theme-complement-blue-gold .menu {
+    background-color: #ffd700; /* Dorado */
+}
+
+.theme-complement-blue-gold .menu-item {
+    color: #002366; /* Azul oscuro */
+}
+
+.theme-complement-blue-gold .menu-item:hover {
+    color: #ffffff;
+}
+
+.theme-complement-blue-gold .header {
+    background-color: #002366; /* Azul oscuro */
+    color: #ffffff;
+}
+
+.theme-complement-blue-gold .footer {
+    background-color: #ffd700; /* Dorado */
+    color: #002366;
+}
+
+.theme-complement-blue-gold .card, .theme-complement-blue-gold .testimonial-card {
+    background-color: #ffd700; /* Dorado */
+    border-color: #002366; /* Azul oscuro */
+}
+
+.theme-complement-blue-gold .form-button {
+    background-color: #002366;
+    color: #ffffff;
+}
+
+
+/* Fuente 1: Roboto */
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Fuente 2: Open Sans */
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Fuente 3: Lora (para títulos) */
+.font-lora {
+    font-family: 'Lora', serif;
+}
+
+/* Fuente 4: Montserrat */
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Fuente 5: Merriweather (para párrafos y texto largo) */
+.font-merriweather {
+    font-family: 'Merriweather', serif;
+}
+
+/* Fuente 6: Poppins */
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fuente 7: Playfair Display (para encabezados) */
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Fuente 8: Source Sans Pro */
+.font-source-sans {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Fuente 9: Raleway */
+.font-raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Fuente 10: Georgia (para un estilo clásico) */
+.font-georgia {
+    font-family: 'Georgia', serif;
+}
+
+/*
+1. Roboto
+    Pros:
+        Altamente legible en tamaños pequeños y grandes.
+        Moderno y versátil, funciona bien en interfaces web.
+        Muy popular, ampliamente soportado en múltiples dispositivos.
+    Contras:
+        Se ha vuelto muy común, por lo que no destaca mucho visualmente.
+    Recomendación:
+        Excelente para cuerpos de texto largos y formularios. 
+        Buena legibilidad para personas con problemas de visión debido a sus líneas limpias y espaciado consistente.
+2. Open Sans
+    Pros:
+        Diseñada específicamente para la web, muy fácil de leer en pantallas.
+        Buena en interfaces de usuario y aplicaciones móviles.
+        Amplio rango de pesos y estilos.
+    Contras:
+        Menos "personalidad" en comparación con fuentes serifadas, es bastante neutral.
+    Recomendación:
+        Ideal para interfaces de usuario y cuerpos de texto.
+        Su espaciado amplio y diseño claro lo hacen accesible para personas con problemas visuales.
+3. Lora
+    Pros:
+        Clásica y elegante con serifas que la hacen ideal para títulos y encabezados.
+        Buena legibilidad en párrafos largos, especialmente impresa.
+    Contras:
+        Las serifas pueden dificultar su lectura en pantallas pequeñas o de baja resolución.
+    Recomendación:
+        Mejor para encabezados y contenido que debe transmitir autoridad. 
+        Menos adecuada para personas con problemas visuales debido a las serifas.
+4. Montserrat
+    Pros:
+        Fuente moderna y elegante con un estilo geométrico.
+        Excelente para títulos y subtítulos, con un toque contemporáneo.
+    Contras:
+        Puede parecer "dura" para textos largos por su estructura geométrica.
+    Recomendación: 
+        Ideal para títulos y texto destacado. 
+        No es la mejor opción para lecturas largas o personas con dificultades visuales.
+5. Merriweather
+    Pros:
+        Diseñada específicamente para mejorar la legibilidad en pantallas.
+        Las serifas están optimizadas para no interferir con la lectura digital.
+    Contras:
+        Puede sentirse un poco densa en tamaños pequeños si no se ajusta bien el interlineado.
+    Recomendación: 
+        Excelente para cuerpos de texto largos, especialmente en dispositivos electrónicos.
+        Buena opción para personas con problemas visuales gracias a su diseño pensado para pantallas.
+6. Poppins
+    Pros:
+        Moderna, amigable y con un diseño redondeado que la hace visualmente atractiva.
+        Funciona bien en tamaños grandes y pequeños.
+    Contras:
+        Su estilo geométrico puede ser menos cómodo para lecturas prolongadas.
+    Recomendación: 
+        Buena para títulos y botones. Atractiva, pero no ideal para textos largos o personas con baja visión.
+7. Playfair Display
+    Pros:
+        Fuente serif con un estilo elegante, adecuada para títulos y contenido editorial.
+        Transmite sofisticación y un aire clásico.
+    Contras:
+        Difícil de leer en textos largos, especialmente en pantallas pequeñas.
+    Recomendación: 
+        Perfecta para títulos grandes o textos de presentación. 
+        No es la mejor opción para personas con dificultades visuales debido a sus detalles en las serifas.
+8. Source Sans Pro
+    Pros:
+        Claridad y simplicidad. Muy legible tanto en pantallas como en impresos.
+        Versátil y altamente profesional.
+    Contras:
+        Como es neutral, puede no tener suficiente "personalidad" para ciertos proyectos visualmente atractivos.
+    Recomendación: 
+        Ideal para cuerpos de texto y contenido donde la legibilidad sea la prioridad.
+        Excelente para personas con problemas visuales gracias a su diseño claro y espacioso.
+9. Raleway
+    Pros:
+        Moderna y estilizada, con un diseño minimalista que es visualmente atractivo.
+        Buena para títulos y presentaciones de diseño.
+    Contras:
+        En tamaños pequeños puede volverse difícil de leer debido a su estructura delgada.
+    Recomendación: 
+        Útil para títulos y subtítulos, pero no es recomendable para cuerpos de texto largos o personas con baja visión debido a su delgadez.
+10. Georgia
+    Pros:
+        Una de las fuentes serif más legibles en pantalla, excelente tanto para texto largo como para títulos.
+        Se ve bien en tamaños pequeños y grandes.
+    Contras:
+        Tiene una estética más tradicional, lo que puede no coincidir con diseños modernos.
+    Recomendación: 
+        Excelente para cuerpos de texto largos, especialmente para usuarios con dificultades visuales, ya que fue diseñada para ser legible en pantallas.
+
+Las mejores para legibilidad y personas con problemas visuales:
+Merriweather, Open Sans, Roboto, y Source Sans Pro son las opciones más accesibles gracias a sus líneas claras, espaciado y diseño pensado para pantallas.
+
+Las mejores para títulos y encabezados:
+Playfair Display, Lora, Montserrat, y Raleway ofrecen un estilo visual atractivo para títulos, pero pueden ser difíciles de leer en textos largos.
+
+Fuentes neutras y versátiles:
+Roboto, Open Sans, y Source Sans Pro son fuentes muy equilibradas y adecuadas para la mayoría de los proyectos web, ya que priorizan la legibilidad.
+*/
+
+
+
+/*!PARA HACER!
+
+Cambiar los colores y probar al menos varias combinaciones, usando colores monocromáticos, complementarios, análogos...
+
+*/
+
+.theme-complement-custom {
+    background-color: #ffffff; /* Cambia el fondo general de la página a blanco */
+    color: #ffffff; /* Cambia el color del texto general a blanco */
+}
+
+.theme-complement-custom .menu {
+    background-color: #ffffff; /* Cambia el fondo del menú de navegación a blanco */
+}
+
+.theme-complement-custom .menu-item {
+    color: #ffffff; /* Cambia el color del texto de los elementos del menú a blanco */
+}
+
+.theme-complement-custom .menu-item:hover {
+    color: #ffffff; /* Cambia el color de los elementos del menú cuando se pasa el cursor por encima a blanco */
+}
+
+.theme-complement-custom .header {
+    background-color: #ffffff; /* Cambia el fondo del encabezado (header) a blanco */
+    color: #ffffff; /* Cambia el color del texto del encabezado a blanco */
+}
+
+.theme-complement-custom .footer {
+    background-color: #ffffff; /* Cambia el fondo del pie de página (footer) a blanco */
+    color: #ffffff; /* Cambia el color del texto del pie de página a blanco */
+}
+
+.theme-complement-custom .card, .theme-complement-custom .testimonial-card {
+    background-color: #ffffff; /* Cambia el fondo de las tarjetas y los testimonios a blanco */
+    border-color: #ffffff; /* Cambia el color del borde de las tarjetas y testimonios a blanco */
+}
+
+.theme-complement-custom .form-button {
+    background-color: #ffffff; /* Cambia el fondo de los botones del formulario a blanco */
+    color: #ffffff; /* Cambia el color del texto de los botones del formulario a blanco */
+}
+
+.theme-complement-custom .card-section {
+    background-color: #ffffff; /* Cambia el fondo de la sección de tarjetas a blanco */
+}
+
+.theme-complement-custom .table-header {
+    background-color: #ffffff; /* Cambia el fondo de los encabezados de la tabla a blanco */
+    color: #ffffff; /* Cambia el color del texto de los encabezados de la tabla a blanco */
+}
+
+
+.font-custom {
+    font-family: 'Georgia', serif;
+}

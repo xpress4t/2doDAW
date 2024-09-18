@@ -1,0 +1,210 @@
+/* styles.css */
+
+/* Reseteo básico */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fuente legible y moderna */
+    background-color: #f4f4f9; /* Fondo claro y suave */
+    color: #333; /* Texto en gris oscuro para buen contraste */
+    line-height: 1.6; /* Espaciado de líneas cómodo para lectura */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima de la pantalla */
+}
+
+header {
+    background-color: #007BFF; /* Fondo azul claro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0; /* Asegura que el header no se reduzca */
+}
+
+header h1 {
+    font-size: 2.5em; /* Tamaño de fuente grande y legible */
+    margin-bottom: 0.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+nav {
+    background-color: #343a40; /* Fondo gris oscuro para el menú de navegación */
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff; /* Enlaces blancos */
+    text-decoration: none;
+    font-size: 1.1em; /* Tamaño de fuente adecuado para lectura */
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #495057; /* Fondo gris medio en hover */
+    border-radius: 4px; /* Bordes redondeados en hover */
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px;
+    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #ffffff; /* Fondo blanco para la barra lateral */
+    padding: 15px;
+    border-right: 1px solid #ddd; /* Borde sutil */
+}
+
+.sidebar h2 {
+    color: #007BFF; /* Encabezados en azul claro */
+    margin-bottom: 1em;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;  
+}
+
+.sidebar ul li a {
+    color: #333; /* Enlaces en gris oscuro */
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+main {
+    width: 75%;
+    padding: 15px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 4px; /* Bordes redondeados para un diseño moderno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    margin-left: 12%;
+    padding: 40px;
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+main h2 {
+    color: #007BFF; /* Encabezados en azul claro */
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Diseño flexible para imágenes */
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Bordes redondeados en imágenes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil en imágenes */
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    width: calc(33.333% - 20px); /* Ancho flexible con espacio entre elementos */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 15px;
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Bordes redondeados para fotos de perfil */
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 15px;
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Etiquetas en gris oscuro */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo muy claro para campos de formulario */
+}
+
+form button {
+    background-color: #007BFF; /* Botón azul claro */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Fondo azul oscuro en hover */
+}
+
+footer {
+    background-color: #343a40; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #ddd; /* Borde sutil en la parte superior */
+    flex-shrink: 0; /* Asegura que el footer no se reduzca */
+}
+li{
+ 
+    left: 40px;
+    position: relative;
+}

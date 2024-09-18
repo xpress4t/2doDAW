@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Temática con Tarjetas</title>   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:wght@400;700&family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Raleway:wght@400;700&family=Georgia" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light">
+    <!-- Menú de navegación -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#home" class="menu-item">Inicio</a></li>
+            <li><a href="#about" class="menu-item">Sobre Nosotros</a></li>
+            <li><a href="#services" class="menu-item">Servicios</a></li>
+            <li><a href="#contact" class="menu-item">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <h1 class="header-title">Bienvenido a nuestra página</h1>
+        <p class="header-subtitle">Cambie el tema usando el desplegable abajo.</p>
+    </header>
+
+    <!-- Sección de tarjetas -->
+    <section class="card-section">
+        <h2 class="section-title">Nuestras Características</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3 class="card-title">Tarjeta 1</h3>
+                <p class="card-text">Descripción de la característica 1. Este es un breve texto que describe un aspecto importante de nuestros servicios.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Tarjeta 2</h3>
+                <p class="card-text">Descripción de la característica 2. Una breve descripción con información relevante para nuestros clientes.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Tarjeta 3</h3>
+                <p class="card-text">Descripción de la característica 3. Un detalle importante de lo que ofrecemos a nuestros usuarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección principal con tabla -->
+    <section class="main-content">
+        <h2 class="section-title">Información de Productos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table-header">Producto</th>
+                    <th class="table-header">Descripción</th>
+                    <th class="table-header">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-cell">Producto 1</td>
+                    <td class="table-cell">Descripción del producto 1</td>
+                    <td class="table-cell">$10.00</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Producto 2</td>
+                    <td class="table-cell">Descripción del producto 2</td>
+                    <td class="table-cell">$15.00</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Producto 3</td>
+                    <td class="table-cell">Descripción del producto 3</td>
+                    <td class="table-cell">$20.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Galería de imágenes -->
+    <section class="gallery">
+        <h2 class="section-title">Galería de Imágenes</h2>
+        <div class="image-grid">
+            <img src="image1.jpg" alt="Imagen 1" class="gallery-image bordered">
+            <img src="image2.jpg" alt="Imagen 2" class="gallery-image bordered">
+            <img src="image3.jpg" alt="Imagen 3" class="gallery-image bordered">
+        </div>
+    </section>
+
+    <!-- Sección de testimonios con tarjetas -->
+    <section class="testimonials">
+        <h2 class="section-title">Testimonios de Clientes</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Este producto cambió mi vida. ¡100% recomendado!"</p>
+                <p class="testimonial-author">- Juan Pérez</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"La atención al cliente es excelente y los productos de gran calidad."</p>
+                <p class="testimonial-author">- Ana Gómez</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Sin duda, volveré a comprar en este sitio. Muy satisfecho con mi compra."</p>
+                <p class="testimonial-author">- Carlos Martínez</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desplegable para cambiar tema -->
+    <select id="themeDropdown" class="dropdown">
+        <option value="theme-analog-green">Tema Verde</option>
+        <option value="theme-complement-blue-orange">Tema Azul y Naranja</option>
+        <option value="theme-mono-gray">Tema Monocromático Gris</option>
+        <option value="theme-triadic-red-blue-yellow">Tema Rojo, Azul y Amarillo</option>
+        <option value="theme-complement-purple-yellow">Tema Púrpura y Amarillo</option>
+        <option value="theme-analog-red-pink">Tema Rojo y Rosa</option>
+        <option value="theme-complement-green-pink">Tema Verde y Rosa</option>
+        <option value="theme-analog-blue-turquoise">Tema Azul y Turquesa</option>
+        <option value="theme-triadic-green-purple-orange">Tema Verde, Púrpura y Naranja</option>
+        <option value="theme-complement-blue-gold">Tema Azul y Dorado</option>
+        <option value="theme-complement-custom">Tema Custom alumno</option>
+    </select>
+    <select id="fontDropdown" class="dropdown">
+        <option value="font-roboto">Roboto</option>
+        <option value="font-open-sans">Open Sans</option>
+        <option value="font-lora">Lora</option>
+        <option value="font-montserrat">Montserrat</option>
+        <option value="font-merriweather">Merriweather</option>
+        <option value="font-poppins">Poppins</option>
+        <option value="font-playfair">Playfair Display</option>
+        <option value="font-source-sans">Source Sans Pro</option>
+        <option value="font-raleway">Raleway</option>
+        <option value="font-georgia">Georgia</option>
+        <option value="font-custom">Custom alumno</option>
+    </select>
+    
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

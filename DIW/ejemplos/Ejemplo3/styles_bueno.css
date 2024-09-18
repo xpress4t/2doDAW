@@ -1,0 +1,189 @@
+/* styles.css */
+
+/* Reseteo básico */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+    background-color: #f0f4f8; /* Fondo gris claro y neutro */
+    color: #333333; /* Texto en gris oscuro para buen contraste */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50; /* Fondo oscuro para un aspecto sofisticado */
+    color: #ecf0f1; /* Texto claro para buen contraste */
+    padding: 20px;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ecf0f1; /* Texto claro en el banner */
+}
+
+.banner p {
+    font-size: 1.2em;
+    color: #bdc3c7; /* Texto más suave en el banner */
+}
+
+nav {
+    background-color: #34495e; /* Fondo más oscuro para el menú de navegación */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Enlaces claros para contraste */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #ffffff; /* Fondo blanco para la barra lateral */
+    padding: 20px;
+    border-right: 1px solid #dfe6e9; /* Borde sutil gris claro */
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    color: #2c3e50; /* Encabezados en gris oscuro */
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #3498db; /* Enlaces en azul claro */
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 75%;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenido principal */
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+main h2 {
+    color: #2c3e50; /* Encabezados en gris oscuro */
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra ligera para profundidad */
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    width: calc(33.333% - 20px);
+    background-color: #ffffff; /* Fondo blanco para los perfiles del equipo */
+    padding: 20px;
+    border: 1px solid #dfe6e9; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 50%; /* Imágenes redondas */
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border: 1px solid #dfe6e9; /* Borde gris claro */
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2c3e50; /* Etiquetas en gris oscuro */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7; /* Borde gris claro */
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #3498db; /* Botón azul claro */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #2980b9; /* Azul más oscuro al pasar el ratón */
+}
+
+footer {
+    background-color: #2c3e50; /* Fondo oscuro consistente con el encabezado */
+    color: #ecf0f1; /* Texto claro para buen contraste */
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #34495e; /* Línea sutil de separación */
+}
