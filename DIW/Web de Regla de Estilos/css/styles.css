@@ -2,6 +2,11 @@ body{
     background-color: rgb(220, 208, 191);
 }
 
+
+
+
+
+/* Quitar el fondo blanco de las imágenes */
 .remove-bw {
     width: 350px;
     height: 250px;
