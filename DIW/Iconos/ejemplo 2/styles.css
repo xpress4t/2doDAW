@@ -1,0 +1,97 @@
+  /* Estilo general de la página */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estilos para el título */
+h1 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+h1 i {
+    margin-right: 10px;
+}
+
+/* Párrafo con información */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+p i {
+    margin-right: 8px;
+}
+
+/* Estilo para la tabla */
+.table-container {
+    max-height: 400px; /* Altura máxima de la tabla */
+    overflow-y: auto;  /* Scroll vertical */
+    margin-top: 20px;
+    border: 1px solid #dee2e6; /* Borde del contenedor */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+/* Encabezados de la tabla */
+table th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    font-size: 1rem;
+    position: sticky;
+    top: 0; /* Encabezado pegajoso al hacer scroll */
+}
+
+table th i {
+    margin-right: 6px;
+}
+
+/* Celdas de la tabla */
+table td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+
+/* Alineación de texto a la izquierda */
+table th, table td {
+    text-align: left;
+}
+
+/* Alineación de números a la derecha */
+table td.number {
+    text-align: right;
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Color alternado para filas */
+table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo de hover sobre las filas */
+table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+
+table th, table td {
+    text-align: left; /* Textos alineados a la izquierda */
+}
+table td.number {
+    text-align: right; /* Números alineados a la derecha */
+}
