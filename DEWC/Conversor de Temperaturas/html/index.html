@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <script src="./logicaTemp.mjs" type="module"></script>
+
+    <div class="Square">
+        <h1>Conversor de Temperatura</h1>
+        <label>Valor:</label>
+        <input type="text" name="texto" placeholder="Ingrese el valor">
+
+        <p></p>
+
+        <form>
+            <label for="temperaturas">Unidad de Entrada:</label>
+            <select name="temps" id="temperaturas">
+                <option value="Celcius">Celcius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+        </form>
+
+        <p></p>
+
+        <form>
+            <label for="temperaturas">Unidad de Salida:</label>
+            <select name="temps" id="temperaturas">
+                <option value="Celcius">Celcius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+        </form>
+
+        <p></p>
+
+        <form>
+            <button>Convertir</button>
+            <button>Limpiar</button>
+        </form>
+    </div>
+</body>

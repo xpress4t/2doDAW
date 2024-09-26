@@ -1,15 +1,25 @@
 body{
     background-color: rgb(220, 208, 191);
+    margin: 0;
+}
+
+/* Quitar el fondo blanco de las imágenes */
+/* .remove-bw {
+    width: 300px;
+    height: 200px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+*/
+header{
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    background-color: black;
 }
 
 
-
-
-
-/* Quitar el fondo blanco de las imágenes */
-.remove-bw {
-    width: 350px;
-    height: 250px;
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;
+.logo img{
+    width: 300px;
+    height: 200px;
 }

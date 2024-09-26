@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Púlsame 1</button>
+    <button>Púlsame 2</button>
+    <button>Púlsame 3</button>
+    <button>Púlsame 4</button>
+    <button>Púlsame 5</button>
+    <button>Púlsame 6</button>
+
+    <!-- eval: poner algo dentro y lo convierte a matemático-->
+    <input type="text"> <!-- Cuadro de texto donde se pueda escribir -->
+
+    <script type="text/javascript">
+        var botones = document.querySelectorAll("button")
+        var inp = document.querySelector("[type=text]")
+
+        function agregarTextoInput(e){
+            inp.value = e.target.innerText
+        }
+
+        for(var i=0;i<botones.length;i++){
+            botones[i].addEventListener("click",agregarTextoInput)
+        }
+    </script>
+</body>
+</html>
