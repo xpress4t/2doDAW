@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="id1" name=""  type="text">
+    <input id="id2" name="" type="text">
+    <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+    </select>
+    <script>
+        //ON CHANGE
+        var inputs = Array.from(document.querySelectorAll("input"))
+        var select = document.querySelector("select")
+ 
+        function eventOnChange(e){
+            console.log(e)
+        }
+
+        //si en vez de change ponemos input el evento se lanza cada vez q se escribe una letra
+        inputs.forEach(x => x.addEventListener("change",eventOnChange)) 
+        select.addEventListener("change",eventOnChange)
+    </script>
+</body>
+</html>

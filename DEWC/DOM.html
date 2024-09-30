@@ -12,35 +12,43 @@
         }
     </style>
 
-
+    <h2>Ejercicios DOM</h2>
+    <h3>Ejercicio 1</h3>
     <p id="parrafo">Texto original</p>
     <button id="cambiarParrafo">Texto cambiado</button>
     <button id="regresarParrafo">Mostrar texto original</button>
 
+    <!-- Ejercicio 1 -->
+    <h3>Ejercicio 2</h3>
+    <h3 id="my-heading">Food R Us</h3>
+    <div class="fruits">Apple</div>
+    <div class="fruits">Orange</div>
+    <div class="fruits">Banana</div>
+
+    <!-- Ejercicio 2 -->
 
     <script type="text/javascript">
+        // Cambiando el fondo de un parrafo con DOM
+        var fruta = document.getElementsByClassName("fruits")
+        fruta[0].style.backgroundColor = "red"
+        fruta[1].style.backgroundColor = "yellow"
+        fruta[2].style.backgroundColor = "green"
 
-
+        /*
         function cambiarParrafo(){
         }
-
 
         document.querySelector('#cambiarParrafo').addEventListener('click', function() {
             document.querySelector('#parrafo').textContent = "Este es el nuevo texto";
         });
 
-
         document.querySelector('#parrafo').addEventListener('click',function(){
             document.querySelector('#parrafo');
         });
 
-
-
-
-
-
         function regresarParrafo(){
         };
+        */
     </script>
 </body>
 </html>

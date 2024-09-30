@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* Altura del body para ocupar toda la pantalla */
+            margin: 0;
+        }
+        .div1{
+            border: 2px solid red;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+   
+    <script type="text/javascript">
+        // Convierte el resultado (una NodeList) en un array para facilitar la manipulación.
+        // Selecciona todos los elementos con la clase div1
+        var inputs = Array.from(document.querySelectorAll("[class=div1]"))
+        var idInterval
+
+        function eventOnMouseEnter(){
+            console.log("Has entrado con el raton")
+
+            setTimeout(() => {
+                console.log("X")
+            },0);
+            
+            setInterval(()=>{
+                console.log("Y")
+            },1000);
+        }
+        function eventOnMouseLeave(){
+            console.log("Has salido con el raton")
+            clearInterval(idInterval)
+        }
+        function eventOnMouseOver(){
+            console.log("tienes el raton adentro")
+        }
+        inputs.forEach(x=>x.addEventListener("mouseenter",eventOnMouseEnter))
+        inputs.forEach(x=>x.addEventListener("mouseleave",eventOnMouseLeave))
+        inputs.forEach(x=>x.addEventListener("mouseover",eventOnMouseOver))
+    </script>
+
+
+</body>
+</html>

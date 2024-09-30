@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla 3x3</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<!-- 
+Te encuentras trabajando en la sección de análisis de datos de tu empresa.
+El equipo necesita una herramienta web que permita realizar cálculos dinámicos para analizar distintas variables.
+Concretamente, se necesita una tabla que se pueda actualizar con datos aleatorios y permita realizar operaciones
+matemáticas sencillas. Esta herramienta ayudará a los analistas a entender rápidamente relaciones numéricas en un
+conjunto de datos.
+ 
+Objetivos
+Inicialización Automática: Al cargar la página, las celdas bajo la columna "Valor Aleatorio"
+deben llenarse automáticamente con números aleatorios entre 1 y 10.
+ 
+Calculo Dinámico: Cada fila de la tabla tiene un campo de entrada donde los usuarios pueden insertar un número.
+ Al hacerlo, la celda "Resultado" en la misma fila debe actualizar su valor al multiplicar el número
+ ingresado por el "Valor Aleatorio" de esa fila.
+ 
+Sumatoria de Resultados: Debe existir un botón llamado "Calcular Suma".
+Al presionarlo, la aplicación debe sumar todos los valores en la columna "Resultado"
+y mostrar una alerta con la suma total.
+ 
+Requisitos Técnicos
+-Utilizar JavaScript para todas las interacciones y cálculos.
+-Los números aleatorios deben generarse programáticamente durante la carga de la página.
+-->
+<body>
+    <script src="./js/main.mjs" type="module"></script>
+    <table>
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Valor Aleatorio</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><input type="text"></td>
+                <td class="aleatorio">2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td class="aleatorio">5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td class="aleatorio">8</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <button>Calcular Suma</button>
+</body>
+</html>

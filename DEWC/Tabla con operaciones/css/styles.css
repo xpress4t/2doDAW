@@ -1,0 +1,23 @@
+table {
+    width: 40%;
+    margin: 50px auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid rgb(146, 146, 146);
+    padding: 15px;
+    text-align: center;
+}
+th {
+    background-color: rgb(190, 190, 190);
+}
+input {
+    border-radius: 4px;
+}
+
+button {
+   justify-content: center;
+   align-items: center;
+   display: flex; 
+   margin-left: 30%;
+}
