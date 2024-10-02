@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <section class="articulo">
+        <h2>Introducción a JavaScript</h2>
+        <p>Javascript es un lenguaje .......</p>
+        <a href="#">Leer más</a>
+        </section>
+        <section class="articulo"></section>
+        <section class="articulo"></section>
+    </main>
+    
+
+    <script type="text/javascript">
+        document.querySelector("p")
+        document.querySelector(".articulo p")
+        // <p>JavaScript es un lenguaje ......</p>
+        document.querySelector(".artiuclo p").previousElementSibling
+        // <h2>Introducción a Javascript</h2>
+        document.querySelector(".articulo p").nextElementSibling
+        // <a href="#">Leer más</a>
+        document.querySelector(".articulo p").parentElement
+        // <section class="articulo">…</section>
+        // tengo que ir paso a psa, no debo saltarme elementos, si quiero ir a mi abuelo debo ir por mi padre, todo en orden 
+        document.querySelector(".articulo p").parentElement.firstElementChild
+        // Al primer hijo (en caso de que l otenga)
+        // <h2>Introducción a Javascript</h2>
+        document.querySelector(".articulo p").parentElement.lastElementChild
+        // Al último hijo
+        // <a href="#">Leer más</a>
+        document.querySelector(".articulo p").parentElement.children
+        // Me devuelve todos los hijos
+        // HTMLCollection(3) [h2, p, a]
+        document.querySelector(".articulo p").closest("main")
+        // <main>...</main>
+
+    </script>
+</body>
+</html>
