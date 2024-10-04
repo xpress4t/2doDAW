@@ -10,20 +10,25 @@
 
 /* 1-Crea una variable llamada nombre y asígnale tu nombre como una cadena. */
 var nombre = "Emmanuel";
+
 /* 2-Escribe una función llamada saludo que acepte un parámetro nombre y que devuelva la cadena "Hola, " seguida del nombre proporcionado. */
 function saludo(nombre){
     return "Hola "+nombre;
 }
 console.log(saludo(nombre));
+
 /* 3-Crea un array llamado colores que contenga las cadenas "rojo", "verde" y "azul".*/
 colores = ["rojo","verde","azul"];
+
 /* 4-Añade "amarillo" al final del array colores utilizando el método push().*/
 colores.push("amarillo");
 console.log(colores);
+
 /* 5-Escribe un bucle for que recorra cada elemento del array colores y los imprima en la consola.*/
 for(var i = 0;colores.lenght;i++){
     console.log(colores[i]);
 }
+
 /* 6-Escribe una función llamada multiplica que acepte dos números como parámetros y devuelva su producto.*/
 var num1 = 4;
 var num2 = 7;
@@ -31,35 +36,66 @@ function multiplica(num1,num2){
     return "El producto entre "+num1+" y "+num2+" es: "+num1*num2;
 }
 console.log(multiplica(num1,num2));
+
 /* 7-Crea un objeto llamado coche que tenga las propiedades marca, modelo y año, y asígnales valores apropiados.*/
 var coche = {
     marca: "Ferrari",
     modelo: "F24",
     año: 2024
 };
+// console.log(coche)
+// {marca: 'Ferrari', modelo: 'F24', año: 2024}
 
 /* 8-Añade una propiedad color al objeto coche y asígnale un color.*/
 var coche = {
     marca: "Ferrari",
     modelo: "F24",
-    año: 2024,
-    color: "rojo"
+    año: 2024
 };
+coche.color = "rojo"
+// console.log(coche)
+// {marca: 'Ferrari', modelo: 'F24', año: 2024, color: 'rojo'}
+
 /* 9-Escribe una función llamada describeCoche que acepte un objeto coche y devuelva una cadena que describa el coche en función de sus propiedades 
     (p.ej., "Un coche rojo de la marca Toyota, modelo Corolla, del año 2010").*/
 function describeCoche(coche){
-    return `Un coche ${color} de la marca ${marca}, modelo ${modelo}, del año ${año}.`;
+    return `Un coche ${coche.color} de la marca ${coche.marca}, modelo ${coche.modelo}, del año ${coche.año}.`;
 };
 describeCoche(coche);
+
+// 
+
 /* 10-Utiliza la función describeCoche con tu objeto coche, e imprimelo por consola.*/
+console.log(describeCoche(coche))
+// Un coche rojo de la marca Ferrari, modelo F24, del año 2024.
 
 /* 11-Crea una función constructora llamada Persona que acepte parámetros para nombre y edad, y asigna estos valores a las propiedades del objeto.*/
 
+function Persona(nombre,edad){
+    this.nombre = nombre;
+    this.edad = edad;
+}
+// Asignando los valores a las propiedades del objeto
+let persona2 = new Persona("Clarivel",34);
+console.log(persona2);
+
 /* 12-Añade un método cumpleaños al prototipo de Persona que incremente la edad de la persona en 1 y devuelva una cadena de felicitación
     (p.ej., "¡Feliz cumpleaños! Ahora tienes 21 años"). */
-
+function Persona(nombre,edad){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.cumpleaños = function (){
+        this.edad++;
+        return `¡Feliz cumpleaños! Ahora tienes ${this.edad} años.`;
+    };
+};
+let persona1 = new Persona("Emmanuel",25);
+console.log(persona1.cumpleaños());
+console.log(persona1.cumpleaños()); 
+console.log(persona1.cumpleaños());
+console.log(persona1.cumpleaños());
 /* 13-Crea una nueva instancia de Persona y luego llama al método cumpleaños en esa instancia.
-
+console.log()
 14-Crea un array de objetos, donde cada objeto represente un libro y tenga propiedades para titulo, autor y añoDePublicacion.
 
 15-Escribe una función que acepte el array de libros y devuelva el libro más reciente (el de mayor añoDePublicacion).
