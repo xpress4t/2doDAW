@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    
+    <input type="text" id="display" disabled>
+    <br>
+    <button class="botonBorrar">C</button>
+    <button class="botonBorrarSigno">←</button>
+    <button class="botonesNumOSigno">/</button>
+    <button class="botonesNumOSigno">*</button>
+    <br>
+    <button class="botonesNumOSigno">7</button>
+    <button class="botonesNumOSigno">8</button>
+    <button class="botonesNumOSigno">9</button>
+    <button class="botonesNumOSigno">-</button>
+    <br>
+    <button class="botonesNumOSigno">4</button>
+    <button class="botonesNumOSigno">5</button>
+    <button class="botonesNumOSigno">6</button>
+    <button class="botonesNumOSigno">+</button>
+    <br>
+    <button class="botonesNumOSigno">1</button>
+    <button class="botonesNumOSigno">2</button>
+    <button class="botonesNumOSigno">3</button>
+    <button class="botonIgual">=</button>
+    <br>
+    <button class="botonesNumOSigno">0</button>
+    <button class="botonesNumOSigno">.</button>
+    
+    <script type="text/javascript">
+
+        var botonesNumSigno=document.querySelectorAll(".botonesNumOSigno")
+        var input=document.getElementById("display")
+        var btnIgual=document.querySelector(".botonIgual")
+        var btnBorrar=document.querySelector(".botonBorrar")
+        var btnBorrarSigno= document.querySelector(".botonBorrarSigno")
+
+
+
+        var hasCalculadoOperacion=false
+        function escribirTextoOSigno(e){
+            if(hasCalculadoOperacion){
+                borrar()
+                hasCalculadoOperacion=false
+            }
+            input.value+= e.target.innerText
+        }
+        function resolver(){
+            input.value=eval(input.value)
+            hasCalculadoOperacion=true
+        }
+        function borrar(){
+            input.value=""
+        }
+        function borrarSigno(){
+            input.value= input.value.slice(0, -1)
+        }
+
+        for(var btnNumSigno of botonesNumSigno){
+            btnNumSigno.addEventListener("click",escribirTextoOSigno)
+        }
+        btnIgual.addEventListener("click",resolver)
+        btnBorrar.addEventListener("click",borrar)
+        btnBorrarSigno.addEventListener("click",borrarSigno)
+        
+    </script>
+</body>
+
+</html>

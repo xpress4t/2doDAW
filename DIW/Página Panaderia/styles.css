@@ -1,7 +1,20 @@
+body{
+    background-color: rgb(190, 173, 134);
+}
 .nav-link{
     text-align: center;
 }
 
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
 /*
 body{
     background-color: rgb(230, 209, 181);
@@ -13,15 +26,7 @@ body{
     height: 800px;
 }
 
-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 400px;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
+
 */
 
 /* Quitar el fondo blanco de las imágenes */
