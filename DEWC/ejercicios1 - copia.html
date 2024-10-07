@@ -8,124 +8,203 @@
     <script type="text/javascript">
 
 
-/* 1-Crea una variable llamada nombre y asígnale tu nombre como una cadena. */
-var nombre = "Emmanuel";
+        /* 1-Crea una variable llamada nombre y asígnale tu nombre como una cadena. */
+        var nombre = "Emmanuel";
 
-/* 2-Escribe una función llamada saludo que acepte un parámetro nombre y que devuelva la cadena "Hola, " seguida del nombre proporcionado. */
-function saludo(nombre){
-    return "Hola "+nombre;
-}
-console.log(saludo(nombre));
+        /* 2-Escribe una función llamada saludo que acepte un parámetro nombre y que devuelva la cadena "Hola, " seguida del nombre proporcionado. */
+        function saludo(nombre){
+            return "Hola "+nombre;
+        }
+        console.log(saludo(nombre));
 
-/* 3-Crea un array llamado colores que contenga las cadenas "rojo", "verde" y "azul".*/
-colores = ["rojo","verde","azul"];
+        /* 3-Crea un array llamado colores que contenga las cadenas "rojo", "verde" y "azul".*/
+        colores = ["rojo","verde","azul"];
 
-/* 4-Añade "amarillo" al final del array colores utilizando el método push().*/
-colores.push("amarillo");
-console.log(colores);
+        /* 4-Añade "amarillo" al final del array colores utilizando el método push().*/
+        colores.push("amarillo");
+        console.log(colores);
 
-/* 5-Escribe un bucle for que recorra cada elemento del array colores y los imprima en la consola.*/
-for(var i = 0;colores.lenght;i++){
-    console.log(colores[i]);
-}
+        /* 5-Escribe un bucle for que recorra cada elemento del array colores y los imprima en la consola.*/
+        for(var i = 0;colores.lenght;i++){
+            console.log(colores[i]);
+        }
 
-/* 6-Escribe una función llamada multiplica que acepte dos números como parámetros y devuelva su producto.*/
-var num1 = 4;
-var num2 = 7;
-function multiplica(num1,num2){
-    return "El producto entre "+num1+" y "+num2+" es: "+num1*num2;
-}
-console.log(multiplica(num1,num2));
+        /* 6-Escribe una función llamada multiplica que acepte dos números como parámetros y devuelva su producto.*/
+        var num1 = 4;
+        var num2 = 7;
+        function multiplica(num1,num2){
+            return "El producto entre "+num1+" y "+num2+" es: "+num1*num2;
+        }
+        console.log(multiplica(num1,num2));
 
-/* 7-Crea un objeto llamado coche que tenga las propiedades marca, modelo y año, y asígnales valores apropiados.*/
-var coche = {
-    marca: "Ferrari",
-    modelo: "F24",
-    año: 2024
-};
-// console.log(coche)
-// {marca: 'Ferrari', modelo: 'F24', año: 2024}
+        /* 7-Crea un objeto llamado coche que tenga las propiedades marca, modelo y año, y asígnales valores apropiados.*/
+        var coche = {
+            marca: "Ferrari",
+            modelo: "F24",
+            año: 2024
+        };
+        // console.log(coche)
+        // {marca: 'Ferrari', modelo: 'F24', año: 2024}
 
-/* 8-Añade una propiedad color al objeto coche y asígnale un color.*/
-var coche = {
-    marca: "Ferrari",
-    modelo: "F24",
-    año: 2024
-};
-coche.color = "rojo"
-// console.log(coche)
-// {marca: 'Ferrari', modelo: 'F24', año: 2024, color: 'rojo'}
+        /* 8-Añade una propiedad color al objeto coche y asígnale un color.*/
+        var coche = {
+            marca: "Ferrari",
+            modelo: "F24",
+            año: 2024
+        };
+        coche.color = "rojo"
+        // console.log(coche)
+        // {marca: 'Ferrari', modelo: 'F24', año: 2024, color: 'rojo'}
 
-/* 9-Escribe una función llamada describeCoche que acepte un objeto coche y devuelva una cadena que describa el coche en función de sus propiedades 
-    (p.ej., "Un coche rojo de la marca Toyota, modelo Corolla, del año 2010").*/
-function describeCoche(coche){
-    return `Un coche ${coche.color} de la marca ${coche.marca}, modelo ${coche.modelo}, del año ${coche.año}.`;
-};
-describeCoche(coche);
+        /* 9-Escribe una función llamada describeCoche que acepte un objeto coche y devuelva una cadena que describa el coche en función de sus propiedades 
+            (p.ej., "Un coche rojo de la marca Toyota, modelo Corolla, del año 2010").*/
+        function describeCoche(coche){
+            return `Un coche ${coche.color} de la marca ${coche.marca}, modelo ${coche.modelo}, del año ${coche.año}.`;
+        };
+        describeCoche(coche);
 
-// 
+        // 
 
-/* 10-Utiliza la función describeCoche con tu objeto coche, e imprimelo por consola.*/
-console.log(describeCoche(coche))
-// Un coche rojo de la marca Ferrari, modelo F24, del año 2024.
+        /* 10-Utiliza la función describeCoche con tu objeto coche, e imprimelo por consola.*/
+        console.log(describeCoche(coche))
+        // Un coche rojo de la marca Ferrari, modelo F24, del año 2024.
 
-/* 11-Crea una función constructora llamada Persona que acepte parámetros para nombre y edad, y asigna estos valores a las propiedades del objeto.*/
+        /* 11-Crea una función constructora llamada Persona que acepte parámetros para nombre y edad, y asigna estos valores a las propiedades del objeto.*/
 
-function Persona(nombre,edad){
-    this.nombre = nombre;
-    this.edad = edad;
-}
-// Asignando los valores a las propiedades del objeto
-let persona2 = new Persona("Clarivel",34);
-console.log(persona2);
+        function Persona(nombre,edad){
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+        // Asignando los valores a las propiedades del objeto
+        let persona2 = new Persona("Clarivel",34);
+        console.log(persona2);
 
-/* 12-Añade un método cumpleaños al prototipo de Persona que incremente la edad de la persona en 1 y devuelva una cadena de felicitación
-    (p.ej., "¡Feliz cumpleaños! Ahora tienes 21 años"). */
-function Persona(nombre,edad){
-    this.nombre = nombre;
-    this.edad = edad;
-    this.cumpleaños = function (){
-        this.edad++;
-        return `¡Feliz cumpleaños! Ahora tienes ${this.edad} años.`;
-    };
-};
-let persona1 = new Persona("Emmanuel",25);
-console.log(persona1.cumpleaños());
-console.log(persona1.cumpleaños()); 
-console.log(persona1.cumpleaños());
-console.log(persona1.cumpleaños());
-/* 13-Crea una nueva instancia de Persona y luego llama al método cumpleaños en esa instancia.
-console.log()
-14-Crea un array de objetos, donde cada objeto represente un libro y tenga propiedades para titulo, autor y añoDePublicacion.
+        /* 12-Añade un método cumpleaños al prototipo de Persona que incremente la edad de la persona en 1 y devuelva una cadena de felicitación
+            (p.ej., "¡Feliz cumpleaños! Ahora tienes 21 años"). */
+        function Persona(nombre,edad){
+            this.nombre = nombre;
+            this.edad = edad;
+            this.cumpleaños = function (){
+                this.edad++;
+                return `¡Feliz ${this.nombre} cumpleaños! Ahora tienes ${this.edad} años.`;
+            };
+        };
+        // Usamos let para crear un objeto
+        let persona1 = new Persona("Emmanuel",25);
 
-15-Escribe una función que acepte el array de libros y devuelva el libro más reciente (el de mayor añoDePublicacion).
+        console.log(persona1.cumpleaños());
+        console.log(persona1.cumpleaños()); 
 
-16-Escribe una función llamada suma que acepte un array de números y devuelva su suma.
+        /* 13-Crea una nueva instancia de Persona y luego llama al método cumpleaños en esa instancia.
+        console.log() */
+        let persona3 = new Persona("Rafa",38);
+        console.log(persona3.cumpleaños())
+        console.log(persona3.cumpleaños())
 
-17-Escribe una función invertir que acepte una cadena y devuelva la cadena invertida (p.ej., invertir("Hola") debe devolver "aloH").
+        /* 14-Crea un array de objetos, donde cada objeto represente un libro y tenga propiedades para titulo, autor y añoDePublicacion.*/
+        let libro = [
+        {
+            título: "Harry Potter",
+            autor: "J.K.Rowling",
+            añoDePublicacion: 1997
+        },
+        {
+            título: "Hannibal",
+            autor: "Tomas Harris",
+            añoDePublicacion: 2001
+        },
+        {
+            título: "Black Jack 21",
+            autor: "Unknow",
+            añoDePublicacion: 2010
+        }
+        ]
+        /* 15-Escribe una función que acepte el array de libros y devuelva el libro más reciente (el de mayor añoDePublicacion).*/
 
-18-Escribe una función esPalindromo que acepte una cadena y devuelva true si la cadena es un palíndromo (se lee igual hacia adelante y hacia atrás) 
-    y false en caso contrario.
+        /* 16-Escribe una función llamada suma que acepte un array de números y devuelva su suma.*/
+        let arrayNumeros = [1,2,3,4,5,6]
 
-    
-19-Escribe una función que acepte dos cadenas y devuelva true si la segunda cadena es una subcadena de la primera, y false en caso contrario.
+        function sumaArray(arrayNumeros){
+            let suma = 0
+            for(let i = 0;i<arrayNumeros.length;i++){
+                suma+=arrayNumeros[i]
+            }
+            return suma
+        }
+        console.log(sumaArray(arrayNumeros))
 
-20-Crea una función contadorDeLetras que acepte una cadena y devuelva un objeto que represente la cantidad de veces que aparece cada letra en la cadena
-    (p.ej., contadorDeLetras("hola") debería devolver { h: 1, o: 1, l: 1, a: 1 }).
+        /* 17-Escribe una función invertir que acepte una cadena y devuelva la cadena invertida (p.ej., invertir("Hola") debe devolver "aloH").*/
+        let palabra = "Hola, me llamo Emmanuel"
+        function invertirPalabra(palabra){
+            let palabraInvertida = ""
+            for(let i = palabra.length-1;i>=0;i--){
+                palabraInvertida += palabra[i]
+            }
+            return palabraInvertida
+        }
+        console.log(invertirPalabra(palabra))
 
-21- Escribe un bucle que recorra los números del 1 al 10 e imprima si cada número es par o impar
+        /* 18-Escribe una función esPalindromo que acepte una cadena y devuelva true si la cadena es un palíndromo (se lee igual hacia adelante y hacia atrás) y false en caso contrario.*/
+        var palabraIngresada = "hola"
+        function esPalindromo(palabraIngresada){
+            let palabraInvertida = ""
+            for(let i = palabraIngresada.length -1;i>=0;i--){
+                palabraInvertida+=palabraIngresada[i]
+            }
 
-22- Escribe un bucle que busque un número determinado en un array. Si el número está en el array, imprime "Número encontrado" y su posición
+            if(palabraIngresada == palabraInvertida){
+                return "Es palindromo"
+            }else{
+                return "No es palindromo"
+            }
+        }
+        console.log(esPalindromo(palabraIngresada))
 
-23- Escribe un bucle que sume todos los múltiplos de 3 o 5 menores que 100
+        /* 19-Escribe una función que acepte dos cadenas y devuelva true si la segunda cadena es una subcadena de la primera, y false en caso contrario. */
+        var cadena1 = "hola, soy programador"
+        var cadena2 = "y programador"
 
-24- Escribe un bucle que cuente el número de veces que una letra aparece en una cadena de texto
+        if(cadena1.includes(cadena2)){
+            console.log("La cadena 2 es una subcadena de la cadena 1")
+        }else{
+            console.log("La cadena 2 no es una subcadena de la cadena 1")
+        }
 
-25- Crea un array con productos para la compra. Recorre la lista y si encuentras el producto "leche", imprime "No olvides comprar leche"
+        /* 20-Crea una función contadorDeLetras que acepte una cadena y devuelva un objeto que represente la cantidad de veces que aparece cada letra en la cadena (p.ej., contadorDeLetras("hola") debería devolver { h: 1, o: 1, l: 1, a: 1 }). */
+        
 
-26- Sin usar el método reverse(), escribe un bucle que invierta una cadena de texto
+        /* 21- Escribe un bucle que recorra los números del 1 al 10 e imprima si cada número es par o impar */
 
-*/
+        // Bucle for
+        for(let a=1;a<=10;a++){
+            if(a%2==0){
+                console.log(`${a} es par`)
+            }else{
+                console.log(`${a} es impar`)
+            }
+        }
+
+        // Bucle do-while
+        let numero = 1
+        do{
+            if(numero%2==0){
+                console.log(`${numero} es par`)
+            }else{
+                console.log(`${numero} es impar`)
+            }
+            numero++
+        }while(numero<=10)
+
+        /* 22- Escribe un bucle que busque un número determinado en un array. Si el número está en el array, imprime "Número encontrado" y su posición */
+        let array = [16, 17, 21, 22, 23, 28]
+        
+        /* 23- Escribe un bucle que sume todos los múltiplos de 3 o 5 menores que 100 */
+
+        /* 24- Escribe un bucle que cuente el número de veces que una letra aparece en una cadena de texto */
+
+        /* 25- Crea un array con productos para la compra. Recorre la lista y si encuentras el producto "leche", imprime "No olvides comprar leche" */
+
+        /* 26- Sin usar el método reverse(), escribe un bucle que invierta una cadena de texto */
     </script>
 
 </head>
