@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<body>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <button>Púlsame</button>
+    <img src="https://i.pinimg.com/736x/3e/ff/9a/3eff9af7b40ab87fc313b78307a56935.jpg">
+    <script>
+        var inputs = document.querySelectorAll("input")
+        var foto = document.querySelector("img")
+        var boton = document.querySelector("button")
+
+        function comprobarMarcados() {
+            var sonPares = false
+            var sonImpares = false
+            var contadorMarcadosPares = 0
+            var contadorMarcadosImpares = 0
+            //Bucle pares
+            for (var i = 0; i < inputs.length; i = i + 2) {
+                if (inputs[i].checked) {
+                    contadorMarcadosPares++
+                }
+            }
+            if (contadorMarcadosPares == 3) {
+                sonPares = true
+            }
+            //Bucle impares
+            for (var i = 1; i < inputs.length; i = i + 2) {
+                if (inputs[i].checked) {
+                    contadorMarcadosImpares++
+                }
+            }
+            if (contadorMarcadosImpares == 3) {
+                sonImpares = true
+            }
+
+            foto.classList.remove("pares")
+            foto.classList.remove("impares")
+
+            if (contadorMarcadosImpares) {
+                foto.src = ""
+                foto.classList.add("impares")
+            }
+            if (contadorMarcadosPares) {
+                foto.src = ""
+                foto.classList.add("pares")
+            }
+
+        }
+
+        function comprobarCantidadMarcados(e) {
+            var contador = 0
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked) {
+                    contador++
+                }
+            }
+            if (contador > 3) {
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i] != e.target) {
+                        inputs[i].checked = false
+                    }
+                }
+            }
+        }
+
+        function modificarImg() {
+            if (foto.classList.contains("pares")) {
+                foto.style.width = "150px"
+                foto.style.height = "150px"
+            } else {
+                foto.style.width = "75px"
+                foto.style.height = "75px"
+            }
+        }
+
+        boton.addEventListener("click", comprobarMarcados)
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener("click", comprobarCantidadMarcados)
+        }
+        foto.addEventListener("click",modificarImg)
+    </script>
+</body>
+</html>

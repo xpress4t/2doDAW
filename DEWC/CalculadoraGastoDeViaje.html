@@ -1,0 +1,140 @@
+<!-- 
+Objetivo: El objetivo de esta práctica es crear una calculadora de gastos de viaje que permita a los usuarios ingresar
+ los detalles de su viaje y calcular el total de gastos estimados.
+
+Requisitos:
+
+	-El programa debe permitir al usuario ingresar los siguientes detalles del viaje:
+		-Cantidad de días del viaje.
+		-Costo diario estimado (alojamiento, comida, transporte, entretenimiento, etc.).
+		-Costo de vuelo (opcional).
+		-Costo de otros gastos (opcional).
+	-El programa debe calcular y mostrar el gasto total estimado del viaje en función de la información proporcionada por el usuario.
+
+	-El programa debe mostrar los detalles ingresados por el usuario junto con el gasto total estimado.
+
+	-El programa debe validar la entrada del usuario para asegurarse de que se ingresen números válidos y de que los campos obligatorios no se dejen en blanco.
+
+	-El programa debe tener una interfaz de usuario agradable y fácil de usar.
+	
+	-Los datos no deben ser enviados al servidor, por lo que todas las comprobaciobes deberán ser en cliente.
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculadora de Gastos de Viaje</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="number"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button[type="submit"] {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  h2 {
+    color: #333;
+    margin-top: 30px;
+  }
+
+  div#travelDetails,
+  div#totalCost,
+  div#mediaCost {
+    font-weight: bold;
+  }
+</style>
+
+<body>
+  <h1>Calculadora de Gastos de Viaje</h1>
+
+  <form id="travelForm">
+    <div>
+      <label for="days">Cantidad de días del viaje:</label>
+      <input type="number" id="days" required><br><br>
+    </div>
+    <div>
+      <label for="dailyCost">Costo diario estimado:</label>
+      <input type="number" id="dailyCost" required><br><br>
+    </div>
+    <div>
+      <label for="flightCost">Costo de vuelo:</label>
+      <input type="number" id="flightCost"><br><br>
+    </div>
+    <div>
+      <label for="otherCosts">Costo de otros gastos:</label>
+      <input type="number" id="otherCosts"><br><br>
+    </div>
+
+    <button type="submit">Calcular</button>
+  </form>
+
+  <h2>Detalles del Viaje:</h2>
+  <div id="travelDetails"></div>
+
+  <h2>Gasto Total Estimado:</h2>
+  <div id="totalCost"></div>
+
+  <h2>Gasto Medio Estimado por Día:</h2>
+  <div id="mediaCost"></div>
+
+  <script>
+    document.getElementById("travelForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Evitar que el formulario se envíe
+      debugger
+      // Obtener los valores ingresados por el usuario
+      var days = parseInt(document.getElementById("days").value);// parseInt(event.target[0].value)
+      var dailyCost = parseFloat(document.getElementById("dailyCost").value);// parseInt(event.target[1].value)
+      var flightCost = parseFloat(document.getElementById("flightCost").value || 0);// parseInt(event.target[2].value)
+      var otherCosts = parseFloat(document.getElementById("otherCosts").value || 0);// parseInt(event.target[3].value)
+
+      // Calcular el gasto total estimado
+      var totalCost = (days * dailyCost) + flightCost + otherCosts;
+
+      // Mostrar los detalles del viaje
+      var travelDetails = "<p>Cantidad de días: " + days + "</p>" +
+        "<p>Costo diario estimado: " + dailyCost + "</p>" +
+        "<p>Costo de vuelo: " + flightCost + "</p>" +
+        "<p>Costo de otros gastos: " + otherCosts + "</p>";
+
+      document.getElementById("travelDetails").innerHTML = travelDetails;
+
+      // Mostrar el gasto total estimado
+      document.getElementById("totalCost").innerHTML = "<p>Gasto Total Estimado: " + totalCost + "</p>";
+      document.getElementById("mediaCost").innerHTML = "<p>Gasto Medio Estimado por Día: " + Math.round(totalCost / days, 2) + "</p>";
+    });
+  </script>
+</body>
+
+</html>

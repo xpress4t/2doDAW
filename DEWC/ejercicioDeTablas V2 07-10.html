@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>    
+    table{
+        border: black 1px solid;
+        width: 300px;
+        text-align: center;
+        align-items: center;
+    }
+
+    td{
+        border: green 1px solid;
+    }
+
+    img{
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+    <button>Púlsame</button>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        <!--
+        <tr>
+            <td>1</td>
+            <td><img src="https://i.redd.it/pdpcowjrjrxc1.jpeg"></td>
+            <td><button>Botón 1</button></td>
+        </tr>
+        -->
+    </table>
+
+    <script>
+        let contador = 1
+        document.querySelector("button").onclick = () => {
+            let fila = document.createElement("tr")
+            fila.innerHTML = `<td>${contador++}</td>
+                              <td><img src="https://i.redd.it/pdpcowjrjrxc1.jpeg" width="100"></td>
+                              <td><button>Botón ${contador-1}</button></td>`
+            fila.querySelector("button").onclick = () => fila.remove()
+            document.querySelector("table").appendChild(fila)
+        }
+        document.querySelectorAll("table button").forEach(x => x.onclick = (event) => event.target.parentElement.parentElement.remove())
+    </script>
+</body>
+</html>

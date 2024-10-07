@@ -1,0 +1,157 @@
+<!--
+Te encuentras trabajando en la sección de análisis de datos de tu empresa. 
+El equipo necesita una herramienta web que permita realizar cálculos dinámicos para analizar distintas variables. 
+Concretamente, se necesita una tabla que se pueda actualizar con datos aleatorios y permita realizar operaciones 
+matemáticas sencillas. Esta herramienta ayudará a los analistas a entender rápidamente relaciones numéricas en un
+conjunto de datos.
+
+Objetivos
+Inicialización Automática: Al cargar la página, las celdas bajo la columna "Valor Aleatorio" 
+deben llenarse automáticamente con números aleatorios entre 1 y 10.
+
+Calculo Dinámico: Cada fila de la tabla tiene un campo de entrada donde los usuarios pueden insertar un número.
+ Al hacerlo, la celda "Resultado" en la misma fila debe actualizar su valor al multiplicar el número 
+ ingresado por el "Valor Aleatorio" de esa fila.
+
+Sumatoria de Resultados: Debe existir un botón llamado "Calcular Suma". 
+Al presionarlo, la aplicación debe sumar todos los valores en la columna "Resultado" 
+y mostrar una alerta con la suma total.
+
+Requisitos Técnicos
+-Utilizar JavaScript para todas las interacciones y cálculos.
+-Los números aleatorios deben generarse programáticamente durante la carga de la página.
+-Los eventos deben añadirse mediante JavaScript, evitando el uso de atributos HTML como onclick.
+
+
+
+--->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Tabla con Cálculos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      text-align: center;
+    }
+
+    input[type="submit"] {
+      margin-top: 10px;
+    }
+  </style> 
+</head>
+<body>
+  <form id="miFormulario">
+    <table id="miTabla">
+      <thead>
+        <tr>
+          <th>Input</th>
+          <th>Valor Aleatorio</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="number"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="number"></td>
+          <td id="asd"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="submit" value="Calcular Suma">
+  </form>
+
+  <script>
+    window.addEventListener('load', function() {
+      rellenarTabla();
+
+      var formulario = document.getElementById('miFormulario');
+      formulario.addEventListener('submit', function(event) {
+		debugger
+        event.preventDefault();
+        calcularSuma();
+      });
+
+      var inputs = document.querySelectorAll('#miTabla input[type="number"]');
+      inputs.forEach(function(input) {
+        input.addEventListener('change', function() {
+          calcularResultado(this);
+        });
+      });
+    });
+
+    function rellenarTabla() {
+      var tabla = document.getElementById("miTabla");
+      var filas = tabla.getElementsByTagName("tr");
+
+      for (var i = 1; i < filas.length; i++) {
+        var valorAleatorio = obtenerValorAleatorio();
+        var celdaValorAleatorio = filas[i].getElementsByTagName("td")[1];
+        celdaValorAleatorio.textContent = valorAleatorio;
+        calcularResultado(filas[i].querySelector('input'));
+      }
+    }
+
+    function calcularResultado(input) {
+      var fila = input.parentNode.parentNode;
+      var valorAleatorio = parseFloat(fila.getElementsByTagName("td")[1].textContent);
+      var resultado = input.value * valorAleatorio;
+
+      fila.getElementsByTagName("td")[2].textContent = resultado;
+    }
+
+    function obtenerValorAleatorio() {
+      return Math.floor(Math.random() * 10) + 1;
+    }
+
+    function calcularSuma() {
+      var resultados = document.querySelectorAll("#miTabla tbody td:nth-child(3)");
+      var sumaTotal = 0;
+
+      for (var i = 0; i < resultados.length; i++) {
+        sumaTotal += parseFloat(resultados[i].textContent);
+      }
+
+      alert("La suma total de la tercera columna es: " + sumaTotal);
+	  /*
+	  
+	  
+	  
+	  
+	  
+	  */
+    }
+  </script>
+</body>
+</html>

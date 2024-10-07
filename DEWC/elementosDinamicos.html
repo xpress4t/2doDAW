@@ -1,0 +1,158 @@
+<!---
+Ejercicio: Creación de una Página Web Interactiva
+Desarrollar una página web que contenga una serie de elementos HTML y funcionalidades JavaScript para interactuar con el usuario. La página debe incluir campos de texto, botones, párrafos y una tabla. Además, se deben aplicar estilos a los elementos de la página mediante JavaScript.
+Requisitos:
+1.	Estructura HTML:
+•	Crear una estructura HTML básica con los siguientes elementos (cada uno de estos elementos deberá estar encerrado en un div):
+•	Un checkBox (habilitado desde un principio) con el texto de habilitar botones.
+•	Un input de texto y un botón para abrir una nueva ventana.
+•	Tres párrafos con los textos "green", "red" y "blue".
+•	Un botón para añadir filas a una tabla y la tabla en sí.
+2.	Estilización con JavaScript:
+•	Al cargar la página, aplicar bordes a los párrafos y a los div que contienen los elementos anteriores.
+•	Los párrafos deben tener un borde negro de 1px sólido 
+•	Los párrafos deben tener un ancho de 500px
+3.	Habilitar botones
+•	Al cambiar el checkBox se deberán ocultar o mostrar todos los botones, en función de si el checkBox está marcado o no.
+4.	Abrir Nueva Ventana:
+•	Al hacer clic en el botón "Abrir ventana", abrir una nueva ventana del navegador con la URL ingresada en el campo de texto correspondiente.
+•	Si no se ha introducido ningún valor no se realiza la acción de abrir la nueva ventana.
+5.	Añadir Filas a la Tabla:
+•	Al hacer clic en el botón "añadir fila", añadir una nueva fila a la tabla. Esta fila debe contener:
+•	Un número que indique el índice de la fila.
+•	Dos botones: uno para "Guardar en bbdd" y otro para "Borrar registro".
+•	Dos campos de texto.
+6.	Funcionalidad de Botones en la Tabla:
+•	Implementar una función que se ejecute al hacer clic en los botones dentro de la tabla. Esta función debe:
+•	Cambiar el color de fondo de la fila a verde si se hace clic en "Guardar en bbdd".
+•	Cambiar el color de fondo de la fila a rojo si se hace clic en "Borrar registro".
+•	Mostrar una alerta con los valores ingresados en los campos de texto de la fila correspondiente.
+•	Si cualquiera de los imputs está vacío no se realiza ninguna acción y se informa al usuario.
+7.	Interacción con Párrafos:
+•	Al pasar el cursor sobre cada párrafo, cambiar el color del texto de todos los párrafos al color que indica el texto del párrafo sobre el que se encuentra el cursor.
+Para tener en cuenta.
+1.	No se pueden usar Id ni clases en ninguno de los elementos HTML
+2.	El ejercicio se debe de hacer en dos ficheros diferentes: uno para el html y otro para el js.
+3.	En la 1º línea de cada fichero debe de haber un comentario con el nombre y apellidos.
+4.	Los comentarios del código influyen en la nota.
+Para entregar:
+1.	Se debe de entregar un documento comprimido .zip que contenga los dos ficheros que se llame NombreApellidos_AEA3T1.zip.
+2.	El .html debe llamarse index.html
+3.	El .js se debe llamar funciones.js
+
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" checked> Habilitar botones
+    </div>
+    <div>
+        <input type="text">
+        <button>Abrir ventana</button>
+    </div>
+
+    <div>
+        <p>
+            green
+        </p>
+        <p>
+            red
+        </p>
+        <p>
+            blue
+        </p>
+    </div>
+    <div>
+        <button> añadir fila</button>
+        <table>
+            <tbody></tbody>
+
+        </table>
+    </div>
+
+    <script>
+        function pintarBordes() {
+            var ps = document.getElementsByTagName("p")
+            for (var p of ps) {
+                p.style.border = "1px solid black";
+                p.style.width = "500px";
+            }
+            var divs = document.getElementsByTagName("div")
+            for (var div of divs) {
+                div.style.border = "1px solid green"
+                div.style.margin = "20px"
+                div.style.padding = "10px"
+            }
+        }
+        pintarBordes()
+
+        var btnAbrirVentana = document.querySelector("body div:nth-child(2) button")
+        var btnAñadirFila = document.querySelector("body div:nth-child(4) button")
+
+        btnAbrirVentana.addEventListener("click", function (e) {
+            var url = this.closest("div").querySelector("input").value
+            if(url ){    
+                window.open(url)
+            }
+        })
+
+        var contador = 1;
+        btnAñadirFila.addEventListener("click", function (e) {
+            var tablaBody = this.nextElementSibling.querySelector("tbody")
+            var btnTXT = `
+        <button onclick='guardarEliminar(this,`+ contador + `,1)'>Guardar en bbdd</button>
+        <button onclick='guardarEliminar(this,`+ contador + `,2)'>Borrar registro</button>`
+            tablaBody.innerHTML += "<tr><td>" + contador + "</td><td>" + btnTXT + "</td><td><input><input></td></tr>"
+            contador++
+        })
+        function guardarEliminar(html, indice, tipo) {
+            var valor1 = html.closest("tbody").querySelector("input:nth-child(1)").value
+            var valor2 = html.closest("tbody").querySelector("input:nth-child(2)").value
+            if(!valor1 && !valor2){
+                alert("esa fila no se puede guardar o borrar")
+                return
+            }
+            alert("Se va a guardar el registro " + indice + " con valores:'" + valor1 + "'' y '" + valor2 + "'")
+            if (tipo == 1) {
+                html.closest("tr").style.backgroundColor = "green"
+            } else {
+                html.closest("tr").style.backgroundColor = "red"
+            }
+        }
+
+        var lstPs = document.querySelectorAll("p")
+        for (var p of lstPs) {
+            p.addEventListener("mouseenter", function (e) {
+                var color = this.innerText
+                for (var p of lstPs) {
+                    p.style.color=color
+                }
+            })
+        }
+
+        var checkbox=document.querySelector("input[type='checkbox']")
+        checkbox.addEventListener("change",function(e){
+            debugger
+            var checked=this.checked
+            var botones=document.getElementsByTagName("button")
+            for(var btn of botones){
+                if(checked){
+                    btn.style.display="inline"
+                }else{
+                    btn.style.display="none"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

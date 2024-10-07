@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="">
+
+    </div>
+
+    <button onclick="crearElemento()">Púlsame</button>
+
+    <script>
+        var div = document.querySelector("div")
+        var button = document.querySelector("button")
+        function decirHola(htmlElement){
+            console.log(e.target)
+            console.log()
+        }
+        function crearElemento(){
+            div.innerHTML += "<input type = 'text'/>"
+        }
+        button.addEventListener("click",crearElemento)
+    </script>
+</body>
+</html>

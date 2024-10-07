@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" placeholder="Ingrese el valor">
+        <br>
+        <label for="unidadEntrada">Unidad de Entrada:</label>
+        <select id="unidadEntrada">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <br>
+        <label for="unidadSalida">Unidad de Salida:</label>
+        <select id="unidadSalida">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <br>
+        <button id="convertir">Convertir</button>
+        <button id="limpiar">Limpiar</button>
+        <br>
+        <p id="resultado"></p>
+    </div>
+    <script>
+	document.addEventListener("DOMContentLoaded", () => {
+    const valorInput = document.getElementById("valor");
+    const unidadEntradaSelect = document.getElementById("unidadEntrada");
+    const unidadSalidaSelect = document.getElementById("unidadSalida");
+    const convertirButton = document.getElementById("convertir");
+    const limpiarButton = document.getElementById("limpiar");
+    const resultadoP = document.getElementById("resultado");
+
+    convertirButton.addEventListener("click", () => {
+        const valor = parseFloat(valorInput.value);
+        const unidadEntrada = unidadEntradaSelect.value;
+        const unidadSalida = unidadSalidaSelect.value;
+
+        if (!isNaN(valor)) {
+            if (unidadEntrada === unidadSalida) {
+                resultadoP.textContent = "Las unidades de entrada y salida son iguales. No se requiere conversión.";
+            } else if (unidadEntrada === "celsius" && unidadSalida === "fahrenheit") {
+                const fahrenheitResult = (valor * 9/5) + 32;
+                resultadoP.textContent = `${valor} grados Celsius son ${fahrenheitResult.toFixed(2)} grados Fahrenheit.`;
+            } else if (unidadEntrada === "fahrenheit" && unidadSalida === "celsius") {
+                const celsiusResult = (valor - 32) * 5/9;
+                resultadoP.textContent = `${valor} grados Fahrenheit son ${celsiusResult.toFixed(2)} grados Celsius.`;
+            }
+        } else {
+            resultadoP.textContent = "Ingrese un valor numérico válido.";
+        }
+    });
+
+    limpiarButton.addEventListener("click", () => {
+        valorInput.value = "";
+        resultadoP.textContent = "";
+    });
+});
+
+	
+	</script>
+</body>
+</html>
