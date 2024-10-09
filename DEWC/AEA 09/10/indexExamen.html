@@ -131,22 +131,22 @@ Puntuación
             Esto solo parará en caso de que vuelva pulsar sobre el botón de automático.
     */
 
-    let a = [];
+    let a = []
     
     filas.forEach((fila,index)=>{
         fila.addEventListener("click",()=>{
             if(a.includes(fila)){
-                fila.style.backgroundColor = "white";
+                fila.style.backgroundColor = "white"
             }else{
                 if(a.length<10){
                     if(a.length<6){
-                        fila.classList.add('fondoAzul');
+                        fila.classList.add('fondoAzul')
                     }else if(a.length<9) {
-                        fila.classList.add('fondoAmarillo');
+                        fila.classList.add('fondoAmarillo')
                     }else if(a.length === 9){
-                        fila.classList.add('fondoRojo');
+                        fila.classList.add('fondoRojo')
                     }
-                    a.push(fila);
+                    a.push(fila)
                 }
             }
         });
@@ -172,7 +172,7 @@ Puntuación
             div.classList.add("sinBorde")
         })
     })
-    
+
     automatic.addEventListener("click",()=>{
         Array.from(divs).forEach(div=>{
             
@@ -180,13 +180,12 @@ Puntuación
                 div.classList.add("fondoVerde")
             }
             function aleatorioBorde(){
-                div.classList.remove("fondoVerde")
                 div.classList.add("bordeNegro")
             }
             function aleatorio(){
                 div.classList.remove("bordeNegro")
             }
-            setInterval(aleatorioFondo,5000,stop)
+            setInterval(aleatorioFondo,5000)
             setInterval(aleatorioBorde,7000)
             setInterval(aleatorio,9000)
         })
