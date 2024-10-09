@@ -1,0 +1,25 @@
+table{
+    border: 2px solid black;
+}
+
+.fondoAzul{
+    background-color: blue;
+}
+
+.fondoAmarillo{
+    background-color: yellow;
+}
+
+.fondoRojo{
+    background-color: red;
+}
+
+.bordeNegro {
+    border: 1px solid black;
+}
+.fondoVerde {
+    background-color: green;
+}
+.sinBorde{
+    background-color: transparent;
+}
