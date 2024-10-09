@@ -35,24 +35,25 @@
     </table>
 
     <script>
-        let contador = 1
-
+        let contador = 1;
+        // function seleccionarBoton()  --> es lo mismo que hacer la funcion flecha
+        // 
         document.querySelector("button").onclick = () => {
-            let fila = document.createElement("tr")
+            let fila = document.createElement("tr");
             fila.innerHTML = `<td>${contador}</td>
                             <td><img src="https://i.redd.it/pdpcowjrjrxc1.jpeg" width="100"></td>
-                            <td><button>Botón ${contador}</button></td>`
-            contador++
+                            <td><button>Botón ${contador}</button></td>`;
+            contador++;
 
             fila.querySelector("button").onclick = () => {
-                let filas = document.querySelectorAll("table tr")
+                let filas = document.querySelectorAll("table tr");
                 if (fila === filas[filas.length - 1]) {
-                    fila.remove()
-                    contador--
-                }
-            }
+                    fila.remove();
+                    contador--;
+                };
+            };
             document.querySelector("table").appendChild(fila);
-        }
+        };
     </script>
 </body>
 </html>

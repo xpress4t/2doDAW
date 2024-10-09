@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    #myImg{
+        margin: auto;
+        padding: 30px;
+    }
+
+    #myButton{
+        font-size: 2rem;
+    }
+</style>
+<body>
+    <button id="myButton">Hide</button>
+    
+    <img id="myImg" src="https://i.redd.it/pdpcowjrjrxc1.jpeg" width="200px">
+    
+    <script type="text/javascript">
+        const myButton = document.getElementById("myButton");
+        const myImg = document.getElementById("myImg");
+        
+        // Se puede usar cualquiera de estos dos para hecer el ejercicio de "Ocultar y mostrar una imagen"
+
+        // Propiedades del método .display = "none"
+        //                        .display = "block"
+
+        // Propiedades del método .visibility = "hidden"
+        //                        .visibility = "visible"
+        myButton.addEventListener("click",event => {
+            if(myImg.style.display === "none"){
+                myImg.style.display = "block";
+                myButton.textContent = "Ocultar";
+            }else{
+                myImg.style.display = "none";
+                myButton.textContent = "Mostrar";
+            }
+            
+        });
+    </script>
+</body>
+</html>

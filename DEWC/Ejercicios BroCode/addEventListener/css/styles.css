@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;  /* Centrará horizontalmente */
+    align-items: center;      /* Centrará verticalmente */
+    height: 100vh;            /* Hacer que el contenedor ocupe toda la ventana del navegador */
+    margin: 0;                /* Quitar márgenes predeterminados del body */
+}
+
+#myBox{
+    background-color: rgb(113, 238, 243);
+    border: rgb(0, 0, 0) 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+}
+
+button{
+    font-size: 1rem;
+}
