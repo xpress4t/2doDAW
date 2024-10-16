@@ -2,14 +2,17 @@ body{
     background-color: rgb(0, 0, 0);
     font-family: sans-serif;
     margin: 0;
+    min-height: 100vh;
+    padding-bottom: 2em;
+    padding-bottom: 80px;
+    position: relative;
 }
 
 header{
+    align-items: center;
+    background-color: white;
     display: flex;
     height: 70px;
-    background-color: green;
-    justify-content: space-between;
-    align-items: center;
     
 }
 
@@ -17,18 +20,77 @@ header{
     display: flex;
     height: 40px;
     width: 60px;
-    
 }
 
 .logo-img{
-    
+    justify-content: flex-start;
 }
 
-.nav-link{
+.imagen-encabezado img{
+    height: 720px;
+    width: 100%;
+}
+
+.texto-portada {
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto dentro del contenedor de texto */
+}
+
+
+/* Estilo adicional del texto */
+.texto-portada h1 {
+    font-size: 48px; /* Tamaño de la cabecera */
+    margin: 0; /* Quita márgenes por defecto */
+}
+
+.texto-portada p {
+    font-size: 40px;
+    margin: 10px 0 0; /* Ajusta márgenes */
 }
 
 .carrusel{
-    height: 300px;
-    width: 180px;
     border-radius: 5px;
+    height: 270px;
+    width: 170px;
+}
+
+.texto-encabezado{
+    color: white;
+}
+
+footer{
+    align-items: center;
+    background-color: white;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.redes-sociales{
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociales i{
+    font-size: 32px;
+}
+
+.redes-sociales i:hover {
+    transform: scale(1.2);
+}
+
+.footer-text {
+    text-align: center; /* Centrar el texto dentro del footer */
+    font-size: 16px;
+    color: #666;
+    margin-top: auto; /* Empuja el párrafo hacia el final del footer */
 }
