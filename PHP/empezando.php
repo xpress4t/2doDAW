@@ -18,8 +18,7 @@
 	for($vueltas=0;$vueltas<10;$vueltas++){
 		echo "<p>Esta es la vuelta número $vueltas</p>";
 	}
-
-
+	
 	echo "string";
 	echo "Nº aleatorio del 1 al 10";
 	$numero = rand(1,10);
