@@ -1,0 +1,59 @@
+body {
+    align-items: center;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td {
+    font-size: 18px;
+    text-align: left;
+    text-align: center;
+    font-weight: bold;
+    border: solid 1px red;
+    background-color: rgb(0, 0, 0);
+}
+
+.tier-s {
+    background-color: #ffcc00;
+    height: 80px;
+    width: 80px;
+}
+
+.tier-a {
+    background-color: #4caf50;
+    height: 80px;
+    width: 80px;
+}
+
+.tier-b {
+    background-color: #2196f3;
+    height: 80px;
+    width: 80px;
+}
+
+.tier-c {
+    background-color: #ff9800;
+    height: 80px;
+    width: 80px;
+}
+
+.tier-d {
+    background-color: #f44336;
+    height: 80px;
+    width: 80px;
+}
+.campeones{
+    height: 80px;
+    width: 80px;
+}
+.contenedor-de-imagenes{
+    border: solid 2px rgb(38, 0, 255);
+    
+}

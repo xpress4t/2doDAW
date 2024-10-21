@@ -1,0 +1,63 @@
+div{
+    height: 75px;
+}
+
+img{
+    width: 75px;
+    height: 75px;
+}
+.tierlist{
+    display: flex;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor{
+    display: flex;
+    justify-content: start;
+}
+.contenedortierlist{
+    width: 100%;
+    border: 1px solid black;
+}
+.inicial{
+    margin-top: 25px;
+}
+
+.posibleimagen{
+    opacity: 0.3;
+}
+
+.tier-t1 {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    color: white;
+    font-weight: bold;
+}
+
+/* Nivel T2 - Fondo morado degradado */
+.tier-t2 {
+    background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+    color: white;
+    font-weight: bold;
+}
+
+/* Nivel T3 - Fondo naranja degradado */
+.tier-t3 {
+    background: linear-gradient(45deg, #f6d365, #fda085);
+    color: white;
+    font-weight: bold;
+}
+
+/* Nivel T4 - Fondo verde degradado */
+.tier-t4 {
+    background: linear-gradient(45deg, #a8e063, #56ab2f);
+    color: white;
+    font-weight: bold;
+}
+
+/* Nivel T5 - Fondo rojo degradado */
+.tier-t5 {
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    color: white;
+    font-weight: bold;
+}
