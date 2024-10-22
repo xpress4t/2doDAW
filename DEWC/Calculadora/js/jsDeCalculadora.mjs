@@ -37,3 +37,6 @@ function agregarTextoInput(e){
 for(var i=0;i<botones.length;i++){
     botones[i].addEventListener("click",agregarTextoInput)
 }
+
+
+// Hacer un rompecabezas con uan imagen grande de los simpsons utilizando drop and drag

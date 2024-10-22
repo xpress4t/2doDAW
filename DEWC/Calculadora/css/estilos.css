@@ -1,4 +1,48 @@
-button{
+* {
+    text-align: center;
+}
+
+body {
+    border: solid 4px red;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna (verticalmente) */
+    justify-content: space-between; /* Distribuye espacio entre los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+    margin: 0;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+header {
+    border: solid 4px blue;
+    margin: 10px;
+    width: 90%; /* Ajusta el ancho del header */
+}
+
+#myBox {
+    width: 200px;
+    border: solid 4px rgb(6, 134, 27);
+    margin: 20px;
+    padding: 20px;
+}
+
+button {
     width: 39px;
     height: 35px;
 }
+
+footer {
+    border: solid 4px black;
+    margin: 10px;
+    width: 90%; /* Ajusta el ancho del footer */
+}
+
+/*
+Six pack de leche 
+Yogurt
+Aceite
+Pan de molde
+Jamonada
+Queso
+Limón
+
+*/
