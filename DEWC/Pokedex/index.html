@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="pokeball.png" type="image/x-icon">
+    <title>Pokedex</title>
+</head>
+<body>
+    <select name="lista-de-pokemon" id="">
+        <option value="0">Escoge tu puchamón...</option>
+    </select>
+    <br>
+    <br>
+    <div class="pokedex">
+        <div class="pokemon-card">
+            <div class="pokemon-name">Pikachu</div>
+            <div class="pokemon-image">
+                <!-- Imagen -->
+            </div>
+            <div class="pokemon-information">
+                <ul>
+                    <li>Tiene pila</li>
+                    <li>Color amarillo</li>
+                    <li>No tiene dueño</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var div = document.querySelector(".pokemon-image")
+
+        function imagenPokemon(){
+            fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+            .then(resultado => resultado.json())
+            .then(resultado => {
+                div.innerHTML = "<img src="+resultado.sprites.other.showdown.front_default+">"
+            })
+        }
+
+        imagenPokemon()
+
+        function maousePorEncima(){
+            
+        }
+    </script>
+</body>
+</html>
