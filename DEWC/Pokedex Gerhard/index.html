@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+   
+</head>
+<body>
+    <select></select>
+    <button id="buscar__info">Buscar Info</button>
+    <template id="poke__template">
+        <div class="poke__card">
+            <div class="poke__nombre"><h1>Nombre</h1></div>
+            <div class="poke__display">
+                <div class="poke__img">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png" alt="">
+                </div>
+                <div class="poke__stats">
+                    <ul class="poke__ivs">
+                        <li>HP:</li>
+                        <li>Attack:</li>
+                        <li>Defense:</li>
+                        <li>Sp. Atk:</li>
+                        <li>Sp. Def:</li>
+                        <li>Speed:</li>
+                    </ul>
+                    <ul class="poke__data">
+                        <li class="iv__hp">1</li>
+                        <li class="iv__atc">2</li>
+                        <li class="iv__def">3</li>
+                        <li class="iv__spatc">4</li>
+                        <li class="iv__spdef">5</li>
+                        <li class="iv__spd">6</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div id="grid__box">
+       
+    </div>
+    <script src="./Script/script.js"></script>
+</body>
+</html>
