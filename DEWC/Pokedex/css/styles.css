@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Comic Sans MS';
+    /* background-image: url('../media/image/arboles-y-estrellas.jpg'); */
+    background-size: cover;
+}
+
+.pokemon__card{
+    font-style: italic;
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px 6px rgba(0,0,0,0.75);
+    height: auto;
+    width: 350px;
+}
+
+.pokemon__name{
+    text-align: center;
+    padding: .3rem;
+    font-size: 20px;
+}
+
+.pokemon__info{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    /* Por si quiero que el contenedor se separe un poco de la carta margin: 2rem; */
+}
+
+.pokemon-image{
+    height: auto;
+    padding: 1rem;
+}
+
+.pokemon-image img{
+    height: 160px;
+    max-height: 250px;
+    width: auto;
+}
+
+.habilities{
+    flex-grow: 1;
+    height: auto;
+}

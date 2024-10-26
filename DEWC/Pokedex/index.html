@@ -3,71 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="pokeball.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./media/image/pokeball.png" type="image/x-icon">
+    
     <title>Pokedex</title>
 </head>
 <body>
-    <select name="lista-de-pokemon" id="lista-pokemones">
+    <select name="lista-de-pokemon" id="lista__pokemones">
         <option value="0">Escoge tu puchamón...</option>
     </select>
     <br>
     <br>
-    <div class="pokedex">
-        <div class="pokemon-card">
-            <div class="pokemon-name">Pikachu</div>
-            <div class="pokemon-info-container">
-                <div class="pokemon-image">
-                <!-- Imagen -->
-                </div>
-                <div class="pokemon-information">
-                    <ul>
-                        <li>Tiene pila</li>
-                        <li>Color amarillo</li>
-                        <li>No tiene dueño</li>
-                        <li>No tiene dueño</li>
-                        <li>No tiene dueño</li>
-                        <li>No tiene dueño</li>
-                        <li>No tiene dueño</li>
-                    </ul>
-                </div>
+
+    <div class="pokemon__card">
+        <div class="pokemon__name">Pikachu</div>
+        <div class="pokemon__info">
+            <div class="pokemon-image">
+            <!-- Imagen -->
             </div>
-            
+            <div class="pokemon__info habilities">
+                <ul>
+                    <li>Tiene pila</li>
+                    <li>Color amarillo</li>
+                    <li>No tiene dueño</li>
+                    <li>No tiene dueño</li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <script>
-        var div = document.querySelector('.pokemon-image')
-
-        var lista = document.querySelector('#lista-pokemones')
-
-        function imagenPokemon(){
-            fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-            .then(resultado => resultado.json())
-            .then(resultado => {
-                // Esto es para mostrar la imagen estática del pokemon
-                div.innerHTML = "<img src="+resultado.sprites.front_default+">"
-                // div.innerHTML = "<img src="+resultado.sprites.other.showdown.front_default+">"
-            })
-            .catch(error => {
-                console.log("Error al obtener imagen del Pokémon"+error)
-            })
-        }
-        // Muestra en pantalla la imagen del pokemon
-        imagenPokemon()
-
-        // Al hacer click que me aparezca la animación del pokémon
-        div.addEventListener("click",event =>{
-            event.target.style.backgroundColor = "red"
-        })
-
-        function maousePorEncima(){
-            fetch()
-            .then(resultado => resultado.json())
-            .then(resultado => {
-                clase.innerHTML = ""
-            })
-        }
-    </script>
+<script src="./js/app.js"></script>
 </body>
 </html>
