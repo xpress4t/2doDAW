@@ -2,6 +2,13 @@ var div = document.querySelector('.pokemon-image')
 imagenPokemon()
 var lista = document.querySelector('#lista-pokemones')
 
+
+var sound = new Audio()
+sound.src = "./media/audio/Opening Pokémon.m4a"
+sound.loop = true
+sound.autoplay = true
+
+
 function imagenPokemon(){
     fetch("https://pokeapi.co/api/v2/pokemon/totodile")
     .then(resultado => resultado.json())
@@ -28,3 +35,9 @@ function maousePorEncima(){
         clase.innerHTML = ""
     })
 }
+
+var myButton = document.querySelector('.button__play')
+
+myButton.addEventListener("click",event => {
+    
+})
