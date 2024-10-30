@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.css" />
+</head>
+<body>
+    <div class="myBox">
+        <div class="card1">
+            <h2>Buscador de países</h2>
+            <div class="card1__input">
+                <h4>Introduce un país </h4>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="card2">
+            <h2>Selector de idioma</h2>
+            <div class="card2__select">
+                <h4>Selecciona un idioma</h4>
+                <select name="idioma[]" multiple id="idioma" aria-placeholder="Selecciona un idioma">
+                    <option value="0">es</option>
+                    <option value="1">pt</option>
+                    <option value="2">en</option>
+                    <option value="3">fr</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="myButtons">
+            <button id="buttonInfo">Buscar info</button>
+            <button id="buttonShowAll">Mostrar todo de nuevo</button>
+        </div>
+    </div>
+
+    <div id="myList">
+        <table>
+            <th>
+                <tr><h4>Nombre País</h4></tr>
+                <tr><h4>Nombre País (Otros idiomas)</h4></tr>
+                <tr><h4>Capital</h4></tr>
+                <tr><h4>Idiomas</h4></tr>
+                <tr><h4>Mapa</h4></tr>
+            </th>
+        </table>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

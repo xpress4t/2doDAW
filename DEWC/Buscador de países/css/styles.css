@@ -1,0 +1,113 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(240, 238, 238);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.myBox{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+    height: 60%;
+    margin: 3rem;
+    padding: .5rem;
+    width: 30vw;
+}
+
+h2{
+    padding-left: 2%;
+}
+
+.card1{
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+    height: 120px;
+    margin: .5rem;
+    padding-top: .8rem;
+}
+
+.card1__input{
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+    display: flex;
+    height: 40px;
+    margin: 10px;
+}
+
+input{
+    height: 60%;
+    margin: auto;
+    width: 60%;
+}
+
+.card2__select{
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+    display: flex;
+    gap: 2%;
+    height: 50px;
+    margin: 10px;
+}
+
+
+select{
+    width: 60%;
+    height: 60%;
+    margin: auto;
+}
+
+
+.card1__input h2, h4{
+    margin: .5rem;
+}
+
+.card2_select h2, h4{
+    margin: .5rem;
+}
+
+.card2{
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.3);
+    height: 160px;
+    margin: .5rem;
+    padding-top: 1rem;
+}
+
+.myButtons{
+    display: flex;
+    gap: 5px;
+    margin: .5rem;
+    padding-top: 2rem;
+}
+
+#buttonInfo{
+    background-color: rgb(0, 102, 255);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height:40px;
+    width: 100px;
+}
+
+#buttonShowAll{
+    background-color: rgb(0, 102, 255);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height:40px;
+    width: 200px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#myList{
+    display: flex;
+}
