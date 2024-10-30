@@ -65,19 +65,5 @@
             echo "<br>";
         }
     ?>
-
-    <?php
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        $a = 8;
-        for($i=1;$i<=$a;$i++){
-            echo "    ";
-            for($j=1;$j<=(2*$i-1);$j++){
-                echo "*";
-            }
-            echo "<br>";
-        }
-    ?>
 </body>
 </html>

@@ -3,14 +3,19 @@ const searchAllButton = document.getElementById("searchAll")
 const searchAllSortedButton = document.getElementById("searchAllSorted")
 const miTabla = document.getElementById('table-body');
 
-searchInfoButton.addEventListener("click",event => {
-})
+function showInfo(){
+}
+searchInfoButton.addEventListener("click",showInfo)
 
-searchAllButton.addEventListener("click",event => {
-})
 
-searchAllSortedButton.addEventListener("click",event => {
-})
+function showAll(){
+}
+searchAllButton.addEventListener("click",showAll)
+
+
+function showAllSorted(){
+}
+searchAllSortedButton.addEventListener("click",showAllSorted)
 
 function obtenerPokemon(){
     fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
