@@ -6,12 +6,6 @@
     <title>PHP</title>
 </head>
 <style>
-    body{
-        text-align: center;
-        justify-content: center;
-        border: solid 1px red;
-        display: flex;
-    }
     .modoClaro{
         background: white;
         color: black;

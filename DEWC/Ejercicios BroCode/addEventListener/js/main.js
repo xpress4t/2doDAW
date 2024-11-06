@@ -1,27 +1,26 @@
 const myBox = document.getElementById("myBox");
 const myButton = document.getElementById("myButton");
 
-// Es lo mismo function(event) {
-//             }
+function haciendoClick(event){
+    event.target.style.color="white";
+    event.target.style.backgroundColor="green";
+    event.target.textContent="clickaste bro";
+    event.target.style.backgroundImage="url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi_9zuYeWr725QU6qOESAMZ0P8UNqwkppMSg&s')";
+}
 
-// que         event => {
-//             }
+function pasandoRaton(event){
+    event.target.style.color="black";
+    event.target.style.backgroundColor="red";
+    event.target.textContent="El cursor está dentro del cuadro";
 
+}
 
-myBox.addEventListener("click",event =>{
-    event.target.style.color = "white";
-    event.target.style.backgroundColor = "green";
-    event.target.textContent = " hiciste click";
-});
+function sacandoRaton(event){
+    event.target.style.color="orange";
+    event.target.style.backgroundColor="yellow";
+    event.target.textContent="El cursor está fuera del cuadro";
+}
 
-myBox.addEventListener("mouseover",event=>{
-    event.target.style.color = "black";
-    event.target.style.backgroundColor = "red"
-    event.target.textContent = "Estás poniendo el ratón sobre el cuadro"
-});
-
-myBox.addEventListener("mouseout",event => {
-    event.target.style.color = "yellow";
-    event.target.style.backgroundColor = "black";
-    event.target.textContent = "El ratón está fuera del cuadro";
-});
+myBox.addEventListener("click",haciendoClick);
+myBox.addEventListener("mouseover",pasandoRaton);
+myBox.addEventListener("mouseout",sacandoRaton);
