@@ -19,7 +19,7 @@
             // echo $palabrasDiferentes."<br>";
             // echo $_POST["palabras"]."<br>";
             // echo $_POST["palabrasDiferentes"]."<br>";
-            //print_r($_GET);
+            // print_r($_GET);
         }
     ?>
     <!-- 
