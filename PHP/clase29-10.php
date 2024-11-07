@@ -51,5 +51,12 @@
             echo "<p>No se que valor tienes</p>";
     }
 
-    // donde la entrada sea el dia de la semana y el dia sea 1 o el lunes
+
+    echo "Nº aleatorio del 1 al 10";
+    $numero = rand(1, 10);
+    echo "<p>Tabla del $numero</p>";
+
+    for ($i = 1; $i <= 10; $i++) {
+        echo "<p>$numero x $i = " . ($numero * $i) . "</p>";
+    }
 ?>
