@@ -10,11 +10,6 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 20px;
     }
-    form{
-        margin: auto;
-        padding: 2rem; 
-        width: 35vw;
-    }
     @keyframes rainbow-text {
             0% { color: red; }
             20% { color: orange; }
@@ -40,12 +35,15 @@
             if (!empty($_POST["nombre"])) {
                 $nombre = trim($_POST["nombre"]);
             }
+            if(!empty($_POST["correo"])){
+                $correo=trim($_POST["correo"]);
+            }
         }
         if(empty($nombre)){
             $nombreError = "El nombre es obligatorio.";
         }
-        if(empty($email)){
-            $emailError = "El correo electrónico es obligatorio.";
+        if(empty($correo)){
+            $correoError = "El correo electrónico es obligatorio.";
         }
         if(empty($edad)){
             $edadError = "La edad es obligatoria.";
@@ -60,13 +58,13 @@
     <br><br><br>
     <form action="" method="POST">
         <label for="">Nombre completo: </label>
-        <input type="text" name="nombre" autofocus>
+        <input type="text" name="nombre" autofocus required>
         <span style="color:red;"><?php echo $nombreError; ?></span>
         <br><br>    
 
         <label for="">Correo electrónico: </label>
-        <input type="email" name="email">
-        <span style="color:red;"><?php echo $emailError; ?></span>
+        <input type="email" name="correo">
+        <span style="color:red;"><?php echo $correoError; ?></span>
         <br><br>
 
         <label for="">Edad: </label>
