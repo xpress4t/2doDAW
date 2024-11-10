@@ -1,21 +1,20 @@
 body{
     background-color: rgb(255, 255, 255);
-    font-family: 'Comic Sans MS';
     /* background-image: url('../media/image/arboles-y-estrellas.jpg'); */
     background-size: cover;
+    font-family: 'Comic Sans MS';
 }
 
 .button__play{
+    cursor: pointer; /* Para que se vea la manito al momento de ponerla sobre el botón */
+    left: 50%; /* Centra el botón horizontalmente */
+    padding: 10px 20px;
     position: absolute;
     top: 20px; /* Ajusta la distancia desde el borde superior */
     transform: translateX(-50%);
-    left: 50%; /* Centra el botón horizontalmente */
-    padding: 10px 20px;
-    cursor: pointer; /* Para que se vea la manito al momento de ponerla sobre el botón */
 }
 
 .pokemon__card{
-    font-style: italic;
     border-radius: 5px;
     box-shadow: 0px 0px 14px 6px rgba(255, 98, 0, 0.75);
     height: auto;
@@ -23,9 +22,9 @@ body{
 }
 
 .pokemon__name{
-    text-align: center;
-    padding: .3rem;
     font-size: 20px;
+    padding: .3rem;
+    text-align: center;
 }
 
 .pokemon__info{
