@@ -62,12 +62,13 @@
             input.value=""
         }
         function borrarSigno(){
-            input.value= input.value.slice(0, -1)
+            input.value= input.value.slice(0,-1) // Para borrar el último número ingresado
         }
 
         for(var btnNumSigno of botonesNumSigno){
             btnNumSigno.addEventListener("click",escribirTextoOSigno)
         }
+
         btnIgual.addEventListener("click",resolver)
         btnBorrar.addEventListener("click",borrar)
         btnBorrarSigno.addEventListener("click",borrarSigno)

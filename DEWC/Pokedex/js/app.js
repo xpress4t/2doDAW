@@ -1,10 +1,10 @@
-const pokemonImage = document.querySelector('.pokemon-image')
+var pokemonImage = document.querySelector('.pokemon-image')
 imagenPokemon()
 
-const pokemonAbility = document.getElementsByClassName("pokemon_inf--ability")
+var pokemonAbility = document.querySelector(".pokemon_inf--ability")
 tablaHabilidades()
 
-const lista = document.querySelector('#lista-pokemones')
+var lista = document.querySelector('#lista-pokemones')
 
 function imagenPokemon(){
     fetch("https://pokeapi.co/api/v2/pokemon/totodile")

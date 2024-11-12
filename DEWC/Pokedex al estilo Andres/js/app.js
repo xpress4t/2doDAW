@@ -19,8 +19,10 @@ searchAllSortedButton.addEventListener("click",showAllSorted)
 
 function obtenerPokemon(){
     fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
-    .then(response => response.json())
-    .then()
+    .then(resultado => resultado.json())
+    .then(resultado => {
+        
+    })
 }
 
 function agregarFila() {

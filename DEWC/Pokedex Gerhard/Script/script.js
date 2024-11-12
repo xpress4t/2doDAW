@@ -1,8 +1,10 @@
 var div = document.querySelector("#grid__box")
 var selector = document.querySelector("select")
 agregarNombres()
+
 var boton__info = document.querySelector("#buscar__info")
 boton__info.addEventListener("click",buscarInfo)
+
 const plantilla__pokemon = document.querySelector("#poke__template")
 generarPokemons()
  
@@ -13,10 +15,8 @@ function agregarNombres(){
     }).then(resultado=>{
         resultado.results.forEach(x=>{
             selector.innerHTML += "<option>"+x.name+"</option>"
-        })
-       
+        }) 
     })
-    .catch()
 }
  
 function generarPokemons(){
@@ -58,5 +58,4 @@ function buscarInfo(){
     }).then(resultado=>{
         div.innerHTML = "<img src="+resultado.sprites.other.showdown.front_default+">"
     })
-   
 }
