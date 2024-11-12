@@ -1,33 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    div{
-        border: 2px solid green;
-    }
-    img{
-        height: 100px;
-        width: 100px;
-    }
-</style>
-<body>
-    <div class=""></div>
-    <button>Púlsame</button>
-
-    <script>
-        const div = document.querySelector("div");
-        const button = document.querySelector("button");
-
-        let contador = 0;
-        function crearElemento(){
-            div.innerHTML += `< >${contador++}</ >`;
+    <title>Ejemplo Intermedio de Drag and Drop</title>
+    <style>
+        .draggable {
+            width: 100px;
+            height: 100px;
+            background-color: #ff9800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: grab;
+            margin: 5px;
         }
+        .dropzone {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #ddd;
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .accepted {
+            background-color: #8bc34a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
 
-        button.addEventListener("click",crearElemento);
-    </script>
+<h2>Arrastra y Suelta Múltiples Elementos</h2>
+
+<div class="draggable" draggable="true" ondragstart="drag(event)" id="drag1">Elemento 1</div>
+<div class="draggable" draggable="true" ondragstart="drag(event)" id="drag2">Elemento 2</div>
+
+<div class="dropzone" ondrop="drop(event, 'drag1')" ondragover="allowDrop(event)">Solo Elem. 1</div>
+<div class="dropzone" ondrop="drop(event, 'drag2')" ondragover="allowDrop(event)">Solo Elem. 2</div>
+
+<script>
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event, acceptedId) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    if (data === acceptedId) {
+        event.target.classList.add("accepted");
+        event.target.textContent = "¡Elemento Aceptado!";
+    } else {
+        alert("Elemento no permitido aquí.");
+    }
+}
+</script>
+
 </body>
 </html>
