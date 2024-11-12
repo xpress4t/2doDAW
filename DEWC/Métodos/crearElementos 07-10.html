@@ -7,27 +7,27 @@
 </head>
 <style>
     div{
-        border: 1px solid black;
+        border: 2px solid green;
+    }
+    img{
+        height: 100px;
+        width: 100px;
     }
 </style>
 <body>
-    <div class="">
-
-    </div>
-
-    <button onclick="crearElemento()">Púlsame</button>
+    <div class=""></div>
+    <button>Púlsame</button>
 
     <script>
-        var div = document.querySelector("div")
-        var button = document.querySelector("button")
-        function decirHola(htmlElement){
-            console.log(e.target)
-            console.log()
-        }
+        const div = document.querySelector("div");
+        const button = document.querySelector("button");
+
+        let contador = 0;
         function crearElemento(){
-            div.innerHTML += "<input type = 'text'/>"
+            div.innerHTML += `< >${contador++}</ >`;
         }
-        button.addEventListener("click",crearElemento)
+
+        button.addEventListener("click",crearElemento);
     </script>
 </body>
 </html>

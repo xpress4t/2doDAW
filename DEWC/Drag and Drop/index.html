@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #drag1 {
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        #dropzone {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="drag1" draggable="true" ondragstart="drag(event)">Arrastra</div>
+    <div id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">Suéltalo aquí</div>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault(); // Permite soltar en esta zona
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id); // Guarda el id del elemento arrastrado
+        }
+
+        function drop(event) {
+            event.preventDefault(); // Evita que el navegador maneje el evento por defecto
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data)); // Coloca el elemento en la zona
+        }
+    </script>
+
+</body>
+</html>
