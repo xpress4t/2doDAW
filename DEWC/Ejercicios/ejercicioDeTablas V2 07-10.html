@@ -16,11 +16,7 @@
     td{
         border: green 1px solid;
     }
-
-    img{
-        height: 100px;
-        width: 100px;
-    }
+ 
 </style>
 <body>
     <button>Púlsame</button>
@@ -32,26 +28,24 @@
             <th>Column 1</th>
             <th>Column 2</th>
         </tr>
-        <!--
-        <tr>
-            <td>1</td>
-            <td><img src="https://i.redd.it/pdpcowjrjrxc1.jpeg"></td>
-            <td><button>Botón 1</button></td>
-        </tr>
-        -->
     </table>
 
     <script>
-        let contador = 1
-        document.querySelector("button").onclick = () => {
-            let fila = document.createElement("tr")
-            fila.innerHTML = `<td>${contador++}</td>
+        let contador = 1;
+        const myButton = document.querySelector("button");
+
+        myButton.onclick = () => {
+            const fila = document.createElement("tr");
+            fila.innerHTML += `<td>${contador++}</td>
                               <td><img src="https://i.redd.it/pdpcowjrjrxc1.jpeg" width="100"></td>
                               <td><button>Botón ${contador-1}</button></td>`
             fila.querySelector("button").onclick = () => fila.remove()
             document.querySelector("table").appendChild(fila)
         }
-        document.querySelectorAll("table button").forEach(x => x.onclick = (event) => event.target.parentElement.parentElement.remove())
+        const tableButton = document.querySelectorAll("table button");
+        tableButton.forEach(x => x.onclick = (event) => {
+            event.target.parentElement.parentElement.remove()
+        })
     </script>
 </body>
 </html>

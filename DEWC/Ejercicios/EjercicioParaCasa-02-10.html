@@ -6,7 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+    <input id="1" class="numeros" type="checkbox">checkbox 1<br><br>
+    <input id="2" class="numeros" type="checkbox">checkbox 2<br><br>
+    <input id="3" class="numeros" type="checkbox">checkbox 3<br><br>
+    <input id="4" class="numeros" type="checkbox">checkbox 4<br><br>
+    <input id="5" class="numeros" type="checkbox">checkbox 5<br><br>
+    <input id="6" class="numeros" type="checkbox">checkbox 6<br><br>
+    <br>
+    <!-- Luigi -->
+    <!-- https://static.wikia.nocookie.net/mario/images/4/43/Luigi_NSMBUD_Artwork.webp/revision/latest?cb=20230911112822&path-prefix=es -->
+    <!-- Mario -->
+     <!-- -->
+
+    <button id="buttonFunc">Lanzar funcionalidad</button>
+
+    <div id="imagenContainer"></div>
+
     <script type="text/javascript">
+        const myButton = document.querySelector("#buttonFunc");
+        const myNumbers = document.querySelectorAll(".numeros");
+        const myImage = document.querySelector("#imagenContainer");
+
+        function pokemon(){
+            fetch("https://pokeapi.co/api/v2/")
+            .then(resultado => resultado.json())
+            .then(resultado => {
+                console.log(resultado)
+            })
+        }
+
+        function clicPares(){
+            myImage.innerHTML = "<img src= 'https://img.redbull.com/images/c_crop,x_528,y_0,h_1145,w_916/c_fill,w_450,h_600/q_auto:low,f_auto/redbullcom/2018/06/19/3419e56f-12ae-4ece-af83-94bb5721a9db/pyke-league-of-legends'>";
+        }
+
+        myImage.addEventListener("click",clicPares);
+        myButton.addEventListener("click",clicPares);
+
         /*
         Vamos a tener 6 inputs de tipo checkbox y un botón para lanzar la funcionalidad.
         Cuando se haga click sobre el botón hay que realizar la siguiente funcionalidad:

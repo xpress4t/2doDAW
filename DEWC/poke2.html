@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .contenedor {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .contenido {
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .imagenes {
+        display: flex;
+        justify-content: space-around;
+    }
+    .hover{
+        background-color: aquamarine;
+    }
+    .modal-body{
+        display: flex;
+        justify-content: space-around;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+
+<body >
+
+    <div class="imagenes"></div>
+    <br></br>
+    <h1>DAME LA ELECCION</h1>
+    <br></br>
+
+    <div class="contenedor">
+        
+        <div class="contenido" onclick="mostrarModal()"></div>
+
+    </div>
+    <div id="modal" class="modal" tabindex="-1" role="dialog" onclick="ocultarModal()">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                <span aria-hidden="true" >&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="imgModal">
+              </div>
+              <table>
+                <tbody id="tblModal">
+                </tbody>
+              </table>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+ 
+    <button class="mostrar info">Mostrar</button>
+    <script>
+        //COONTENIDO Y VARIABLES A USAR
+        var contenedor = document.querySelectorAll(".contenido")
+        var imgs = document.querySelector(".imagenes")
+        var imagenes = document.querySelectorAll(".imagenes img")
+        //VARIABLES PARA LA MODAL
+        var mostrar = document.querySelector(".mostrar")
+        var  myModal = new bootstrap.Modal(document.getElementById('modal'));
+        var titulo = document.querySelector(".modal-title")
+        var imagen = document.querySelector("#imgModal")
+        var tabla = document.querySelector("#tblModal")
+        //FUNCION PARA ABRIR LA MODAL
+        function mostrarModal(){
+            //PARA SACAR LOS ATTRIBUTOS
+            var contenido = contenedor[0].querySelector("img").attributes
+            console.log(contenido)
+            // PARA COMPROBAR SI EL CONTENEDOR DE LA MODAL ESTA LLENO
+            if(contenedor[0].children[0]!=undefined){
+                myModal.show()
+                console.log(contenido)
+                //AGREGAR CONTENIDO A LA MODAL 
+                titulo.innerHTML = contenido["titulo"].textContent
+                imagen.innerHTML = "<img src="+contenido["src"].value+">"
+                //var cont=""
+                //RECORRIDO PARA AGREGAR LOS ATRIBUTOS A LA TABLA DE LA MODAL
+                for(var i=3;i<contenido.length;i++ ){
+                    console.log(contenido[i])
+                    tabla.innerHTML +="<tr>"+contenido[i].name+"=" +contenido[i].value+" </tr><br>"
+                    /*cont += "<tr>"+contenido[i].name+"=" +contenido[i].value+" </tr><br>"*/
+                }
+                /*tabla.innerHTML = cont*/
+            }else{
+                // SI NO LO ESTA MANDA ALERTA
+                alert("El mostrar esta vacio")
+            }
+        }
+        //OCULTAR MODAL
+        function ocultarModal(){
+            // VACIAR TABLA PARA QUE MUESTRE SOLO LA INFORMACION DEL POKEMON SELECCIONADO
+            tabla.innerHTML = ""
+            myModal.hide()
+        }
+        // PARA EL BOTON MOSTRAR
+        mostrar.addEventListener("click",mostrarModal)
+        // FETCH PARA SACAR LOS OBJETOS POKEMONS
+        fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200").then(personajes => {
+            // JSON PARA SACAR LAS URL
+            return personajes.json()
+        }).then((personajes) => {
+            //VER CUANTOS RESULTS EXISTEN EN PERSONAJES
+            console.log(personajes.results.length)
+            //ALMACENADOR PARA LOS NUMERO ALEATORIOS
+            var aleatorios = []
+            // SOLO TRES NUMEROS DE LA CANTIDAD DE RESULTADOS
+            for (var i = 0; i < 3; i++) {
+                // NUMERO ALEATORIO QUE SALGA DE LA CANTIDAD DE RESULTADO MATH.FLOOR PARA QUE EL NUMERO SEA ENTERO
+                var aleatorio = Math.floor(Math.random() * personajes.results.length)
+                aleatorios.push(aleatorio)
+            }
+            console.log(aleatorios)
+            // ENTRO A PERSONAJES URLS
+            personajes.results.forEach(urls => {
+                // FETCH DE TODAS LAS URL
+                fetch(urls.url).then((url) => {
+                    return url.json()
+                }).then((personajes) => {
+                    // USO LOS NUMEROS ALEATORIOS 
+                    aleatorios.forEach(aleatorio => {
+                        //COMPARO SI LA ID Y EL NUMERO ALMACENADO COHINCIDEN
+                        if (aleatorio == personajes.id) {
+                            console.log(personajes)
+                            // AGREGAR DATOS
+                            var habilidad =""
+                            var datosExtra =""
+                            // DATOS HABILIDAD , ESTADISTICAS Y FOTO PARA EL CONTENEDOR DIV
+                            for(var i = 0;i<personajes.stats.length;i++){
+                                // AGREGAR EN UNA VARIABLE LAS ESTADISTICAS
+                                datosExtra += " "+personajes.stats[i].stat.name+"="+personajes.stats[i].base_stat+" "
+                            }
+                            // SACAR HABILIDADES Y USO DEL CONTADOR PARA QUE SALGA CADA HABILIDAD EN UNA CLASE DIFERENTE
+                            var contador = 0
+                            personajes.abilities.forEach(e => {
+                                contador++
+                                // AGREGAR HABILIADA AL CONTENEDOR HABILIDAD
+                                habilidad += "habilidad"+contador+"= "+e.ability.name +" "
+                            }); 
+                            console.log(habilidad)
+                            //AGREGAR TODAS LAS IMAGENES EN EL DIV Y ADEMAS EL USO DEL DRAGENTER DRAGLEAVE DRAGOVER Y DROP PARA EL DIV QUE PERMITA EL MOVIMIENTO ENTRE CUADROS DE USO 
+                            //USO DEL DRAGSTART PARA QUE LA IMAGNES PUEDA SALIR DEL RECUADRO Y AGREGAR LOS ATRIBUTOS EN LA IMAGEN 
+                            imgs.innerHTML += "<div class=contenido ondragenter = dragenter() ondragleave = dragLeave() ondragover = dragover(this) ondrop = drop(this) class=contenido><img ondragstart=dragstart(this) src =" + personajes.sprites.other.dream_world["front_default"] + " titulo ="+personajes.name+" "+datosExtra +habilidad+"></div>"
+                        }
+                    });
+                })
+            })
+        })
+
+        //SE CREA PARA EL CONTENIDO DENTRO DEL FETCH YA QUE NO SE PUEDEN USAR FUERA LAS VARIABLES DE LA IMAGEN 
+        // CONTENEDOR DE LA IMAGNE Y EL PADRE DE LA IMAGEN (DIV)
+        var img = ""
+        var contenedorDiv = ""
+        // FUNCION DRAGSTART PARA EMPEZAR EL COGER IMAGEN
+        function dragstart(htmlElement) {
+            // ALMACENAMIENTO DEL ELEMENTO IMAGNE DENTRO DEL CONTENEDOR IMG Y EL PADRE DE LA IMAGEN(DIV) EN EL CONTENEDORDIV
+            img = htmlElement
+            contenedorDiv = htmlElement.parentElement
+            console.log(contenedorDiv)
+        }
+        //DROP PARA QUE EL DEJAR LA IMAGEN EL RECUADRO SELECCIONADO
+        function drop(e) {
+            // CONDICION DE QUE SI EL DIV CONTENEDOR NO CONTIENE IMANGE PUES QUE SE AGREGUE SINO QUE SE QUEDE EN SU CONTENEDOR
+           if(e.querySelectorAll("img").length<=1){
+            e.appendChild(img)
+           }else{
+                contenedorDiv.appendChild(img)
+           }
+        }
+        // FUNCION DRAGOVER PARA EL USO DEL E.PREVENTDEFAULT(), ES NECESARIO EL USO DEL ADDEVENT POR QUE EL HTMLELEMENT POR SI SOLO NO ACCEDE AL PREVENDEFAULT
+        function dragover(htmlElement) {      
+            htmlElement.appendChild(img)
+            htmlElement.addEventListener("dragover",(e)=>{
+                e.preventDefault()
+            })
+        }
+        // PARA EL ENTER
+        function dragenter() {
+        }
+        // PARA EL LEAVE
+        function dragLeave() {
+        }
+        // PARA EL CONTENEDOR EL USO DEL ADDEVENT CON LOS EVENTOS DRAG AND DROP POR SEPARADO 
+        // SE CREA DENUEVO POR QUE SE USA PARA EL ELEMENTO QUE SI EXISTE 
+        contenedor.forEach(contenido => {
+            contenido.addEventListener("dragenter", (e) => {
+            })
+            contenido.addEventListener("dragleave", (e) => {
+            })
+            contenido.addEventListener("dragover", (e) => {
+                e.preventDefault()
+            })
+            contenido.addEventListener("drop", (e) => {
+                console.log(e.target.tagName)
+                if(contenido.querySelectorAll("img").length<1){
+                    contenido.appendChild(img)
+                }else{
+                    e.preventDefault()
+                    console.log(e.target)
+                    alert("sitio ocupado")
+                }  
+            })
+        })
+    </script>
+</body>
+</html>
