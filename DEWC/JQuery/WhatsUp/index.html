@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .usuario1 {
+        color: red
+    }
+
+    .usuario2 {
+        color: blue
+    }
+
+    .usuario3 {
+        color: green
+    }
+</style>
+
+<body>
+    <div>
+        <div class="usuario1">
+            <input type="checkbox" > Usuario 1
+        </div>
+        <div class="usuario2">
+            <input type="checkbox"> Usuario 2
+        </div>
+        <div class="usuario3">
+            <input type="checkbox"> Usuario 3
+        </div>
+        <input type="text" id="textoAñadir">
+        <button id="send">Enviar</button>
+        <button id="exit">Salir del chat</button>
+    </div>
+    <div id="historialChat">
+        
+    </div>
+    <script>
+        /*
+        Ejercicio 1: Simular chat de youtube.
+        -	Crea una web que simule un chat entre 3 personas.
+        -	La simulación será a partir de un checkbox, el cual solo permitirá que 1 de ellos esté seleccionado.
+        -	El usuario 1 se coloreará en azul, el usuario 2 en rojo y el 3 en verde. Cada usuario tendrá definido un icono diferente.
+        -	Además, tendrá un input de tipo texto y un botón a su lado.
+        -	Cada vez que pulsemos sobre el botón recogeremos el texto del input y lo añadiremos al “historial” del chat. Deberemos tener en cuenta el icono y el color de cada usuario.
+        -	Por último, se pondrá un botón de “salir del chat” el cual eliminará todos los mensajes del usuario correspondiente y su checkbox.
+
+        */
+        $("input[type='checkbox']").on("click", function () {
+            //este evento sirve para tener un solo checkbox seleccionado
+            $("input[type='checkbox']").prop("checked", false)
+            $(this).prop("checked", true)
+        })
+        
+
+
+
+
+
+
+
+
+        $("#send").on("click", function () {
+            //recojo el valor del input de tipo texto
+            var txt = $("#textoAñadir").val()
+            if (!txt) {
+                alert("No has puesto ningún mensaje")
+                return
+            }
+            //recojo la clase del input que esté seleccionado
+            var colorClase = $("input[type='checkbox']:checked").parent().attr("class")
+            if (!colorClase) {
+                alert("No has seleccionado ningún usuario")
+                return
+            }
+            //añado el texto como un nuevo parrafo
+            $("#historialChat").append("<p class='" + colorClase + "'>" + txt + " </p>")
+            //reseteo el input del texto
+            $("#textoAñadir").val("")
+            $("input[type='checkbox']").prop("checked", false)
+        })
+
+
+        
+        $("#exit").on("click", function(){
+            //recojo el color del checkbox marcado y eliminto todo lo que tenga esa clase
+            var colorClase = $("input[type='checkbox']:checked").parent().attr("class")
+            if (!colorClase) {
+                alert("No has seleccionado ningún usuario")
+                return
+            }
+            $("."+colorClase).remove()
+        })
+    </script>
+</body>
+
+</html>

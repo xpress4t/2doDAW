@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./codigo.js" defer></script>
+</head>
+<h1>Emmanuel</h1>
+<!-- sprites.other.showdown.front_default Animacion del pokemon 
+     sprites.front_default Pokemon estático
+     
+-->
+<style>
+    .boxContainer{
+        border: solid 2px red;
+        height: 40vh;
+        display: flex;
+    }
+    
+    .box1{
+        border: solid 2px rgb(161, 161, 161);
+        width: 50vw;
+        height: 35vh;
+        margin: 1rem;
+    }
+    
+    .box2{
+        width: 50vw;
+        height: 40vh;
+    }
+    
+    #detalles-pokemon img{
+        width: 100px;
+    }
+</style>
+<body>
+    <div class="boxContainer">
+        <div class="box1" id="imagen-pokemon"></div>
+        <div class="box2" id="info-zone">
+            <div id="pokemon-details"></div>
+        </div>
+    </div>
+    <div id="pokemon-list"></div>
+</body>
+</html>

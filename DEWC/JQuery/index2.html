@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    .div2 {
+        position: absolute;
+        height: 90px;
+        border: 1px solid black;
+        width: 200px;
+        margin: 5px;
+        left: 50px;
+        top:200px;
+    }
+</style>
+
+<body>
+    <button>btn0</button>
+    <button id="btn" class="class">btn1</button>
+    <button class="clase1 clase2">btn2</button>
+    <input type="text">
+    <button id="mostrar">mostrar</button>
+    <button id="ocultar">ocultar</button>
+    <!--<button id="arriba">arriba</button>
+    <button id="abajo">abajo</button>
+-->
+
+
+    <div id="div"></div>
+    <div id="div1" style="display: none;">HOLA OCULTO!</div>
+    <button id="right"> <--</button>
+    <button id="left"> --> </button>
+    <button id="arriba"> arriba</button>
+    <button id="abajo"> abajo</button>
+
+    <div class="div2"></div>
+
+    <script>
+        $("#left").on("click", function () {
+            $(".div2").animate({
+                left: "+=50px"
+            }, "slow");
+        })
+        $("#right").on("click", function () {
+            $(".div2").animate({
+                left: "-=50px"
+            }, "slow");
+        })
+        $("#arriba").on("click", function () {
+            $(".div2").animate({
+                top: "-=50px"
+            }, "slow");
+        })
+        $("#abajo").on("click", function () {
+            $(".div2").animate({
+                top: "+=50px"
+            }, "slow");
+        })
+
+        $("button").one("click", function (e) {
+            console.log(e.target)
+
+        })
+
+        //PARA MODIFICAR UN INPUT Y CAMBIAR SU VALUE
+        $("input").val("hoOla")
+
+        //para asignar cualquier cosa
+
+        //para seguir añadiendo cosas a mi parrafo
+        //Al principio 
+        $("#div").prepend("<p>antes de todo!!</p>")
+        //hmtl para agregar informacion o recogerla
+        $("#div").html("<p>hola amigos</p>")
+
+        //append agrega al final manteniendo lo que tenga
+        $("#div").append("<p>despues de todo")
+        // Interruptor para poner y quitar clases 
+        $("#div").toggleClass("claseMaravillosa")
+        //Funcion recomendada
+        $("button").on("click", function (e) {
+            console.log(e.target)
+        })
+        //Funcion click
+        $("#div").click(function () {
+            console.log("hola")
+        })
+        $("#div").hover(function () {
+            console.log("hola")
+        })
+        $("#div").on("click", function () {
+            $("#div1").show(10000)
+        })
+        $("#mostrar").on("click", function (e) {
+            $("#div1").animate({
+                width: "200px",     // Cambia el ancho
+                height: "200px",    // Cambia la altura
+                opacity: 0.5,      // Cambia la opacidad
+                // La animación durará 1000 milisegundos
+            }, 1000);
+        })
+
+        $("#ocultar").on("click", function (e) {
+            $("#div1").hide(1000)
+        })
+        $("#arriba").on("click", function (e) {
+            $("#div1").fadeOut(1000)
+            $("#div1").show(1000)
+
+        })
+        $("#abajo").on("click", function (e) {
+            $("#div1").fadeIn(1000)
+            $("#div1").show(1000)
+
+        })
+
+
+    </script>
+</body>
+
+</html>
