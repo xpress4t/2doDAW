@@ -1,0 +1,31 @@
+#contenedorGeneral{
+    height: 500px;
+    border: 1px solid red;
+    display: flex
+}
+#contenedorImg{
+    width: 50%;
+    border: 1px solid red;
+
+}
+#caracteristicas{
+    width: 50%;
+    border: 1px solid red;
+}
+#pokemonABuscar{
+    margin: 50px;
+    height: -webkit-fill-available;
+    border: 1px solid black;
+}
+.grande{
+    height: 150px;
+    width: 150px;
+}
+#caracteristicas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.divInfo{
+    margin: 20px;
+}

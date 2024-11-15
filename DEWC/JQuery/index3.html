@@ -1,11 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>animate demo</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo animada</title>
+  </head>
   <style>
   div {
     position: absolute;
-    background-color: #abc;
+    background-color: rgb(0, 0, 0);
     left: 50px;
     width: 90px;
     height: 90px;
@@ -13,22 +16,19 @@
   }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-</head>
-<body>
- 
-<button id="left">&laquo;</button>
-<button id="right">&raquo;</button>
-<div class="block"></div>
- 
-<script>
-$( "#right" ).on( "click", function() {
-  $( ".block" ).animate({ "left": "+=50px" }, "slow" );
-});
- 
-$( "#left" ).on( "click", function(){
-  $( ".block" ).animate({ "left": "-=50px" }, "slow" );
-});
-</script>
- 
-</body>
-</html>
+  <body>
+  <button id="left">&laquo;</button>
+  <button id="right">&raquo;</button>
+  <div class="block"></div>
+  
+  <script>
+    $( "#right" ).on( "click", function() {
+      $( ".block" ).animate({ "left": "+=50px" }, "slow" );
+    });
+     
+    $( "#left" ).on( "click", function(){
+      $( ".block" ).animate({ "left": "-=50px" }, "slow" );
+    });
+  </script>
+  </body>
+  </html>
