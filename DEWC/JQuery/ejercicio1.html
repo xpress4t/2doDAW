@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <button id="limpiarTareas">Limpiar completadas</button>
+    <input type="text" id="taskInput" placeholder="Escribe algo caunsa">
+    <button id="addTask">Agregar tarea</button>
+
+   
+    <h2 id="tareasPendientes">Pendientes: </h2>
+    <div id="taskList"></div>
+    <h2 id="tareasTerminadas">Terminadas: </h2>
+
+    <script>
+        $("#addTask").on("click",function(){
+            const taskText = $("#taskInput").val().trim();
+            $("#taskList").append(`<p></p><input type="checkbox"></input> <button>Borrar tarea</button>`);
+        })
+        
+    </script>
+</body>
+</html>

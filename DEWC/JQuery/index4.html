@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #contenedor{
+            background: rgb(212, 215, 255);
+        }
+    </style>
+
+    <button id="btn">Agregar</button>
+    <div id="contenedor"></div>
+
+    <script>
+        $("#btn").on("click",function(){
+            $("#contenedor").append("<p>HOLA!!</p> <button>asasasas</button>")
+        })
+
+        $("#contenedor").on("click","p,button",function(){
+            $(this).addClass("colorFondo")
+        })
+    </script>
+</body>
+</html>
