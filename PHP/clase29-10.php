@@ -21,10 +21,10 @@
 
     echo "<h2>Bucle WHILE</h2>";
     // Bucle while 
-    $index = 0;
-    while($index <= 10){
-        echo "<p>El contador vale: $index </p>";
-        $index++;
+    $a = 0;
+    while($a <= 10){
+        echo "<p>El contador vale: $a </p>";
+        $a++;
     }
 
     echo "<h2>Bucle FOR</h2>";
@@ -59,4 +59,31 @@
     for ($i = 1; $i <= 10; $i++) {
         echo "<p>$numero x $i = " . ($numero * $i) . "</p>";
     }
+
+    echo "<h2>Pirámide</h2>";
+
+    $altura = 5;
+
+        for ($m=1;$m<=$altura;$m++){
+            for($n=1;$n<=(2*$m-1);$n++){
+                echo "*";
+            }
+            echo "<br>";
+        }
+?>
+
+<?php
+$var1 = 6;
+$var2 = 9;
+$operador = "+";
+
+if($operador == "+"){
+    echo "El resultado de la suma $var1 + $var2 es: ".$var1+$var2;
+}else if($operador == "-"){
+    echo "El resultado de la resta $var1 - $var2 es: ".$var1-$var2;
+}else if($operador == "*"){
+    echo "El resultado de la multiplicación $var1 * $var2 es: ".$var1*$var2;
+}else if($operador == "/"){
+    echo "El resultado de la división $var1 / $var2 es: ".$var1/$var2;
+}
 ?>

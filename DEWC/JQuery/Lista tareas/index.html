@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btnLimpiarCompletadas">Limpiar completadas</button>
+        <input type="text" id="inputAgregarTarea">
+        <button id="btnAgregarTarea">Agregar tarea</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th> tareas pendientes - <label id="numTareasPendientes"></label></th>
+            </tr>
+        </thead>
+        <tbody id="tareasPendientes">
+            <tr>
+                <td> tarea 1 <input type="checkbox"><button>borrar tarea</button></td>
+            </tr>
+            <tr>
+                <td> tarea 2 <input type="checkbox"><button>borrar tarea</button></td>
+            </tr>
+            <tr>
+                <td> tarea 3 <input type="checkbox"><button>borrar tarea</button></td>
+            </tr>
+            <tr>
+                <td> tarea 4 <input type="checkbox"><button>borrar tarea</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+    <table>
+        <thead>
+            <tr>
+                <th> tareas finalizadas - <label id="numTareasFinalizadas"></label></th>
+            </tr>
+        </thead>
+        <tbody id="tareasFinalizadas">
+            
+        </tbody>
+    </table>
+    <script>
+        /*
+        
+        Ejercicio 3: Aplicación de Lista de Tareas
+        -	Muestra una lista de tareas pendientes en una interfaz de usuario.
+        -	Permite al usuario agregar nuevas tareas a la lista. Para hacerlo, 
+                debe haber un campo de texto y un botón "Agregar Tarea".
+        -	Cada tarea debe tener un checkbox que permita marcarla como completada.
+        -	Al hacer clic en una tarea marcada como completada, esta deberá pasar a 
+                una sección de "Tareas Completadas".
+        -	Proporcionar un botón "Eliminar Tarea" junto a cada tarea, que permita eliminar 
+                una tarea de la lista.
+        -	Mantener un contador que muestre la cantidad total de tareas pendientes
+                y la cantidad de tareas completadas.
+        -	Validar que no se puedan agregar tareas vacías a la lista.
+        -	Proporcionar un botón "Limpiar Completadas" que permita eliminar todas 
+                las tareas completadas de la lista.
+
+        */
+
+
+        $("tbody").on("click", "input[type='checkbox']", function(){            
+            var tareaCompletada=$(this).closest("tr");
+            if($(this).prop("checked")){
+                $("#tareasFinalizadas").append(tareaCompletada)
+            }else{
+                $("#tareasPendientes").append(tareaCompletada)
+            }
+            numTareasPendientesYCompletadas()
+        })
+
+        function numTareasPendientesYCompletadas(){
+            var numFinalizadas=$("#tareasFinalizadas").find("tr").length;
+            var numPendientes=$("#tareasPendientes").find("tr").length;
+            $("#numTareasPendientes").text(numPendientes)
+            $("#numTareasFinalizadas").text(numFinalizadas)
+        }
+        
+        $("#btnAgregarTarea").on("click",function(){
+            var nuevaTarea=$("#inputAgregarTarea").val()
+            if(!nuevaTarea)
+                return
+            $("#tareasPendientes").append("<tr><td>"+nuevaTarea+" <input type='checkbox'><button>borrar tarea</button></td></tr>")
+            numTareasPendientesYCompletadas()
+            $("#inputAgregarTarea").val("")
+        })
+        $("tbody").on("click", "button", function(){
+            $(this).closest("tr").remove()
+            numTareasPendientesYCompletadas()
+        })
+        $("#btnLimpiarCompletadas").on("click", function(){
+            $("#tareasFinalizadas").html("")
+            numTareasPendientesYCompletadas()
+        })
+        numTareasPendientesYCompletadas()
+    </script>
+</body>
+</html>

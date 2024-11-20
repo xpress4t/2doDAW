@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Lista de elementos con funcionalidad:
+1.	Debes proporcionar una forma de introducir un texto y un botón para enviar
+2.	A este elemento pon una etiqueta con el texto de “Agregar elemento”
+En el momento de que se haga click sobre el botón se debe hacer lo siguiente:
+1.	En caso de que el input este vacío no hacer nada.
+2.	En caso contrario agregar ese elemento a una lista con dos botones: "Eliminar" y "Marcar como importante".
+3.	Si un elemento está marcado como importante (con fondo dorado), no debe eliminarse al hacer clic en el botón "Eliminar". Debes quitar la marca de importante.
+4.	Si un elemento no está marcado como importante (sin fondo dorado), debe eliminarse al hacer clic en el botón "Eliminar".
+5.	Vaciar el input en cuanto se agregue el elemento a la lista
+
+Cada elemento tendrá un icono con un candado.
+Cuando pulsemo sobre el candado esperaremos 1.5s para ocultarlo.
+Si hemos pulsado el candado y ha desaparecido no podremos interactuar con el resto de botones, los cuales seguirán visibles
+
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Lista de Elementos</title>
+    <style>
+        .importante {
+            background-color: gold;
+        }
+
+        .candado {
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .bloqueado {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="elemento">Agregar elemento:</label>
+        <input type="text" id="elemento">
+        <button id="agregar">Agregar</button>
+    </div>
+    <ul id="lista">
+        <!-- Aquí se mostrarán los elementos agregados -->
+    </ul>
+    <script>
+        // Función para agregar un elemento a la lista
+        $("#agregar").on("click", function () {
+            var elemento = $("#elemento").val();
+            if (elemento) {
+                // Crear un nuevo elemento de lista
+                var nuevoElemento = $(`
+                    <li>
+                        ${elemento} 
+                        <button class='eliminar'>Eliminar</button> 
+                        <button class='btnImportante'>Marcar como importante</button>
+                        <span class="candado">🔓</span>
+                    </li>
+                `);
+
+                // Agregar el nuevo elemento a la lista
+                $("#lista").append(nuevoElemento);
+
+                // Limpiar el campo de entrada
+                $("#elemento").val("");
+            }
+        });
+
+        // Eliminar un elemento
+        $("#lista").on("click", ".eliminar", function () {
+            var elemento = $(this).parent();
+            if(elemento.hasClass("bloqueado")) return
+            if (!elemento.hasClass("importante") && !elemento.hasClass("bloqueado")) {
+                elemento.remove();
+            } else if (elemento.hasClass("importante")) {
+                elemento.removeClass("importante");
+            }
+        });
+
+        // Marcar como importante
+        $("#lista").on("click", ".btnImportante", function () {
+            if($(this).parent().hasClass("bloqueado")) return
+            $(this).parent().toggleClass("importante");
+        });
+
+        // Funcionalidad del candado
+        $("#lista").on("click", ".candado", function () {
+            var candado = $(this);
+            candado.css("font-size", "20px"); // Aumentar tamaño
+            setTimeout(function () {
+                candado.fadeOut(500, function () {
+                    candado.parent().addClass("bloqueado"); // Bloquear elemento
+                    candado.remove(); // Eliminar el candado
+
+                });
+            }, 1500); // Desaparece tras 1.5 segundos
+        });
+    </script>
+</body>
+</html>

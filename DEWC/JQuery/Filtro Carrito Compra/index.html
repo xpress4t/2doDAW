@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<style>
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .imgAmpliada {
+        width: 550px;
+        height: 550px;
+    }
+</style>
+
+<body>
+    <div>
+        <select name="" id="filtro">
+            <option value="todo">Mostrar todo</option>
+            <option value="coche">Coches</option>
+            <option value="guitarra">Guitarras</option>
+        </select>
+        <button id="mostrarTodasImagenes">Mostrar todas las imagenes</button>
+        <button id="resetearImagen">Resetear tamaño imagenes</button>
+    </div>
+    <div>
+        <img class="todo coche" src="./img/coche1.jpg">
+        <img class="todo coche" src="./img/coche2.jpg">
+        <img class="todo coche" src="./img/coche3.jpg">
+        <img class="todo coche" src="./img/coche4.jpg">
+        <img class="todo guitarra" src="./img/guitarra1.jpg">
+        <img class="todo guitarra" src="./img/guitarra2.jpg">
+        <img class="todo guitarra" src="./img/guitarra3.jpg">
+    </div>
+    <script>
+        /*
+        Ejercicio 5: Galería de Imágenes con Filtros
+        -	Muestra una selección de imágenes en la página, cada una con una etiqueta o categoría asociada.
+        -	Proporcionar botones o un menú desplegable que permita a los usuarios seleccionar una categoría.
+        -	Al seleccionar una categoría, solo se deben mostrar las imágenes asociadas a esa categoría.
+        -	Incluir un botón "Mostrar Todas" para restaurar la visualización de todas las imágenes.
+        -	Implementar un efecto de animación suave al cambiar entre las imágenes, como un fundido suave.
+        -	Proporcionar una opción para ampliar las imágenes haciendo clic en ellas.
+        -	Permitir a los usuarios cerrar la imagen ampliada con un botón de cierre o haciendo clic fuera de la imagen ampliada.
+
+        */
+        $("#mostrarTodasImagenes").on("click",function(){
+            $("img").show()
+        })
+        $("#filtro").on("change", function(){
+            var filtro=$("#filtro").val()
+            $("img").hide()
+            $("img."+filtro).show()
+        })
+        $("#resetearImagen").on("click",function(){
+            $("img").removeClass("imgAmpliada")
+        })
+        $("img").on("click",function(e){        
+            $("img").removeClass("imgAmpliada")
+            $(this).addClass("imgAmpliada")
+        })
+        
+    </script>
+</body>
+</html>
