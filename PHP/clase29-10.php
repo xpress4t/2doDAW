@@ -87,3 +87,32 @@ if($operador == "+"){
     echo "El resultado de la división $var1 / $var2 es: ".$var1/$var2;
 }
 ?>
+
+<?php
+	echo "<h1>Sumatoria de pares e impares</h1>";
+	$sumaImpares = 0;
+	$sumaPares = 0;
+	
+	for ($numero=1; $numero <= 1000; $numero++) { 
+		if ($numero%2==0) {
+			$sumaPares += $numero;
+			// $sumaPares = $sumaPares + $numero;
+		}else{
+			$sumaImpares += $numero;
+			// $sumaImpares = $sumaImapres + $numero;
+			// $sumaImpares = 0 + 1
+			// $sumaImpares = 1 + 3
+			// $sumaImpares = 3 + 5
+			// $sumaImpares = 5 + 7
+			//         -
+			//         -
+			//         -
+			//         -
+			//         -
+			// 1 + 3 + 5 + 7 + 9 + .......
+		}
+	}
+
+	echo "<p>Sumatoria de números pares hasta el 1000: " .$sumaPares."</p>";
+	echo "<p>Sumatoria de números impares hasta el 1000: " .$sumaImpares."</p>";
+?>

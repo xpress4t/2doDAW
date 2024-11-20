@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    body {
-        font-family: Calibri;
-        font-size: 16px;
-    }
-</style>
-
 <body>
     <?php
     // Funciones para contar caracteres de un texto
