@@ -17,3 +17,4 @@ for ($tabla = $min; $tabla <= $max; $tabla++) {
         echo "<p>$tabla x $i = $resultado</p>";
     }
 }
+?>
