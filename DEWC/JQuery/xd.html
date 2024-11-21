@@ -10,10 +10,8 @@
     <h1 id="mensaje">Yeicueri</h1>
     <button id="cambiarTexto">Cambiar</button>
     <script>
-        $(document).ready(function(){
-            $("#cambiarTexto").click(function(){
-                $("#mensaje").text("Texto cambiadooo")
-            })
+        $("#cambiarTexto").on("click",function(){
+            $("#mensaje").text("texto cambiado").css("color","red");
         })
     </script>
 </body>

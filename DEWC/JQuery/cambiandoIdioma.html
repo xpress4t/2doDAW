@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <select id="idiomas">
+        <option value="esp">Español</option>
+        <option value="en">English</option>
+    </select>
+
+    <div class="texto1">
+        <p id="saludo">Holaaaa</p>
+    </div>
+
+    <script>
+        var idiomas = {
+            esp:{
+                "f1":"hola, buenos dias"
+            },
+
+            en:{
+                "f1":"hello, good morning"
+            }
+        }
+
+        $("#idiomas").on("change",function(){
+            var idiomaSeleccionado = $(this).val();
+            if(idiomaSeleccionado === "esp" || idiomaSeleccionado === "en"){
+                $("#saludo").text(idiomas[idiomaSeleccionado].f1);
+            }
+        })
+    </script>
+</body>
+</html>
