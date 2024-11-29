@@ -6,8 +6,10 @@
     <title>php</title>
 </head>
 <style>
+    body{
+        font-size: 24px;
+    }
     .piramide{
-    background-color: rgb(58, 58, 58);
     color: rgb(7, 170, 7);
     height: 300px;
     width: 300px;
@@ -32,5 +34,20 @@
             }
         ?>
     </div>
+    <br>
+    <br><br>
+
+    <?php
+        $array_asociativo = ["key1" => "value1", "key2" => "value2", "key3" => "value3"];
+        $valor = "value2";
+        if(in_array($valor,$array_asociativo)){
+            echo "El valor `$valor` value se encuentra en tu array asociativo :)";
+        }else{
+            echo "El valor `$valor` no se encuentra en tu array asociativo :(";
+        }
+        // para acceder a una variable enviada a traves de n formulario 
+        // $_POST["nombre"]
+        // método para enviar datos a través de una URL --> GET
+    ?>
 </body>
 </html>
