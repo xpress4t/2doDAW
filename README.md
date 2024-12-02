@@ -1,4 +1,4 @@
-# 2do-a-o-de-DAW
+# 2doDAW
 ✔ Apuntes de 2do curso de Daw ✔
 
 <?php
