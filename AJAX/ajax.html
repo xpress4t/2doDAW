@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        //$.ajax() funcion del jquery es como el fetch
+        $.ajax({
+            url : "https://rickandmortyapi.com/api/character",
+            method : "GET", //puede ser GET O POST el get es el predeterminado,
+            data:{ //parametros que se van a añadir a la url
+                name: "Rick Sanchez"
+            },
+            dataType : "JSON",
+            success: function(data){
+                console.log(data)
+            },
+            error: function(data){}
+        })
+    </script>
+</body>
+</html>
