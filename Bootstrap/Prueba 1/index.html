@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    .col-box {
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+   
+      }
+   
+      .row-1 {
+        background-color: #f8d7da;
+        /* Rojo claro */
+      }
+   
+      .row-2 {
+        background-color: #d4edda;
+        /* Verde claro */
+      }
+   
+      .row-3 {
+        background-color: #cce5ff;
+        /* Azul claro */
+      }
+   
+      .row-4 {
+        background-color: #fff3cd;
+        /* Amarillo claro */
+      }
+   
+      .row-5 {
+        background-color: #e2e3e5;
+        /* Gris claro */
+      }
+      .image{
+            width: 100px;
+            height: 100px;    
+      }
+</style>
+<body>
+    <!-- COL 10 usaré 10 columnas
+    COL 1 usaré 1 columna
+    ROW 1 usaré 1 fila 
+    -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row row-1">
+            <div class="col-5 col-box">
+                <div class="col-sm-12 col-lg-4 d-flex justify-content-center align-content-center bg-danger">
+                    <img src="https://via.placeholder.com/150" alt="">
+                </div>
+                <div class="col-sm-12 col-lg-8">
+                    <h1>Nombre: Diachi</h1>
+                    <p>Descripción: X</p>
+                    <p>A</p>
+                    <p>A</p>
+                    <p>A</p>
+                    <p>A</p>
+                    <p>A</p>
+                    <p>A</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
