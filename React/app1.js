@@ -5,6 +5,9 @@ export const CustomForm = ({inputs}) => {
 
     return <form>
         {inputs && inputs.map((input, index) => {
-            )}
+            <div key={index}>
+                <CustomImputs input = {input}></CustomImputs>
+            </div>    
+        )}
     </form>
 }
