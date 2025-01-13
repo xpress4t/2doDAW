@@ -11,8 +11,8 @@ export const Producto = (({props}) => {
         }
     }   
     function fnSalir(e){
-        e.target.classList.add("hacerPequeño");
-        
+        e.target.classList.remove("hacerGrande");
+        e.target.classList.remove("hacerPequeño");
     }
     return <div>
         <h2>{props.producto.name}</h2>
