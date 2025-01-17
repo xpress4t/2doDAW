@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <input id="name" type="text" placeholder="Introduce un nombre">
+    <button id="add">Añadir</button>
+    <button id="remove">Eliminar</button>
+    <button id="removeAll">Eliminar todos</button>
+
+    <script>
+        var names = [];
+        $("#add").on("click",function(){
+            var name = $("#name").val();
+            if(!names.find(n => n == name)){
+                names.push(name);
+                $("#names").append("<li>"+name+"</li>");
+            }
+        })
+
+        $("#remove").on("click",function(){
+        })
+
+        $("#removeAll").on("click",function(){
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <!-- Crear Un botón que al hacer clic en el, desaparezca el texto del párrafo
+    y al hacer clic nuevamente, aparezca el texto del párrafo 
+    -->
+    <button>Ocultar</button>
+    <p>Al hacer clic en el botón, desapareceré. Y al hacer clic nuevamente, regresaré</p>
+    <p>Usando toggle en lugar de hide() & show()</p>
+
+    <script>
+        $("button").on("click",function(){
+            /* 
+            if($("#myContainer").is(":visible")){
+                $("#myContainer").hide();
+                $("#button").text("Mostrar");
+            }else{
+                $("#myContainer").show();
+                $("#button").text("Ocultar");
+            }
+            */
+            // Con esta opción puedo cambiar el texto del botón y hacer la misma acción que el toggle
+            $("button").text($("p").is(":visible") ? "Mostrar" : "Ocultar");
+            // Con este método hago lo mismo que un hide() y show()
+            $("p").toggle();
+        })
+    </script>
+</body>
+</html>
