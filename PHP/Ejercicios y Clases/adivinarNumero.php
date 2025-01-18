@@ -6,9 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Adivina el número</h1>
     <?php
-    
     ?>
 </body>
 </html>
