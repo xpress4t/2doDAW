@@ -1,0 +1,9 @@
+.city{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    margin-left: 25%; /*Centrar el div*/
+}

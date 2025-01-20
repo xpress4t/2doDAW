@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <style>
+    .contenido {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    body {
+      padding: 0 20%;
+      text-align: center;
+      background-color: whitesmoke;
+    }
+    h1 {
+      color: rgb(25, 89, 150);
+    }
+    .buscar,
+    .botonEpisodios,
+    .verPersonajes {
+      padding: 10px;
+      color: white;
+      background-color: rgb(24, 137, 243);
+      border: 0px solid black;
+      border-radius: 5px;
+    }
+    img {
+      border-radius: 10px;
+    }
+    .personaje {
+      border-radius: 10px;
+      border: 1px solid black;
+      box-shadow: 10px 10px 10px;
+    }
+    .titEpi {
+      color: rgb(25, 89, 150);
+    }
+    .episodios,
+    .mostrarEpi {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    .episodio {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 5px;
+      width: 300px;
+    }
+    .verEpisodio {
+      padding: 10px;
+      color: white;
+      background-color: rgb(75, 131, 183);
+      border: 3px solid black;
+      border-radius: 20px;
+    }
+    .buscador {
+      padding: 7px;
+    }
+    .ocultar {
+      display: none;
+    }
+    .conFiltrado {
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <div class="contenedor">
+      <h1>Rick y Morty API</h1>
+      <input type="text" class="buscador" />
+      <button class="buscar">Buscar</button>
+      <label>Filtrar<input type="checkbox" class="filtrar" /></label>
+      <div class="conFiltrado">
+        <label> Genero:</label>
+        <select class="generos">
+          <option value="">Selecciona un genero</option>
+          <option value="male">Hombre</option>
+          <option value="female">Mujer</option>
+          <option value="genderless">Variado</option>
+          <option value="unknown">Desconocido</option>
+        </select>
+        <label> Estado: </label>
+        <select class="estado">
+          <option value="">Selecciona un estado</option>
+          <option value="alive">Vivo</option>
+          <option value="dead">Muerto</option>
+          <option value="unknown">Desconocido</option>
+        </select>
+      </div>
+    </div>
+    
+    <div>
+      <div class="titEpi"><h1>Episodios de Rick y Morty</h1></div>
+      <button class="botonEpisodios">Cargar episodios</button>
+    </div>
+    <div class="contenido"></div>
+    <p class="errorDatos"></p>
+    <div class="episodios"></div>
+    <div class="mostrarEpi"></div>
+    <!--Etiqueta importante para hacer el scrol display none para que no se vea-->
+    <p class="prueba" style="display:none"></p>
+    <script>
+      //CHECKED NO HAY MAS DESCRIPCION
+
+      $(".conFiltrado").addClass("ocultar");
+      // FUNCION FILTRAR PARA MOSTRAR LOS FILTROS NECESARIOS
+      $(".filtrar").on("change", function () {
+        if ($(this).prop("checked")) {
+          $(".conFiltrado").removeClass("ocultar");
+        } else {
+          $(".conFiltrado").addClass("ocultar");
+        }
+      });
+      // Valores importantes PARA PODER USAR EL SCROLL 
+      var pagina = 1;
+      var inpBuscar;
+      var genero;
+      var estado;
+    //FUNCION PARA AGREGAR LOS PERSONAJES A UN CONTENEDOR
+      function mostrarPersonajes() {
+        $.ajax({
+          method: "GET",
+          url://NECESARIO PONERLO ASI SI QUIERES FILTRAR POR EL LINK
+            "https://rickandmortyapi.com/api/character/?page=" +
+            pagina +
+            "&name=" +
+            inpBuscar +
+            "&gender=" +
+            genero +
+            "&status=" +
+            estado,
+          data: {},
+          success: function (data) {
+            console.log(data);
+            var contenido = "";
+            $(data.results).each((e, valor) => {
+              contenido +=
+                "<div class=personaje><h2>" +
+                valor.name +
+                "</h2><img src=" +
+                valor.image +
+                "><p>Genero: " +
+                valor.gender +
+                "</p><p>Especie: " +
+                valor.species +
+                "</p><p>Estado: " +
+                valor.status +
+                "</p><p>" +
+                valor.created +
+                "</p></div>";
+            });
+            $(".contenido").append(contenido);
+          },
+          error: function (error) {
+            // MOSTRAR CUANDO YA NO ENCUENTRA DATOS
+            $(".errorDatos").html("No se han encontrado datos");
+          },
+        });
+      }
+    // CONDICIONES PARA IMPRIMIR EN LOS PERSONAJES
+      $(".buscar").on("click", function () {
+        // CONDICIONES PARA EL SCROLL Y PODER DEJAR LA BUSQUEDA DE CERO CUANDO ENVIE LOS DATOS
+        $(".mostrarEpi").html("");
+        $(".episodios").html("");
+        $(".contenido").html("");
+        inpBuscar = $(".buscador").val();
+        genero = $(".generos").val();
+        estado = $(".estado").val();
+        pagina = 1;
+        mostrarPersonajes();
+        pixeles = $(".contenido").height();
+        $(".conFiltrado").addClass("ocultar");
+        $(".errorDatos").html("");
+        $(".buscador").val("");
+        $(".estado").val("");
+        $(".genero").val("");
+        $(".filtrar").prop("checked", false);
+        //PARA AGREGAR EL NOMBRE DIV CONTENIDO
+        $(".prueba").html("contenido");
+      });
+      // SCROLL INFINITO PARA PODER AGREGAR LOS DATOS
+      $(window).on("scroll", function () {
+        var subida = $(window).height() + $(window).scrollTop();
+        var pixeles = $(document).height();
+        if (subida > pixeles - 10) {
+          pagina++;
+          // COMPARACION PARA LA ETIQUETA PRUEBA DE QUE SI SE LLAMA IGUAL A LA CLASE DIV MOSTRARA UNO O OTRO
+          if($(".prueba").text() == "contenido") {
+            mostrarPersonajes();
+          } else if ($(".prueba").text() == "episodios") {
+            buscarEpisodio();
+          }
+        }
+      });
+      // AGREGAR EPISODIOS
+      function buscarEpisodio() {
+        // DATO PARA LA ETIQUETA P PARA HACER EL SCROLL INFINITO
+        $(".prueba").html("episodios");
+        $.ajax({
+          method: "GET",
+          url: "https://rickandmortyapi.com/api/episode/?page=" + pagina,
+          data: {},
+          success: function (data) {
+            console.log(data);
+            var contenido = "";
+            $(data.results).each((e, valor) => {
+              contenido +=
+                "<div class=verEpisodio><h2>" +
+                valor.name +
+                "</h2><p>Episodio: " +
+                valor.episode +
+                "</p><p>Creado: " +
+                valor.created +
+                "</p><p>Fecha de Emision: " +
+                valor.air_date +
+                "</p><button class=verPersonajes episodios=" +
+                JSON.stringify(valor.characters) +
+                ">Ver personajes</button></div>";
+            });
+            $(".episodios").append(contenido);
+          },
+          error: function () {},
+        });
+      }
+      // FUNCION DEL BOTON CREADO PARA VER LOS PERSONAJES DE CADA EPISODIO
+      $(".episodios").on("click", ".verPersonajes", function () {
+        $(".mostrarEpi").html("");
+        var personajes = JSON.parse($(this).attr("episodios"));
+        $(personajes).each((e, valor) => {
+          console.log(valor);
+          $.ajax({
+            method: "GET",
+            url: valor,
+            data: {},
+            success: function (data) {
+              var contenido = "";
+              $(data).each((e, valor) => {
+                contenido +=
+                  "<div class=personaje><h2>" +
+                  valor.name +
+                  "</h2><img src=" +
+                  valor.image +
+                  "><p>Genero: " +
+                  valor.gender +
+                  "</p><p>Especie: " +
+                  valor.species +
+                  "</p><p>Estado: " +
+                  valor.status +
+                  "</p><p>" +
+                  valor.created +
+                  "</p></div>";
+              });
+              $(".mostrarEpi").append(contenido);
+            },
+          });
+        });
+      });
+      //FUNCION PARA AGREGAR LOS DATOS AL BOTON 
+      $(".botonEpisodios").on("click", function () {
+        $(".episodios").html("");
+        $(".contenido").html("");
+        $(".errorDatos").html("");
+        buscarEpisodio();
+      });
+    </script>
+  </body>
+</html>
