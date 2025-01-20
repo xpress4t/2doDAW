@@ -7,8 +7,7 @@ import {Boton} from './customComponents/Boton';
 import { Formulario } from './customComponents/Formulario';
 import { BotonConProp } from './customComponents/BotonConProp';
 import { BotonConProp2 } from './customComponents/BotonConProp2';
-import {Producto} from './Tienda/Producto';
-import {TiendaOnline} from './Tienda/TiendaOnline';
+import { BotonConClick } from './customComponents/BotonConClick';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -40,7 +39,6 @@ products.push({ id: 1, name: 'Laptop', price: 999.99, inStock: true, category: '
   { id: 6, name: 'Backpack', price: 39.99, inStock: false, category: 'Accessories', rating: 4.1 },   
   { id: 7, name: 'Coffee Maker', price: 89.99, inStock: true, category: 'Appliances', rating: 4.6 });
 
-
 root.render(
   <React.StrictMode>
     <Boton></Boton>
@@ -50,7 +48,10 @@ root.render(
     <BotonConProp fnClic={click2} text={"NO ME PULSES CAUSA"} text1={"GAAAAA"}></BotonConProp>
     <BotonConProp2 text={"SOY UN BOTON"}></BotonConProp2>
     <FormCom inputs={inputs}></FormCom>
-    <TiendaOnline productos={products}></TiendaOnline>
+    <BotonConClick
+    src1={"https://i.pinimg.com/236x/05/49/86/05498664d54894f92c6523c50c1eb9e6.jpg"} 
+    src2={"https://www.patasencasa.com/sites/default/files/2024-07/meme-del-gato-riendo_0.jpg"}
+    src3={"https://i.pinimg.com/236x/37/ab/7a/37ab7a8e579e5c307092cda929f036a2.jpg"}></BotonConClick>
   </React.StrictMode>
 );
 
