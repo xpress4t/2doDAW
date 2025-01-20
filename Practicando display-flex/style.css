@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+h1{
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+.navBar{
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+.navList{
+    display: flex; /*Para que los elementos de la lista se alineen horizontalmente*/
+    list-style: none;
+    padding: 0;
+}
+.navItem{
+    padding: 10px 20px;
+    color: white;
+}
+.navItem:hover{
+    background-color: #000000;
+}
