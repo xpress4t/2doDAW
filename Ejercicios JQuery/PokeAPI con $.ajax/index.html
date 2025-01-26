@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
+    #pokemonData{
+        margin-top: 20px;
+    }
+    img{
+        max-width: 200px;
+    }
+</style>
+<body>
+    <h1>Buscador de Pokémon</h1>
+    <form id="pokemonForm">
+        <label for="pokemonName">Nombre o número del Pokémon:</label>
+        <input type="text" id="pokemonName" placeholder="Pikachu o 25" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="pokemonData"></div>
+    <script>
+        document.getElementById('pokemonForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+        
+            const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+        
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Pokémon no encontrado');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    mostrarPokemon(data);
+                })
+                .catch(error => {
+                    mostrarError(error.message);
+                });
+        });
+        
+        function mostrarPokemon(pokemon) {
+            const pokemonData = document.getElementById('pokemonData');
+            pokemonData.innerHTML = `
+                <h2>${pokemon.name.toUpperCase()}</h2>
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+                <p><strong>Número:</strong> ${pokemon.id}</p>
+                <p><strong>Tipo(s):</strong> ${pokemon.types.map(type => type.type.name).join(', ')}</p>
+                <p><strong>Altura:</strong> ${pokemon.height / 10} m</p>
+                <p><strong>Peso:</strong> ${pokemon.weight / 10} kg</p>
+            `;
+        }
+        
+        function mostrarError(mensaje) {
+            const pokemonData = document.getElementById('pokemonData');
+            pokemonData.innerHTML = `<p style="color: red;">${mensaje}</p>`;
+        }
+    </script>
+</body>
+</html>
