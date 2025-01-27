@@ -109,6 +109,12 @@
                 echo "<p>Nº de error: ".$mse->getCode()."</p>";
                 echo "<p>Mensaje: ".$mse->getMessage()."</p>";
             }
+            /*
+            mostrar_contactos.php -> (dibujo de un lapiz) -> editar_contacto.php
+            UPDATE contactos SET
+            nombre = (una caja, o sa un input)
+            WHERE cod_contacto = (una caja, o sea un input)
+            */
             ?>
 </body>
 </html>
