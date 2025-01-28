@@ -4,11 +4,19 @@
     font-family: "Calibri";
 }
  
-header img{
-    width: 100%;
-}
- 
 #contenedor{
     margin: 0 auto;
     width: 80%;
+}
+
+img{
+    margin-right: .8em;
+    height: 150px;
+    height: 150px;
+    vertical-align: middle;/*Para poner el texto a la altura de la mitad de la imagen */
+}
+
+.info-par, .info-impar{
+    background: #cdffff;
+
 }
