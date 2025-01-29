@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="rick-info"></div>
     <script>
         //$.ajax() funcion del jquery es como el fetch
         $.ajax({
@@ -17,9 +18,21 @@
             },
             dataType : "JSON",
             success: function(data){
-                console.log(data)
+                if(data.result.length>0){
+                    const rick = data.results[0];
+                    const rickInfo = `
+                    <h1>${rick.name}</h1>
+                    <img src = "${rick.image}" alt="${rick.name}">
+                    <p>Status: ${rick.status}</p>
+                    `;
+                    $("#rick-info").html(rickInfo); // Insertamos la información en el div
+                }else{
+                    $("#rick-info").html("<p>No se encontró información de Rick Sanchez.</p>");
+                }
             },
-            error: function(data){}
+            error: function(data){
+                $("#rick-info").html("<p>Error al cargar los datos de Rick Sanchez.</p>");
+            }
         })
     </script>
 </body>
