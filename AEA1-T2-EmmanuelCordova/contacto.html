@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body id="contacto">
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img class="imageLogo" src="./img/logo-logitech.jpg" alt="logo"></a>
+        </div>
+        <nav class="navBar">
+            <ul class="navList">
+                <a class="textDec" href="index.html"><li class="navItem">Comprar</li></a>
+                <a class="textDec" href="software.html"><li class="navItem">Software y Hardware</li></a>
+                <a class="textDec" href="contacto.html"><li class="navItem">Contacto</li></a>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="contact">
+        <h2>Contacto</h2>
+        <br>
+        <p>¿Tienes alguna pregunta? Contáctanos a través del siguiente formulario:</p>
+    </div>
+   
+    <section id="formulario">
+        <form name="formulario" method="get" enctype="application/x-www-form-urlencoded">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" placeholder="Nombre*" required>
+        <label>E-mail:</label>
+        <input type="email" name="mail" placeholder="Correo electrónico*" required>
+        <label>Asunto:</label>
+        <select name="ciclo" required>
+            <option value="" hidden>Seleccione uno</option>
+            <option value="1">Consulta sobre modelos disponibles</option>
+            <option value="2">Solicitud de cotización</option>
+            <option value="3">Información sobre financiamiento</option>
+            <option value="4">Estado de una orden o entrega</option>
+            <option value="5">Problema técnico o servicio postventa</option>
+            <option value="6">Información sobre accesorios y repuestos</option>
+        </select>
+        <label>Mensaje:</label>
+        <textarea name="mensaje" placeholder="Mensaje*"></textarea>  
+        <section id="botones">
+            <input type="submit" name="enviar" value="Enviar">
+        </section>
+        </form>
+    </section>
+
+    <br><br><br><br><br>
+    <footer>
+        <div class="redesSociales">
+            <a href="https://www.facebook.com/LogitechG"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com/LogitechG"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/logitechg/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/logitechg"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://discord.com/invite/LogitechG"><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <p class="textoFooter">© 2025 Logitech. Reservados todos los derechos</p>   
+    </footer>
+</body>
+</html>
