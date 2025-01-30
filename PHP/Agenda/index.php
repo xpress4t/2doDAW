@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="borrar.js"></script>
 </head>
 <body>
     <h1>Listado de contactos</h1>
@@ -81,6 +82,17 @@
             &telefono=$fila[telefono]
             &observaciones=$fila[observaciones]
             &foto=$fila[foto]'>$fila[nombre] $fila[apellidos]</a>";
+
+            // Añadiendo función para borrar un contacto 
+            // También se puede escribir \"$fila[nombre] $fila[apellidos]\"
+            echo "<a onclick='borrar($fila[cod_contacto],`$fila[nombre] $fila[apellidos]`);'>
+                <img src='media/img/papelera.jpg' 
+                alt='Eliminar contacto' 
+                title='Borrar contacto' 
+                style='cursor:pointer;border:1px solid black;'
+                $fila[nombre] 
+                $fila[apellidos]>
+            </a>";
             echo "</section>";
             $contador++;
             /*
