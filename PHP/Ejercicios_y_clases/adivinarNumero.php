@@ -14,7 +14,8 @@
         <button type="submit">Comprobar</button>
     </form>
     <?php
-
+        $numeroAleatorio = rand(1,100);
+        
     ?>
 </body>
 </html>
