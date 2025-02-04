@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch con JS y jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        gap: 10px;
+    }
+</style>
+<body>
+
+    <h2>Fetch con JavaScript y jQuery</h2>
+
+    <button id="js-get-all">JS - Obtener Todos</button>
+    <button id="js-get-zelda">JS - Obtener Zelda</button>
+    <button id="js-post">JS - Enviar Juego</button>
+
+    <br><br>
+
+    <button id="jq-get-all">jQuery - Obtener Todos</button>
+    <button id="jq-get-zelda">jQuery - Obtener Zelda</button>
+    <button id="jq-post">jQuery - Enviar Juego</button>
+
+    <br><br>
+
+    <h3>Eliminar un juego</h3>
+    <input type="text" id="delete-id" placeholder="Título del juego">
+    <button id="jq-delete">jQuery - Borrar Juego</button>
+
+    <h2>Registro para juegos</h2>
+    <form action="">
+        <label>Título: </label>
+        <input type="text" id="titulo">
+        <label>Plataforma: </label>
+        <input type="text" id="plataforma">
+        <label>Desarrollador: </label>
+        <input type="text" id="desarrollador">
+        <label>Género: </label>
+        <input type="text" id="genero">
+        <label>Fecha de lanzamiento: </label>
+        <input type="date" id="fecha_lanzamiento">
+        <label>Precio: </label>
+        <input type="number" id="precio">
+        <label>Puntuación: </label>
+        <input type="number" id="puntuacion" step="0.1">
+        <input type="color" name="" id="">
+    </form>
+
+    <script>
+        // ----------- JavaScript Puro -----------
+
+        document.getElementById("js-get-all").addEventListener("click", () => {
+            fetch("http://localhost/2doDAW/API/api.php")
+                .then(res => res.json())
+                .then(data => console.log("JS - Todos:", data))
+                .catch(err => console.error("Error:", err));
+        });
+
+        document.getElementById("js-get-zelda").addEventListener("click", () => {
+            fetch("http://localhost/2doDAW/API/api.php?titulo=Zelda")
+                .then(res => res.json())
+                .then(data => console.log("JS - Zelda:", data))
+                .catch(err => console.error("Error:", err));
+        });
+
+        document.getElementById("js-post").addEventListener("click", () => {
+            fetch("http://localhost/2doDAW/API/api.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    titulo: "Dark Souls III",
+                    plataforma: "PC",
+                    desarrollador: "FromSoftware",
+                    genero: "RPG",
+                    fecha_lanzamiento: "2016-04-12",
+                    precio: 39.99,
+                    puntuacion: 9.4
+                })
+            })
+                .then(res => res.json())
+                .then(data => console.log("JS - POST:", data))
+                .catch(err => console.error("Error:", err));
+        });
+
+        
+
+        // ----------- jQuery -----------
+
+        $("#jq-get-all").click(() => {
+            $.get("http://localhost/2doDAW/API/api.php", (data) => {
+                console.log("jQuery - Todos:", data);
+            }).fail((err) => {
+                console.error("Error:", err);
+            });
+        });
+
+        $("#jq-get-zelda").click(() => {
+            $.get("http://localhost/2doDAW/API/api.php", { titulo: "Zelda" }, (data) => {
+                console.log("jQuery - Zelda:", data);
+            }).fail((err) => {
+                console.error("Error:", err);
+            });
+        });
+
+        $("#jq-post").click(() => {
+            $.ajax({
+                url: "http://localhost/2doDAW/API/api.php",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    titulo: "Dark Souls III",
+                    plataforma: "PC",
+                    desarrollador: "FromSoftware",
+                    genero: "RPG",
+                    fecha_lanzamiento: "2016-04-12",
+                    precio: 39.99,
+                    puntuacion: 9.4
+                }),
+                success: (data) => {
+                    console.log("jQuery - POST:", data);
+                },
+                error: (err) => {
+                    console.error("Error:", err);
+                }
+            });
+        });
+
+        $("#jq-delete").click(() => {
+            let id = $("#delete-id").val();
+            $.ajax({
+                url: `http://localhost/2doDAW/API/api.php`,
+                data: {
+                    id: id
+                },
+                type: "DELETE",
+                contentType: "application/json",
+                success: (data) => {
+                    console.log("jQuery - DELETE:", data);
+                },
+                error: (err) => {
+                    console.error("Error:", err);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
