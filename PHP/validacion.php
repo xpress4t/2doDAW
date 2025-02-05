@@ -6,9 +6,7 @@
         $usuario = $_POST['usuario'];
         $pass = $_POST['pass'];
 
-        $usuario = mysqli_real_escape_string($conexion, $usuario);
-        $pass = mysqli_real_escape_string($conexion, $pass);
-
+     
         $consulta = "SELECT * FROM usuarios WHERE user='$usuario' AND contrasena='$pass'";
 
         if($_POST['usuario']=="pepe@gmail.com" && $_POST['pass']=="123456"){
