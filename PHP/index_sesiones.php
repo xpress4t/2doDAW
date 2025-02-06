@@ -72,10 +72,6 @@
             <input class="btn btn-primary" type="submit" name="enviar" value="Acceder">
             <input class="btn btn-danger" type="reset" value="Borrar">
         </div>
-        <br>
-        <div class="spinner-border text-primary" role="status"></div>
-        <div class="spinner-border text-danger" role="status"></div>
 	</form>
-
 </body>
 </html>
