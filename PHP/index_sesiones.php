@@ -37,8 +37,6 @@
 </head>
 <body>
 	<h1>Validación de usuario (sesiones)</h1>
-    <!-- Feedback -->
-
     <?php
         if(isset($_GET['mensaje'])){
             if($_GET['mensaje']=="error"){
@@ -54,14 +52,12 @@
     ?>
 	<form id="formulario" name="sesiones" action="validacion.php" method="post" enctype="application/x-www-form-urlencoded">
 		<label>Usuario:</label>
-        <!-- Bootstrap -->
         <div class="row g-3 align-items-center">
             <div class="col-auto">
                 <input type="text" name="usuario" maxlength="50" required autofocus id="inputPassword6" class="form-control" aria-describedby="textHelpInline">
             </div>
         </div>
         <label>Contraseña:</label>
-        <!-- Bootstrap -->
         <div class="row g-3 align-items-center">
             <div class="col-auto">
                 <input type="password" name="pass" minlength="6" maxlength="20" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
