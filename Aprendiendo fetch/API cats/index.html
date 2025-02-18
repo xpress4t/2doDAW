@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatitos</title>
+</head>
+<body>
+    <h1>Imágenes de gatitos</h1>
+    <div id="imagenes"></div>
+    <div id="container"></div>
+    <!--
+        {
+            "id": "J2PmlIizw",
+            "url": "https://cdn2.thecatapi.com/images/J2PmlIizw.jpg",
+            "width": 1080,
+            "height": 1350
+        },
+    -->
+    <script>
+        const contenedorImagenes = document.getElementById("imagenes")
+        const url = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_CkF0mQ9rKTfiJsdR8iLTL66y8xKlX1TCxMO2RR29fvAtsGtTyD8RBZbxtcpFVWdy"
+        function mostrarImagenes(){
+            fetch(url) // Haciendo una petición
+            .then(response => response.json()) // Convertimos la respuesta a JSON
+            .then(data => {         // Se procesa la respuesta y muestra las imágenes
+                data.forEach(imgData => {
+                    const elementoImagen = document.createElement("img")
+                    elementoImagen.src = imgData.url
+                    elementoImagen.style.width = "200px"
+                    elementoImagen.style.height = "180px"
+                    contenedorImagenes.appendChild(elementoImagen)
+
+                    const elementoID = document.createElement("p") // Sólo pueden crearse etiquetas de html, Ejemplo: 
+                    elementoID.textContent = `El ID de la imagen es: ${imgData.id}` // Comillas inversas para poder agregar el ${imgData.id}
+                    elementoID.style.color = "red"
+                    elementoID.breeds.forEach(breed => {
+                        const raza = document.createElement("p")
+                        raza.textContent = `La raza del gato es: ${breed.name}`
+                        contenedorImagenes.appendChild(raza)
+
+                    })
+                    contenedorImagenes.appendChild(elementoID)
+                })
+            }) 
+
+        }
+        mostrarImagenes()
+
+        function usandoAppendChild(){
+            const contenedor =document.getElementById("container")
+            const agregandoParrafo = document.createElement("h1")
+
+            agregandoParrafo.textContent = "Hola mundo!"
+            contenedor.appendChild(agregandoParrafo) // Le agrego el h1 al contenedor
+        }
+        usandoAppendChild()
+    </script>
+</body>
+</html>
