@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.square{
+    border: 2px solid rgb(42, 42, 42);
+    border-radius: 12px;
+    padding: 50px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(black,rgb(42, 42, 42));
+}
+
+.container {
+    width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.square1{ /*Centrando el logo y titulo login*/
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    gap: 0.75rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;/*Para quitar el borde negro al hacer clic enel botón */
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:first-child {
+    background-color: rgb(30, 215, 96);
+    margin-right: 5px;
+}
+
+.btn:last-child {
+    background-color: rgb(30, 215, 96);
+}
+
+.btn:hover {
+    background-color: rgb(68, 227, 124);
+}
