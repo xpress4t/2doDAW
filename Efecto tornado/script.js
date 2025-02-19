@@ -12,7 +12,7 @@ class Particle {
 
     draw(ctx) {
         ctx.fillStyle = '#e91e63'; // Color del texto
-        ctx.font = '16px "Times New Roman"';
+        ctx.font = '16px "Comic Sans MS"'; // cambiar la fuente del texto
         ctx.fillText(this.char, this.x, this.y);
     }
 
@@ -23,7 +23,7 @@ class Particle {
 
         const maxDistance = 100; 
         const minDistance = 5;
-        const gravitationalPull = 2;
+        const gravitationalPull = 2; // Para aumentar el radio de absorción del mouse
         
         if (distance < maxDistance) {
             let force = (1 - distance / maxDistance) * gravitationalPull;
