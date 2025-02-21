@@ -4,11 +4,11 @@ def imprimir_tablero(tablero):
         print("-" * 9)
 
 def verificar_ganador(tablero, jugador):
-    # Verificar filas y columnas
+    # Verifico filas y columnas
     for i in range(3):
         if all(tablero[i][j] == jugador for j in range(3)) or all(tablero[j][i] == jugador for j in range(3)):
             return True
-    # Verificar diagonales
+    # Verifico diagonales
     if all(tablero[i][i] == jugador for i in range(3)) or all(tablero[i][2 - i] == jugador for i in range(3)):
         return True
     return False
@@ -27,7 +27,7 @@ def jugar():
         print(f"Turno del jugador {jugador}")
         
         try:
-            fila, columna = map(int, input("Introduce fila y columna (0-2, separados por espacio): ").split())
+            fila, columna = map(int, input("Introduce fila y columna separados por espacio: ").split())
             if tablero[fila][columna] != " ":
                 print("Casilla ocupada, elige otra.")
                 continue

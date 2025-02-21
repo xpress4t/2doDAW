@@ -20,3 +20,4 @@ print("La suma de los numeros es: ", suma)
 print("La multiplicacion de los numeros es: ", multiplicacion)
 
 #Ejercicio 3
+
