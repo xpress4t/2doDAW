@@ -1,7 +1,7 @@
 def imprimir_tablero(tablero):
     for fila in tablero:
         print(" | ".join(fila))
-        print("-" * 9)
+        print("-" *9)
 
 def verificar_ganador(tablero, jugador):
     # Verifico filas y columnas
