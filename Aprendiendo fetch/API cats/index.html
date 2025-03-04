@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gatitos</title>
+    <style>
+        body{
+            background: rgb(48, 48, 48);
+        }
+    </style>
 </head>
 <body>
-    <h1>Imágenes de gatitos</h1>
+    <h1 style="color:white">Imágenes de gatitos</h1>
     <div id="imagenes"></div>
-    <div id="container"></div>
     <!--
         {
             "id": "J2PmlIizw",
             "url": "https://cdn2.thecatapi.com/images/J2PmlIizw.jpg",
             "width": 1080,
             "height": 1350
+            marisol
         },
     -->
     <script>
@@ -46,15 +51,6 @@
 
         }
         mostrarImagenes()
-
-        function usandoAppendChild(){
-            const contenedor =document.getElementById("container")
-            const agregandoParrafo = document.createElement("h1")
-
-            agregandoParrafo.textContent = "Hola mundo!"
-            contenedor.appendChild(agregandoParrafo) // Le agrego el h1 al contenedor
-        }
-        usandoAppendChild()
     </script>
 </body>
 </html>
