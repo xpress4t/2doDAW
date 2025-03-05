@@ -2,9 +2,8 @@
     $DB_HOST = "localhost";
     $DB_USER = "root";
     $DB_PASSWORD = "";
-    $DB_NAME = "pruebas";
+    $DB_NAME = "discoteca";
 
-    
     function getUser($email){
 
         global $DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME;
@@ -26,6 +25,4 @@
         $user = $resultado->fetch_assoc();
         return $user;
     }
-
-    
 ?>

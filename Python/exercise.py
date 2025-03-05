@@ -9,7 +9,7 @@ SIZE_PARTICLES = 6
 NUMBER_PARTICLES = 700
 COLOR_PARTICLES = "#FF1493"
 
-def posicion_corazon(t):
+def heartPosition(t):
     x = 16 * math.sin(t) ** 3
     y = 13 * math.cos(t) - 5 * math.cos(2 * t) - 2 * math.cos(3 * t) - math.cos(4 * t)
     return x, y
@@ -25,7 +25,7 @@ class Particula:
 
     def definir_destino(self):
         t = random.uniform(0, 2 * math.pi)
-        x, y = posicion_corazon(t)
+        x, y = heartPosition(t)
         self.destino[0] = WIDTH // 2 + int(x * 20)
         self.destino[1] = HEIGHT // 2 - int(y * 20)
 

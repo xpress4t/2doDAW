@@ -1,0 +1,36 @@
+<!-- 
+    La tabla actores tiene los siguientes campos: 
+    
+    - cod_actor (PK) auto incremental
+    
+    - nombre (máximo 30 caracteres) ✅
+    
+    - apellidos (máximo 40 caracteres) un actor puede no tener apellidos (ej.: Cher), por lo que debes guardar “” en la tabla si no se indican los apellidos del actor. ✅
+    
+    - fec_nacimiento (aaaa-mm-dd) ✅
+    
+    - fec_muerte (aaaa-mm-dd). Lógicamente, si el actor está vivo no se indicará la fecha de fallecimiento (vacía), en cuyo caso el programa debe guardar 9999-12-31. ✅
+    
+    - foto (máximo 50 caracteres) Si no se selecciona una foto debes guardar nd. ✅
+    
+    La tabla tiene un índice único para evitar la inserción de dos actores con el mismo nombre y apellidos (el índice se llama i_actor). No se permiten campos nulos. 
+    
+    Se pide realizar únicamente el archivo insertar_autores.php y el archivo de conexión. ✅
+    
+    1. El archivo insertar_autores.php debe permitir insertar autores con su foto en la BBDD mediante un formulario con las restricciones pertinentes, nomenclatura correcta y código comentado (3 puntos).
+    
+    2. Debes recoger y tratar las excepciones con los mensajes de feedback adecuados (2 puntos). ✅
+    
+    3. Obviamente, la fecha de fallecimiento no puede ser anterior a la fecha de nacimiento (1 punto). ✅
+    
+    4. El programa sólo debe permitir subir imágenes de hasta 1 MB en formato jpg o png (1 punto).✅
+    
+    5. Las imágenes deben subirse al servidor a la carpeta media/img/actores, pero el programa debe contemplar la posibilidad de que no exista la carpeta actores, en cuyo caso deberá crearla (1 punto).
+    
+    6. El programa debe contemplar la posibilidad de que la imagen ya exista en el servidor, por lo que no grabará los datos, no subirá la imagen y mostrará el feedback pertinente (1 punto).
+    
+    7. Comprobar que no se permite la inserción de dos autores con el mismo nombre y apellidos y mostrar el feedback correspondiente (1 punto).
+    
+    Mostrar el feedback adecuado a cada acción en el propio archivo (insertar_autores.php) sobre el formulario. Utiliza código de colores para el feedback.
+ 
+-->

@@ -1,0 +1,17 @@
+.boxContainer{
+    border: solid 2px red;
+    height: 40vh;
+    display: flex;
+}
+
+.box1{
+    border: solid 2px rgb(161, 161, 161);
+    width: 50vw;
+    height: 35vh;
+    margin: 1rem;
+}
+
+.box2{
+    width: 50vw;
+    height: 40vh;
+}
