@@ -23,7 +23,7 @@ class Particle {
 
         const maxDistance = 100; 
         const minDistance = 5;
-        const gravitationalPull = 2; // Para aumentar el radio de absorción del mouse
+        const gravitationalPull = 8; // Para aumentar el radio de absorción del mouse
         
         if (distance < maxDistance) {
             let force = (1 - distance / maxDistance) * gravitationalPull;

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container py-5">
+      <div class="card shadow p-4">
+          <h2 class="text-center mb-4">Conversor de Temperatura</h2>
+            <div class="containerInputs">
+
+                <div class="input-group mb-3">
+                    <input id="temperaturaDeEntrada" type="text" class="form-control" placeholder="Temperatura X" aria-label="Temperatura">
+                    <select id="unidadEntrada" class="form-select">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+
+                <div><p class="equals">=</p></div>
+
+                <div class="input-group mb-3">
+                    <input id="temperaturaDeSalida" type="text" class="form-control" placeholder="Temperatura Y" aria-label="Resultado" disabled>
+                    <select id="unidadSalida" class="form-select">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn btn-primary" onclick="operaciones()">Convertir</button>
+                </div>
+            </div>
+            <div class="operation mt-4"></div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

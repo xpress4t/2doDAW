@@ -1,0 +1,82 @@
+body {
+    background-color: #a1a1a1;
+    padding: 20px;
+}
+
+.calculator {
+    max-width: 320px;
+    margin: 0 auto;
+    background-color: #343a40;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.display {
+    background-color: #212529;
+    color: white;
+    font-size: 1.8rem;
+    padding: 10px 15px;
+    text-align: right;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    min-height: 60px;
+    font-family: monospace;
+}
+
+.btn-calculator {
+    height: 55px;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.btn-number {
+    background-color: #495057;
+    color: white;
+}
+
+.btn-number:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-operation {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.btn-operation:hover {
+    background-color: #e96b02;
+    color: white;
+}
+
+.btn-equals {
+    background-color: #0d6efd;
+    color: white;
+    grid-column: span 2;
+}
+
+.btn-equals:hover {
+    background-color: #0b5ed7;
+    color: white;
+}
+
+.btn-clear {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #bb2d3b;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #5c636a;
+    color: white;
+}
