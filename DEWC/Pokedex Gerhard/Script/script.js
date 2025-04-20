@@ -9,10 +9,9 @@ const plantilla__pokemon = document.querySelector("#poke__template")
 generarPokemons()
  
 function agregarNombres(){
-    fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200")
+    fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50")
+    .then(resultado=>resultado.json())
     .then(resultado=>{
-        return resultado.json()
-    }).then(resultado=>{
         resultado.results.forEach(x=>{
             selector.innerHTML += "<option>"+x.name+"</option>"
         }) 
@@ -20,9 +19,8 @@ function agregarNombres(){
 }
  
 function generarPokemons(){
-    fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200").then(resultado=>{
-        return resultado.json()
-    })
+    fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200")
+    .then(resultado=>resultado.json())
     .then(resultado=>{
         const promesas = resultado.results.map(obj => {
             const copia = document.importNode(plantilla__pokemon.content, true)
